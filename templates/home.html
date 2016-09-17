@@ -1,0 +1,513 @@
+<!-- <div ng-include="'navigation/header.html'"></div> -->
+<md-content>
+    <div id="gl-circle-loader-wrapper">
+        <div id="gl-circle-loader-center">
+            <div class="gl-circle-load">
+                <img src="images/ploading.gif" alt="Page Loader">
+            </div>
+        </div>
+    </div>
+    <!--================================
+            SIDE MENU
+=================================-->
+    <!-- PAGE OVERLAY WHEN MENU ACTIVE -->
+    <div class="gl-side-menu-overlay"></div>
+    <!-- PAGE OVERLAY WHEN MENU ACTIVE END -->
+    <div class="gl-side-menu-wrap">
+        <div class="gl-side-menu">
+            <div class="gl-side-menu-widget-wrap">
+                <div class="gl-login-form-wrapper">
+                    <h3>User Login</h3>
+                    <!--         <p>Login to add new listing </p> -->
+                    <div class="gl-login-form">
+                        <form action="#">
+                            <input type="text" name="gl-user-name" id="gl-user-input" placeholder="Email or Mobile">
+                            <input type="password" name="gl-user-password" id="gl-user-password" placeholder="Password/OTP">
+                            <button type="submit">Login</button>
+                        </form>
+                    </div>
+                    <div class="gl-social-login-opt">
+                        <a href="#" class="gl-social-login-btn gl-facebook-login">Login with Facebook</a>
+                        <a href="#" class="gl-social-login-btn gl-google-login">Login with Google</a>
+                    </div>
+                    <div class="gl-other-options">
+                        <a href="#" class="gl-forgot-pass">Forget Password ?</a>
+                        <a href="#" class="gl-signup">Sign up</a>
+                    </div>
+                </div>
+                <div class="gl-login-form-wrapper">
+                    <h3>User Signup</h3>
+                    <!--         <p>Login to add new listing </p> -->
+                    <div class="gl-login-form">
+                        <form action="#">
+                            <input type="text" name="gl-user-fname" id="gl-user-input" placeholder="First Name">
+                            <input type="text" name="gl-user-lname" id="gl-user-input" placeholder="Last Name">
+                            <input type="text" name="gl-user-email" id="gl-user-input" placeholder="Email">
+                            <input type="text" name="gl-user-mobile" id="gl-user-input" placeholder="Mobile">
+                            <input type="password" name="gl-user-password" id="gl-user-password" placeholder="Password/OTP">
+                            <button type="submit">Login</button>
+                        </form>
+                    </div>
+                    <div class="gl-social-login-opt">
+                        <a href="#" class="gl-social-login-btn gl-facebook-login">Sign up with Facebook</a>
+                        <a href="#" class="gl-social-login-btn gl-google-login">Sign up with Google</a>
+                    </div>
+                    <div class="gl-other-options">
+                        <a href="#" class="gl-forgot-pass">Forget Password ?</a>
+                        <a href="#" class="gl-signup">Sign up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="gl-side-menu-close-button" id="gl-side-menu-close-button">Close Menu</button>
+    </div>
+    <!-- SIDE MENU END -->
+    <!-- HEADER -->
+    <header class="gl-header">
+        <!-- BOTTOM BAR/NAVIGATION -->
+        <div class="gl-header-bottombar">
+            <!-- Navigation Menu start-->
+            <nav class="navbar gl-header-main-menu" role="navigation">
+                <div class="container-fluid">
+                    <!-- Navbar Toggle -->
+                    <div class="navbar-header">
+                        <!-- Logo -->
+                        <a class="navbar-brand" href="index.html"><img class="logo" src="images/logo-header.png" alt="GLIMPSE"></a>
+                    </div>
+                    <!-- Navbar Toggle End -->
+                    <!-- navbar-collapse start-->
+                    <!-- navbar-collapse end-->
+                    <div class="gl-extra-btns-wrapper">
+                        <!-- PROFILE BTN -->
+                        <span id="gl-side-menu-btn">     Sign In </span>
+                        <i class="fa fa-map-marker" aria-hidden="true" style="margin-left:20px;"></i>
+                        <span>Gurgaon</span>
+                        <!-- PROFILE BTN END -->
+                    </div>
+                </div>
+            </nav>
+            <!-- Navigation Menu end-->
+        </div>
+        <!-- END -->
+    </header>
+    <!-- HEADER END -->
+    <!-- HERO IMAGE -->
+    <!--Call your modal-->
+    <a id="demo01" href="#animatedModal"></a>
+    <!--DEMO01-->
+    <div id="animatedModal">
+        <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID  class="close-animatedModal" -->
+        <div class="close-animatedModal">
+            CLOSE MODAL
+        </div>
+        <div class="modal-content">
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="gl-elements-content-wrapper">
+                            <div class="search-city-selection"><span class="search-cs-header">You are in</span><span class="search-cs-toggler"><span>Gurgaon</span><i class="icon icon-arrow-down filter-icon-down"></i></span>
+                            </div>
+                            <!-- DIRECTORY FORM -->
+                            <div class="gl-directory-searchbar gl-bz-directory-searchbar">
+                                <form action="#" id="gl-bz-directory-form">
+                                    <fieldset>
+                                        <input type="text" name="gl-business-keyword" id="gl-business-keyword" class="gl-directory-input" placeholder="Search by project, builder, landmark or locality">
+                                    </fieldset>
+                                    <button type="submit" class="gl-icon-btn"><i class="fa fa-search"></i> Search</button>
+                                </form>
+                            </div>
+                            <!-- END -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <section class="gl-hero-img-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="gl-elements-content-wrapper">
+                    <div id="typed-strings">
+                        <p>Let’s <span class="gl-color-text">discover</span> great places to live</p>
+                        <p>Find Top Rated <span class="gl-color-text">Projects</span> In Gurgaon</p>
+                        <p>Find The <span class="gl-color-text">Best Places</span> In Gurgaon</p>
+                    </div>
+                    <h2 id="gl-slogan" class="gl-hero-text-heading"></h2>
+                    <p class="gl-hero-text-paragraph">World's first propery reviewing platform</p>
+                    <!-- DIRECTORY FORM -->
+                    <div class="gl-directory-searchbar gl-bz-directory-searchbar" onclick="openSeacrh()">
+                        <form action="#" id="gl-bz-directory-form">
+                            <fieldset>
+                                <input type="text" name="gl-business-keyword" id="gl-business-keyword" class="gl-directory-input" placeholder="Search by project, builder, landmark or locality">
+                            </fieldset>
+                            <button type="submit" class="gl-icon-btn"><i class="fa fa-search"></i> Search</button>
+                        </form>
+                    </div>
+                    <!-- END -->
+                    <div class="gl-scroll-down-wrapper">
+                        <a href="#gl-next-section" class="gl-scroll-down"><i class="ion-chevron-down"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- HERO IMAGE END -->
+    <!-- ICON WITH TEXT/SERVICES -->
+    <section class="gl-service-section-wrapper gl-section-wrapper" id="gl-next-section">
+        <div class="container">
+            <div class="row">
+                <div class="gl-service-we-offer">
+                    <!-- ICON WITH TEXT -->
+                    <div class="gl-icon-top-with-text col-md-4 col-sm-4 col-xs-12 appear fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
+                        <div class="gl-icon-wrapper">
+                            <img src="images/fingerprint-icon.png" alt="Trusted">
+                        </div>
+                        <h3>Trusted Service</h3>
+                        <p>On the other hand, we denounce great deal come indignation and dislike</p>
+                    </div>
+                    <!-- END -->
+                    <!-- ICON WITH TEXT -->
+                    <div class="gl-icon-top-with-text col-md-4 col-sm-4 col-xs-12 appear fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+                        <div class="gl-icon-wrapper">
+                            <img src="images/shield-icon.png" alt="Quality">
+                        </div>
+                        <h3>Quality Assured</h3>
+                        <p>On the other hand, we denounce great deal come indignation and dislike</p>
+                    </div>
+                    <!-- END -->
+                    <!-- ICON WITH TEXT -->
+                    <div class="gl-icon-top-with-text col-md-4 col-sm-4 col-xs-12 appear fadeIn" data-wow-duration="1s" data-wow-delay=".7s">
+                        <div class="gl-icon-wrapper">
+                            <img src="images/location-pin.png" alt="Location">
+                        </div>
+                        <h3>Easy Location</h3>
+                        <p>On the other hand, we denounce great deal come indignation and dislike</p>
+                    </div>
+                </div>
+                <!-- END -->
+            </div>
+        </div>
+    </section>
+    <!-- ICON WITH TEXT/SERVICES END -->
+    <!-- WRITE A REVIEW -->
+    <section class="gl-how-it-works-section gl-custom-section gl-section-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="gl-custom-sec-content">
+                    <h1>1000+ Reviews</h1>
+                    <p>Write a review and help someone find a home. For every review we help a girl child with one day of education. </p>
+                    <a href="#" class="gl-btn gl-more-btn">Write Review Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="gl-custom-image-wrapper">
+                    <img src="images/review-home.png" alt="Custom Image" class="gl-lazy review-home">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- WRITE A REVIEW END -->
+    <!-- WHAT YOU NEED SECTION -->
+    <section class="gl-what-you-need-section gl-section-wrapper">
+        <div class="container">
+            <div class="row">
+                <!-- SECTION HEADINGS -->
+                <div class="gl-section-headings">
+                    <h1>What you need ?</h1>
+                    <p>Checkout and enjoy the biggest unlimited possiblities</p>
+                </div>
+                <!-- END -->
+                <div class="gl-listing-categories-wrapper">
+                    <!-- CATEGORY ITEM -->
+                    <div class="gl-listing-cat-item gl-dbl-width gl-tour-travel-cat">
+                        <picture>
+                            <source media="(min-width: 768px)" srcset=images/family.jpg>
+                            <img alt="Category Image" srcset=images/family.jpg>
+                        </picture>
+                        <a href="#" class="gl-img-overlay-effect">
+                            <span class="gl-cat-title">Family</span>
+                        </a>
+                    </div>
+                    <!-- END -->
+                    <!-- CATEGORY ITEM -->
+                    <div class="gl-listing-cat-item gl-hangout-cat">
+                        <picture>
+                            <source media="(min-width: 768px)" srcset=images/newlymarried.jpg>
+                            <img alt="Category Image" srcset=images/newlymarried.jpg>
+                        </picture>
+                        <a href="#" class="gl-img-overlay-effect">
+                            <span class="gl-cat-title">Just Married</span>
+                        </a>
+                    </div>
+                    <!-- END -->
+                    <!-- CATEGORY ITEM -->
+                    <div class="gl-listing-cat-item gl-dbl-height gl-fashion-cat">
+                        <picture>
+                            <source media="(min-width: 480px)" srcset=images/old.jpg>
+                            <img alt="Category Image" srcset=images/old.jpg>
+                        </picture>
+                        <a href="#" class="gl-img-overlay-effect">
+                            <span class="gl-cat-title">Elderly</span>
+                        </a>
+                    </div>
+                    <!-- END -->
+                    <!-- CATEGORY ITEM -->
+                    <div class="gl-listing-cat-item gl-food-cafe-cat">
+                        <picture>
+                            <source media="(min-width: 480px)" srcset=images/kids.jpg>
+                            <img alt="Category Image" srcset=images/kids.jpg>
+                        </picture>
+                        <a href="#" class="gl-img-overlay-effect">
+                            <span class="gl-cat-title">Children</span>
+                        </a>
+                    </div>
+                    <!-- END -->
+                    <!-- CATEGORY ITEM -->
+                    <div class="gl-listing-cat-item gl-dbl-width gl-office-cat">
+                        <picture>
+                            <source media="(min-width: 480px)" srcset=images/bachelors.jpg>
+                            <img alt="Category Image" srcset=images/bachelors.jpg>
+                        </picture>
+                        <a href="#" class="gl-img-overlay-effect">
+                            <span class="gl-cat-title">Bachelors</span>
+                        </a>
+                    </div>
+                    <!-- END -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- WHAT YOU NEED SECTION END -->
+    <!-- FEATURED LISTINGS -->
+    <section class="gl-feat-listing-section gl-section-wrapper">
+        <div class="container">
+            <div class="row">
+                <!-- SECTION HEADINGS -->
+                <div class="gl-section-headings">
+                    <h1>Top Rated Projects</h1>
+                    <p>Checkout and enjoy the biggest unlimited possiblities</p>
+                </div>
+                <!-- END -->
+                <!-- WRAPPER -->
+                <div class="gl-featured-listing-wrapper">
+                    <!-- FEATURED ITEMS -->
+                    <div class="gl-featured-items col-md-4 col-sm-4 col-xs-12 appear fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
+                        <div class="gl-feat-items-img-wrapper">
+                            <picture>
+                                <source media="(min-width: 768px)" srcset=images/placeholder-standard.jpg>
+                                <img alt="Featured Listing" srcset=images/placeholder-standard.jpg>
+                            </picture>
+                        </div>
+                        <div class="gl-feat-item-details">
+                            <span class="gl-item-rating">
+              <i class="ion-android-star-outline"></i>
+              4.5
+            </span>
+                            <h3>
+              <a href="#">Office Rent</a>
+            </h3>
+                            <div class="gl-item-location">
+                                <i class="ion-ios-location-outline"></i>
+                                <span>Road 3, West Portland, USA</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END -->
+                    <!-- FEATURED ITEMS -->
+                    <div class="gl-featured-items col-md-4 col-sm-4 col-xs-12 appear fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+                        <div class="gl-feat-items-img-wrapper">
+                            <picture>
+                                <source media="(min-width: 768px)" srcset=images/placeholder-standard.jpg><img alt="Featured Listing" srcset=images/placeholder-standard.jpg>
+                            </picture>
+                        </div>
+                        <div class="gl-feat-item-details">
+                            <span class="gl-item-rating">
+              <i class="ion-android-star-outline"></i>
+              4.5
+            </span>
+                            <h3>
+              <a href="#">Lake Heaven</a>
+            </h3>
+                            <div class="gl-item-location">
+                                <i class="ion-ios-location-outline"></i>
+                                <span>Road 3, West Portland, USA</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END -->
+                    <!-- FEATURED ITEMS -->
+                    <div class="gl-featured-items col-md-4 col-sm-4 col-xs-12 appear fadeIn" data-wow-duration="1s" data-wow-delay=".7s">
+                        <div class="gl-feat-items-img-wrapper">
+                            <picture>
+                                <source media="(min-width: 768px)" srcset=images/placeholder-standard.jpg><img alt="Featured Listing" srcset=images/placeholder-standard.jpg>
+                            </picture>
+                        </div>
+                        <div class="gl-feat-item-details">
+                            <span class="gl-item-rating">
+              <i class="ion-android-star-outline"></i>
+              4.5
+            </span>
+                            <h3>
+              <a href="#">Cafe Hapus</a>
+            </h3>
+                            <div class="gl-item-location">
+                                <i class="ion-ios-location-outline"></i>
+                                <span>Road 3, West Portland, USA</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END -->
+                </div>
+                <!-- END -->
+                <!-- MORE BTN -->
+                <div class="gl-more-btn-wrapper">
+                    <a href="#" class="gl-more-btn gl-btn">More</a>
+                </div>
+                <!-- END -->
+            </div>
+        </div>
+    </section>
+    <!-- FEATURED LISTINGS END -->
+    <!-- HOW IT WORKS -->
+    <section class="gl-how-it-works-section gl-custom-section gl-section-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="gl-custom-sec-content">
+                    <h1>How it works ?</h1>
+                    <p>On the other hand, we denounce with righteous indignation and dislike men beguiled and demoralized by the charms of pleasure of the moment, blinded belongs to those who fail in their duty through weakness </p>
+                    <a href="#" class="gl-btn gl-more-btn">More</a>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="gl-custom-image-wrapper">
+                    <img src="images/placeholder-custom.jpg" alt="Custom Image" class="gl-lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- HOW IT WORKS END -->
+    <!-- CTA -->
+    <section class="gl-cta-section">
+        <div class="container">
+            <div class="row">
+                <div class="gl-cta-content-wrapper">
+                    <p> Get best glimpse app for mobile and other small <span class="gl-bold-font">devices</span> from playstore </p>
+                    <ul>
+                        <li>
+                            <a href="#" class="gl-google-play-btn"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="gl-app-store-btn"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CTA END -->
+    <!-- FOOTER -->
+    <footer>
+        <!-- FOOTER TOP -->
+        <div class="gl-footer-top-wrapper">
+            <div class="container">
+                <div class="row">
+                    <!-- FOOTER WIDGET -->
+                    <div class="gl-footer-widget gl-footer-logo gl-footer-fixed-widget">
+                        <a href="#">
+                            <img src="images/logo-footer.png" alt="Glimpse">
+                        </a>
+                    </div>
+                    <!-- END -->
+                    <!-- FOOTER WIDGET -->
+                    <div class="gl-footer-widget gl-contact-info">
+                        <h3 class="gl-footer-widget-title">Contact info</h3>
+                        <div class="gl-footer-widget-content">
+                            <ul>
+                                <li><i class="fa fa-map-marker"></i>Road 3, West side lane Texas, USA</li>
+                                <li><i class="fa fa-phone"></i>0632 0152 001</li>
+                                <li><i class="fa fa-envelope-o"></i>mail@gmail.com</li>
+                                <li><i class="fa fa-globe"></i>www.glimpse.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- END -->
+                    <!-- FOOTER WIDGET -->
+                    <div class="gl-footer-widget gl-useful-links">
+                        <h3 class="gl-footer-widget-title">Company</h3>
+                        <div class="gl-footer-widget-content">
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">History</a></li>
+                                <li><a href="#">Career &amp; Goal</a></li>
+                                <li><a href="#">Company Profile</a></li>
+                                <li><a href="#">Process</a></li>
+                                <li><a href="#">Account</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- END -->
+                    <!-- FOOTER WIDGET -->
+                    <div class="gl-footer-widget gl-subscribe-widget">
+                        <h3 class="gl-footer-widget-title">Subscribe</h3>
+                        <div class="gl-footer-widget-content">
+                            <p>Checkout and enjoy the biggest eco</p>
+                            <form action="#">
+                                <input type="email" name="gl-subscription" id="gl-subscription" placeholder="Your email">
+                                <button type="submit" class="gl-btn">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- END -->
+                </div>
+            </div>
+        </div>
+        <!-- END -->
+        <!-- FOOTER BOTTOM -->
+        <div class="gl-footer-bottom-wrapper">
+            <div class="container">
+                <div class="row">
+                    <!-- COPYRIGHT INFO -->
+                    <div class="gl-copyright-info-wrapper">
+                        <p>Copyright &copy; 2016 Glimpse. All rights reserved</p>
+                    </div>
+                    <!-- COPYRIGHT INFO -->
+                    <div class="gl-social-info-wrapper">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-behance"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-dribbble"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-vimeo"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END -->
+    </footer>
+    <!-- FOOTER END -->
+</md-content>

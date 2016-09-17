@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>World's First Property Reviewing Platform | Project Reviews | Locality Reviews | Builder Reviews </title>
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="css/main.css">
+
+
+
+     <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/business.style.css">
+    <link rel="stylesheet" href="css/custom.style.css">
+
+</head>
+
+<body ng-app="roofWebsite" class="gl-business-template gl-home-template">
+    <div class="main" layout="column" layout-fill>
+        <md-content class="main-content">
+            <div ui-view></div>
+        </md-content>
+    </div>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-aria/angular-aria.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-material/angular-material.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+    <script>
+    var config = {
+        apiKey: "AIzaSyD_4bPp5HKryXDzaQwfRhqAU5SsSAdDIJ0",
+        authDomain: "roofpik-948d0.firebaseapp.com",
+        databaseURL: "https://roofpik-948d0.firebaseio.com",
+        storageBucket: "roofpik-948d0.appspot.com",
+    };
+
+    firebase.initializeApp(config);
+    </script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/config.js"></script>
+    <script src="js/controller/home.ctrl.js" />
+
+
+     <script src="js/jquery.min.js"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBF0FPDHlurGkDKua7PfZjpD2fr2rQsRw0&libraries=places"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animatedModal.min.js"></script>
+    <script>
+    $("#demo01").animatedModal();
+
+    function openSeacrh() {
+        $("#demo01").click();
+
+    }
+    </script>
+
+</body>
+
+</html>
