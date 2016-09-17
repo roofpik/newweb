@@ -1,0 +1,41 @@
+.gl-extra-btns-wrapper{
+	line-height: 32px !important;
+	margin-left: 20px;
+}
+
+
+.gl-hero-img-wrapper .container .gl-elements-content-wrapper .gl-directory-searchbar form fieldset input{
+	width: 100%;
+}
+
+
+:focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+:focus:-moz-placeholder {
+  opacity: 1;
+}
+:focus::-moz-placeholder {
+  opacity: 1;
+}
+:focus:-ms-input-placeholder {
+  opacity: 1;
+}
+
+
+.gl-google-login{
+	background-color: #fff;
+	    border: 1px solid #fc313a !important;
+    color: #585858 !important;
+}
+
+.review-home{
+	width:30%;
+}
+.gl-hero-img-wrapper .container .gl-elements-content-wrapper .gl-directory-searchbar form fieldset{
+box-shadow: 2px 5px 2px rgba(0, 0, 0, 0.1), inset 2px 2px 1px #f0f0f0;
+}
+
+.gl-hero-img-wrapper .container .gl-elements-content-wrapper .gl-directory-searchbar form fieldset input{
+	border: 0px;
+}

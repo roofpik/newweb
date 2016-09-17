@@ -1,5 +1,5 @@
 var app = angular.module('roofWebsite', ['ngMaterial', 'ui.router']);
-// var db = firebase.database();
+var db = firebase.database();
 
 app.config(['$mdThemingProvider', '$mdIconProvider', function($mdThemingProvider, $mdIconProvider) {
 
