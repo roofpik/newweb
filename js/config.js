@@ -8,6 +8,13 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
             controller: 'homeCtrl'
         });
 
-    $urlRouterProvider.otherwise('/home');
+    $stateProvider
+        .state('project-list', {
+            url: '/project-list',
+            templateUrl: 'templates/project-list.html',
+            controller: 'listCtrl'
+        });
+
+    $urlRouterProvider.otherwise('/project-list');
 
 }]);

@@ -188,7 +188,7 @@ InfoBubble.prototype.BACKGROUND_COLOR_ = '#fff';
  * @const
  * @private
  */
-InfoBubble.prototype.CLOSE_SRC_ = 'http://glimpsehtml.s3.amazonaws.com/jobs/images/close-icon.png';
+InfoBubble.prototype.CLOSE_SRC_ = 'http://icons.iconarchive.com/icons/iconsmind/outline/128/Close-Window-icon.png';
 
 /**
  * Extends a objects prototype by anothers.
@@ -223,8 +223,10 @@ InfoBubble.prototype.buildDom_ = function() {
   // Close button
   var close = this.close_ = document.createElement('IMG');
   close.style['position'] = 'absolute';
-  close.style['margin-top'] = '15px';
-  close.style['margin-right'] = '15px';
+  close.style['margin-top'] = '5px';
+  close.style['margin-right'] = '5px';
+  close.style['height'] = '24px';
+  close.style['width'] = '24px';
   close.style['border'] = 0;
   close.style['zIndex'] = this.baseZIndex_ + 1;
   close.style['cursor'] = 'pointer';
@@ -548,7 +550,7 @@ InfoBubble.prototype['hideCloseButton'] = InfoBubble.prototype.hideCloseButton;
  * hideCloseButton changed MVC callback
  */
 InfoBubble.prototype.hideCloseButton_changed = function() {
-  this.close_.style['display'] = this.get('hideCloseButton') ? 'none' : '';
+  this.close_.style['display'] = this.get('hideCloseButton') ? 'block' : '';
 };
 InfoBubble.prototype['hideCloseButton_changed'] = InfoBubble.prototype.hideCloseButton_changed;
 

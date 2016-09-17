@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/jquery.min.js"></script>
-
+ <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBF0FPDHlurGkDKua7PfZjpD2fr2rQsRw0&libraries=places"></script>
 
      <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="stylesheet" href="css/business.style.css">
@@ -18,7 +18,7 @@
 
 </head>
 
-<body ng-app="roofWebsite" class="gl-business-template gl-home-template">
+<body ng-app="roofWebsite" class="gl-search-template gl-search-style-map-right gl-search-style-alt">
     <div class="main" layout="column" layout-fill>
         <md-content class="main-content">
             <div ui-view></div>
@@ -43,7 +43,11 @@
     </script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/config.js"></script>
-    <script src="js/controller/home.ctrl.js" />
+
+    <script src="js/controller/list.ctrl.js" ></script>
+    <script src="js/controller/home.ctrl.js" ></script>
+    
+ 
 
 
 
