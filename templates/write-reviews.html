@@ -1,0 +1,167 @@
+<style type="text/css">
+.review-tips {
+    background-color: #dddddd;
+}
+
+.review-form {
+    background-color: #ffffff;
+}
+
+.rating span {
+    font-size: 30px;
+}
+</style>
+<md-content>
+    <div ng-include="'navigation/auth.html'"></div>
+    <div ng-include="'navigation/header.html'"></div>
+    <section class="gl-elements-shortcode-section">
+        <div class="container">
+            <div class="row">
+                <div layout="row" class="">
+                    <div flex="75" class="md-padding review-form">
+                        <form>
+                            <div class="md-padding" flex>
+                                <md-input-container class="md-block">
+                                    <input ng-model="review.projectName" placeholder="Project Name">
+                                </md-input-container>
+                            </div>
+                            <div layout="row" class="md-padding">
+                                <label>Are you a</label>
+                                <span flex></span>
+                                <md-radio-group ng-model="review.who" layout="row" class="md-warn">
+                                    <md-radio-button value="owner"> Owner </md-radio-button>
+                                    <md-radio-button value="tenant"> Tenant </md-radio-button>
+                                    <md-radio-button value="visitor"> Visitor </md-radio-button>
+                                </md-radio-group>
+                            </div>
+                            <md-divider></md-divider>
+                            <div layout="row" class="md-padding rating">
+                                <div flex="30">
+                                    Overall rating
+                                </div>
+                                <span flex></span>
+                                <div flex="20">
+                                    <ionic-ratings ratingsobj='ratingsObject' index='1'></ionic-ratings>
+                                </div>
+                            </div>
+                            <md-divider></md-divider>
+                            <div layout="row" class="md-padding rating">
+                                <div flex="30">
+                                    Security
+                                </div>
+                                <span flex></span>
+                                <div flex="20">
+                                    <ionic-ratings ratingsobj='ratingsObject' index='2'></ionic-ratings>
+                                </div>
+                            </div>
+                            <md-divider></md-divider>
+                            <div layout="row" class="md-padding rating">
+                                <div flex="30">
+                                    Amenities
+                                </div>
+                                <span flex></span>
+                                <div flex="20">
+                                    <ionic-ratings ratingsobj='ratingsObject' index='3'></ionic-ratings>
+                                </div>
+                            </div>
+                            <md-divider></md-divider>
+                            <div layout="row" class="md-padding rating">
+                                <div flex="30">
+                                    Open and green areas
+                                </div>
+                                <span flex></span>
+                                <div flex="20">
+                                    <ionic-ratings ratingsobj='ratingsObject' index='4'></ionic-ratings>
+                                </div>
+                            </div>
+                            <md-divider></md-divider>
+                            <div layout="row" class="md-padding rating">
+                                <div flex="30">
+                                    Electricity and water supply
+                                </div>
+                                <span flex></span>
+                                <div flex="20">
+                                    <ionic-ratings ratingsobj='ratingsObject' index='5'></ionic-ratings>
+                                </div>
+                            </div>
+                            <md-divider></md-divider>
+                            <div layout="row" class="md-padding rating">
+                                <div flex="30">
+                                    Convinience of housemaids
+                                </div>
+                                <span flex></span>
+                                <div flex="20">
+                                    <ionic-ratings ratingsobj='ratingsObject' index='6'></ionic-ratings>
+                                </div>
+                            </div>
+                            <md-divider></md-divider>
+                            <div layout="row" class="md-padding rating">
+                                <div flex="30">
+                                    Convinience of parking
+                                </div>
+                                <span flex></span>
+                                <div flex="20">
+                                    <ionic-ratings ratingsobj='ratingsObject' index='7'></ionic-ratings>
+                                </div>
+                            </div>
+                            <md-divider></md-divider>
+                            <div layout="row" class="md-padding">
+                                <div flex>
+                                    Is the project conveniently located ?
+                                </div>
+                                <md-radio-group ng-model="review.location" layout="row" class="md-warn">
+                                    <md-radio-button value="yes"> Yes</md-radio-button>
+                                    <md-radio-button value="no"> No </md-radio-button>
+                                </md-radio-group>
+                            </div>
+                            <div layout="row" class="md-padding">
+                                <div flex>
+                                    Do you have easy access to public transport ?
+                                </div>
+                                <md-radio-group ng-model="review.transport" layout="row" class="md-warn">
+                                    <md-radio-button value="yes"> Yes </md-radio-button>
+                                    <md-radio-button value="no"> No </md-radio-button>
+                                </md-radio-group>
+                            </div>
+                            <div layout="row" class="md-padding">
+                                <div flex>
+                                    Do you think a property reviewing platform like this would be useful for you in the future ?
+                                </div>
+                                <md-radio-group ng-model="review.useful" layout="row" class="md-warn">
+                                    <md-radio-button value="yes"> Yes </md-radio-button>
+                                    <md-radio-button value="no"> No </md-radio-button>
+                                </md-radio-group>
+                            </div>
+                            <div layout="row" class="md-padding">
+                                <div flex>
+                                    <md-input-container class="md-block">
+                                        <input ng-model="review.title" placeholder="Review Title">
+                                    </md-input-container>
+                                </div>
+                            </div>
+                            <div layout="row" class="md-padding">
+                                <div flex class="md-padding">
+                                    <md-input-container class="md-block">
+                                        <textarea ng-model="review.reviews" md-maxlength="500" rows="5" placeholder="Write your review"></textarea>
+                                    </md-input-container>
+                                </div>
+                            </div>
+                        </form>
+                        <div layout="row" layout-align="end center">
+                            <md-button class="md-raised md-warn" ng-click="submitReview(review)">Submit</md-button>
+                        </div>
+                    </div>
+                    <div flex="25" class="md-padding review-tips">
+                        <h3 class="gl-sub-heading">Review Writing Tips</h3>
+                        <p><b>Help your fellow apartment seeker get the most out of your review with the following tips:</b></p>
+                        <p><b>Be Specific </b>- Don't just complain about something but rather describe specific thing you do or don't like. Explain what happened. We've found users lend more weight to a review with details.</p>
+                        <p><b>Be Courteous and Honest</b> - Describe your experience, be it good or bad, but don't go overboard. Keep your review precise and to the point. We value open expression, but profanity and hateful speech are not allowed on the site.</p>
+                        <p><b>Add Photos </b>- A picture tells a thousand words, or so they say.</p>
+                        <p><b>No Personal Info </b>- We don't allow reviews with names, phone numbers, email or other contact info, so please avoid using it.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div ng-include="'navigation/footer.html'"></div>
+</md-content>

@@ -15,6 +15,13 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
             controller: 'listCtrl'
         });
 
+    $stateProvider
+        .state('write-reviews', {
+            url: '/write-reviews',
+            templateUrl: 'templates/write-reviews.html',
+            controller: 'writeReviewsCtrl'
+        });
+
     $urlRouterProvider.otherwise('/project-list');
 
 }]);
