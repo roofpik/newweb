@@ -2,38 +2,9 @@
     <div ng-include="'navigation/auth.html'"></div>
     <div ng-include="'navigation/header.html'"></div>
     <!-- HERO IMAGE -->
-    <!--Call your modal-->
-    <a id="demo01" href="#animatedModal"></a>
-    <!--DEMO01-->
-    <div id="animatedModal">
-        <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID  class="close-animatedModal" -->
-        <div class="close-animatedModal">
-            CLOSE MODAL
-        </div>
-        <div class="modal-content">
-            <section>
-                <div class="container">
-                    <div class="row">
-                        <div class="gl-elements-content-wrapper">
-                            <div class="search-city-selection"><span class="search-cs-header">You are in</span><span class="search-cs-toggler"><span>Gurgaon</span><i class="icon icon-arrow-down filter-icon-down"></i></span>
-                            </div>
-                            <!-- DIRECTORY FORM -->
-                            <div class="gl-directory-searchbar gl-bz-directory-searchbar">
-                                <form action="#" id="gl-bz-directory-form">
-                                    <fieldset>
-                                        <input type="text" name="gl-business-keyword" id="gl-business-keyword" class="gl-directory-input" placeholder="Search by project, builder, landmark or locality">
-                                    </fieldset>
-                                    <button type="submit" class="gl-icon-btn"><i class="fa fa-search"></i> Search</button>
-                                </form>
-                            </div>
-                            <!-- END -->
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
+  
     <section class="gl-hero-img-wrapper">
+	<div ng-include="'templates/modal/search.html'"></div>
         <div class="container">
             <div class="row">
                 <div class="gl-elements-content-wrapper">
@@ -68,7 +39,7 @@
             <div class="row">
                 <div class="gl-service-we-offer">
                     <!-- ICON WITH TEXT -->
-                    <div class="gl-icon-top-with-text col-md-4 col-sm-4 col-xs-12 appear fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
+                    <div class="gl-icon-top-with-text col-md-4 col-sm-4 col-xs-12" data-wow-duration="1s" data-wow-delay=".3s">
                         <div class="gl-icon-wrapper">
                             <img src="images/fingerprint-icon.png" alt="Trusted">
                         </div>
@@ -77,7 +48,7 @@
                     </div>
                     <!-- END -->
                     <!-- ICON WITH TEXT -->
-                    <div class="gl-icon-top-with-text col-md-4 col-sm-4 col-xs-12 appear fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+                    <div class="gl-icon-top-with-text col-md-4 col-sm-4 col-xs-12" data-wow-duration="1s" data-wow-delay=".5s">
                         <div class="gl-icon-wrapper">
                             <img src="images/shield-icon.png" alt="Quality">
                         </div>
@@ -86,7 +57,7 @@
                     </div>
                     <!-- END -->
                     <!-- ICON WITH TEXT -->
-                    <div class="gl-icon-top-with-text col-md-4 col-sm-4 col-xs-12 appear fadeIn" data-wow-duration="1s" data-wow-delay=".7s">
+                    <div class="gl-icon-top-with-text col-md-4 col-sm-4 col-xs-12" data-wow-duration="1s" data-wow-delay=".7s">
                         <div class="gl-icon-wrapper">
                             <img src="images/location-pin.png" alt="Location">
                         </div>
@@ -203,7 +174,7 @@
                 <!-- WRAPPER -->
                 <div class="gl-featured-listing-wrapper">
                     <!-- FEATURED ITEMS -->
-                    <div class="gl-featured-items col-md-4 col-sm-4 col-xs-12 appear fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
+                    <div class="gl-featured-items col-md-4 col-sm-4 col-xs-12" data-wow-duration="1s" data-wow-delay=".3s">
                         <div class="gl-feat-items-img-wrapper">
                             <picture>
                                 <source media="(min-width: 768px)" srcset=images/placeholder-standard.jpg>
@@ -226,7 +197,7 @@
                     </div>
                     <!-- END -->
                     <!-- FEATURED ITEMS -->
-                    <div class="gl-featured-items col-md-4 col-sm-4 col-xs-12 appear fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+                    <div class="gl-featured-items col-md-4 col-sm-4 col-xs-12" data-wow-duration="1s" data-wow-delay=".5s">
                         <div class="gl-feat-items-img-wrapper">
                             <picture>
                                 <source media="(min-width: 768px)" srcset=images/placeholder-standard.jpg><img alt="Featured Listing" srcset=images/placeholder-standard.jpg>
@@ -248,7 +219,7 @@
                     </div>
                     <!-- END -->
                     <!-- FEATURED ITEMS -->
-                    <div class="gl-featured-items col-md-4 col-sm-4 col-xs-12 appear fadeIn" data-wow-duration="1s" data-wow-delay=".7s">
+                    <div class="gl-featured-items col-md-4 col-sm-4 col-xs-12" data-wow-duration="1s" data-wow-delay=".7s">
                         <div class="gl-feat-items-img-wrapper">
                             <picture>
                                 <source media="(min-width: 768px)" srcset=images/placeholder-standard.jpg><img alt="Featured Listing" srcset=images/placeholder-standard.jpg>
@@ -320,4 +291,6 @@
     </section>
     <!-- CTA END -->
     <div ng-include="'navigation/footer.html'"></div>
+
+
 </md-content>

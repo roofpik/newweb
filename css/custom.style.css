@@ -39,3 +39,23 @@ box-shadow: 2px 5px 2px rgba(0, 0, 0, 0.1), inset 2px 2px 1px #f0f0f0;
 .gl-hero-img-wrapper .container .gl-elements-content-wrapper .gl-directory-searchbar form fieldset input{
 	border: 0px;
 }
+
+
+.gl-job-list-item .gl-job-list-item-wrapper a .gl-job-position-company h3 {
+	width:100%;
+	padding-right: 0px;
+	margin-right: 0px;
+	border-right: 0px;
+}
+
+
+.gl-circle-load-search{
+    position: relative;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    transform: scale(0.6);
+    -o-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    -webkit-transform: scale(0.6);
+}
