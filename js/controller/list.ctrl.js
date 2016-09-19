@@ -1,9 +1,72 @@
-app.controller('listCtrl', function($scope, $timeout) {
+app.controller('listCtrl', function($scope, $timeout, $stateParams) {
+    console.log($stateParams.from);
+
+    var types= ['family', 'justMarried', 'oldAgeFriendly', 'kids', 'bachelors'];
+
+    if($stateParams.from == 'topRated'){
+        db.ref('topRated').once('value', function(dataSnapshot){
+            $timeout(function(){
+                console.log(dataSnapshot.val());
+                console.log(Object.keys(dataSnapshot.val()).length);
+                $scope.numResults = Object.keys(dataSnapshot.val()).length;
+                $scope.projects = dataSnapshot.val();
+                initializeProjects(dataSnapshot.val());
+            }, 100);
+        });
+    } else {
+        for(var i = 0; i < 5; i++){
+            if($stateParams.from == types[i]){
+                console.log($stateParams.from+'List');
+                db.ref($stateParams.from+'List').once('value', function(dataSnapshot){
+                    $timeout(function(){
+                        console.log(dataSnapshot.val());
+                        console.log(Object.keys(dataSnapshot.val()).length);
+                        $scope.numResults = Object.keys(dataSnapshot.val()).length;
+                        $scope.projects = dataSnapshot.val();
+                        initializeProjects(dataSnapshot.val());
+                        // $timeout(function() {
+                        //     var h = document.getElementById('flux').clientHeight;
+                        //     console.log(h);
+                        //     $('#gl-result-section').css('height', h);
+                        //     $('#gl-result-section').on('scroll', function() {
+                        //         console.log($(this)[0].scrollHeight, $(this).scrollTop(), $(this).innerHeight());
+                        //         if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
+                        //             alert('end reached');
+                        //         }
+                        //     })
+
+                        // }, 2000);
+                    }, 100);
+                })
+            }
+        }
+    }
+
+    function initializeProjects(projects) {
+        console.log(Object.keys(projects).length);
+        var count = 0;
+        angular.forEach(projects, function(value, key) {
+            count++;
+            var data = [];
+            data.push(value.lat);
+            data.push(value.lng);
+            // data.push('placeholder-standard.jpg');
+            data.push(value.imgUrl);
+            data.push(value.projectName);
+            data.push(value.displayLocation);
+            data.push('gl-real-estate-icon.svg');
+            data.push('gl-real-estate-icon');
+            allProjects.push(data);
+            if (count == Object.keys(projects).length) {
+                initializeMap();
+            }
+        })
+    }
+
     var allProjects = [];
 
-
     function initializeMap() {
-      console.log('called');
+        console.log('called');
         var map = new google.maps.Map(document.getElementById('gl-search-map'), {
             zoom: 15,
             scrollwheel: false,
@@ -58,7 +121,7 @@ app.controller('listCtrl', function($scope, $timeout) {
             marker.html =
                 '<div class="gl-map-marker-wrapper gl-business-listing-map">' +
                 '<div class="gl-map-marker-img">' +
-                '<img src="'+imgLink+'"/>' +
+                '<img src="' + imgLink + '"/>' +
                 '</div>' +
                 '<div class="gl-map-marker-info-details">' +
                 '<h3 class="gl-heading">' + jobTitle + '</h3>' +
@@ -95,130 +158,27 @@ app.controller('listCtrl', function($scope, $timeout) {
         $(".gm-style-iw").next("div").hide();
     }
 
-    function initializeProjects(projects) {
-        console.log(Object.keys(projects).length);
-        var count = 0;
-        angular.forEach(projects, function(value, key) {
-            count++;
-            var data = [];
-            data.push(value.projectDetails.address.lat);
-            data.push(value.projectDetails.address.lng);
-            // data.push('placeholder-standard.jpg');
-            data.push(value.images.main.url);
-            data.push(value.projectName);
-            data.push(value.projectDetails.address.displayLocation);
-            data.push('gl-real-estate-icon.svg');
-            data.push('gl-real-estate-icon');
-            allProjects.push(data);
-            if (count == Object.keys(projects).length) {
-                initializeMap();
-            }
-        })
-    }
+    // db.ref('projects/-KPmH9oIem1N1_s4qpCv/residential').once('value', function(snapshot) {
+    //     console.log(snapshot.val());
+    //     $timeout(function() {
+    //         $scope.projects = snapshot.val();
+    //         $scope.numResults = Object.keys($scope.projects).length;
+    //         initializeProjects(snapshot.val());
+    //         $timeout(function() {
 
-    db.ref('projects/-KPmH9oIem1N1_s4qpCv/residential').once('value', function(snapshot) {
-        console.log(snapshot.val());
-        $timeout(function() {
-            $scope.projects = snapshot.val();
-            $scope.numResults = Object.keys($scope.projects).length;
-            initializeProjects(snapshot.val());
-        }, 100);
-    })
+    //             //  var h = $('#gl-result-section').outerHeight();
+    //             var h = document.getElementById('flux').clientHeight;
+    //             console.log(h);
+    //             $('#gl-result-section').css('height', h);
+    //             $('#gl-result-section').on('scroll', function() {
+    //                 console.log($(this)[0].scrollHeight, $(this).scrollTop(), $(this).innerHeight());
+    //                 if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
+    //                     alert('end reached');
+    //                 }
+    //             })
 
-
-
-
-    //  var allProjects = [
-    //     [
-    //       40.678178,             // Latitude
-    //       -73.944158,             // Longititude
-    //       'placeholder-standard.jpg',        // Main Image
-    //       'Lake Heaven',     // Title
-    //       'Brooklyn',            // Location
-    //       'gl-travel-icon.svg',          // Map Icon
-    //       'gl-travel-icon'          // Class
-    //     ],
-    //     [
-    //       40.675431,             // Latitude
-    //       -73.891296,             // Longititude
-    //       'placeholder-standard.jpg',        // Main Image
-    //       'Cafe Hapus',     // Title
-    //       'Brooklyn',            // Location
-    //       'gl-booking-icon.svg',          // Map Icon
-    //       'gl-booking-icon'          // Class
-    //     ],
-    //     [
-    //       40.727486,             // Latitude
-    //       -73.917389,             // Longititude
-    //       'placeholder-standard.jpg',        // Main Image
-    //       'Cafe Hapus',     // Title
-    //       'Brooklyn',            // Location
-    //       'gl-real-estate-icon.svg',          // Map Icon
-    //       'gl-real-estate-icon'         // Class
-    //     ],
-    //     [
-    //       40.748948,             // Latitude
-    //       -73.914814,             // Longititude
-    //       'placeholder-standard.jpg',        // Main Image
-    //       'Cafe Hapus',     // Title
-    //       'Brooklyn',            // Location
-    //       'gl-fashion-icon.svg',          // Map Icon
-    //       'gl-fashion-icon',          // Class
-    //     ],
-    //     [
-    //       40.754799,             // Latitude
-    //       -73.906746,             // Longititude
-    //       'placeholder-standard.jpg',        // Main Image
-    //       'Cafe Hapus',     // Title
-    //       'Brooklyn',            // Location
-    //       'gl-travel-icon.svg',          // Map Icon
-    //       'gl-travel-icon'          // Class
-    //     ],
-    //     [
-    //       40.759871,             // Latitude
-    //       -73.911209,             // Longititude
-    //       'placeholder-standard.jpg',        // Main Image
-    //       'Cafe Hapus',     // Title
-    //       'Brooklyn',            // Location
-    //       'gl-travel-icon.svg',          // Map Icon
-    //       'gl-travel-icon'          // Class
-    //     ],
-    //     [
-    //       40.762211,             // Latitude
-    //       -73.918076,             // Longititude
-    //       'placeholder-standard.jpg',        // Main Image
-    //       'Cafe Hapus',     // Title
-    //       'Brooklyn',            // Location
-    //       'gl-restaurant-icon.svg',          // Map Icon
-    //       'gl-restaurant-icon',          // Class
-    //     ],
-    //     [
-    //       40.700162,             // Latitude
-    //       -73.924599,             // Longititude
-    //       'placeholder-standard.jpg',        // Main Image
-    //       'Cafe Hapus',     // Title
-    //       'Brooklyn',            // Location
-    //       'gl-booking-icon.svg',          // Map Icon
-    //       'gl-booking-icon',          // Class
-    //     ],
-    //     [
-    //       40.691052,             // Latitude
-    //       -73.910351,             // Longititude
-    //       'placeholder-standard.jpg',        // Main Image
-    //       'Cafe Hapus',     // Title
-    //       'Brooklyn',            // Location
-    //       'gl-travel-icon.svg',          // Map Icon
-    //       'gl-travel-icon'          // Class
-    //     ],
-    //     [
-    //       40.705758,             // Latitude
-    //       -73.905544,             // Longititude
-    //       'placeholder-standard.jpg',        // Main Image
-    //       'Cafe Hapus',     // Title
-    //       'Brooklyn',            // Location
-    //       'gl-booking-icon.svg',          // Map Icon
-    //       'gl-booking-icon',          // Class
-    //     ]
-    // ];
+    //         }, 2000)
+    //     }, 100);
+    // })
 
 })

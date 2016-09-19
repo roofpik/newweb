@@ -7,7 +7,7 @@
             <div class="row">
                 <div id="gl-result-section" class="gl-search-map-result-wrapper">
                     <!-- SEARCH -->
-                    <div class="gl-search-filter-result-wrapper">
+                    <div class="gl-search-filter-result-wrapper" id="flux">
                         <!-- SEARCH META -->
                         <div class="gl-search-meta-wrapper">
                             <p class="gl-search-number">{{numResults}} Results found</p>
@@ -24,8 +24,8 @@
                             <div class="gl-featured-items col-md-6 col-sm-12 col-xs-12" data-wow-duration="1s" data-wow-delay=".3s" ng-repeat="project in projects">
                                 <div class="gl-feat-items-img-wrapper">
                                     <picture>
-                                        <source media="(min-width: 768px)" srcset={{project.images.main.url}}>
-                                        <img alt="Category Image" srcset={{project.images.main.url}}>
+                                        <source media="(min-width: 768px)" srcset={{project.imgUrl}}>
+                                        <img alt="Category Image" srcset={{project.imgUrl}}>
                                     </picture>
                                 </div>
                                 <div class="gl-feat-item-details">
@@ -34,7 +34,7 @@
                                     </h3>
                                     <div class="gl-item-location">
                                         <i class="ion-ios-location-outline"></i>
-                                        <span>{{project.projectDetails.address.displayLocation}}</span>
+                                        <span>{{project.displayLocation}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -45,7 +45,7 @@
                     <!-- SEARCH MAP -->
                     <div class="gl-search-map-wrapper gl-split-map">
                         <div id="gl-search-map"></div>
-                        <a href="#gl-result-section" class="gl-scroll-down gl-btn">result</a>
+                        <!-- <a href="#gl-result-section" class="gl-scroll-down gl-btn">result</a> -->
                     </div>
                     <!-- SEARCH MAP END -->
                 </div>
@@ -55,4 +55,9 @@
     <!-- PAGE CONTETNT END -->
     <div ng-include="'navigation/footer.html'"></div>
     <script src="js/infobubble-richmarker.js"></script>
+    <style>
+    footer{
+        display:none;
+    }
+    </style>
 </md-content>

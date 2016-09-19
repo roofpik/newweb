@@ -112,56 +112,56 @@
                 <!-- END -->
                 <div class="gl-listing-categories-wrapper">
                     <!-- CATEGORY ITEM -->
-                    <div class="gl-listing-cat-item gl-dbl-width gl-tour-travel-cat">
+                    <div class="gl-listing-cat-item gl-dbl-width gl-tour-travel-cat" ng-click="takeToProjectList('family')">
                         <picture>
                             <source media="(min-width: 768px)" srcset=images/family.jpg>
                             <img alt="Category Image" srcset=images/family.jpg>
                         </picture>
-                        <a href="#" class="gl-img-overlay-effect">
+                        <a class="gl-img-overlay-effect">
                             <span class="gl-cat-title">Family</span>
                         </a>
                     </div>
                     <!-- END -->
                     <!-- CATEGORY ITEM -->
-                    <div class="gl-listing-cat-item gl-hangout-cat">
+                    <div class="gl-listing-cat-item gl-hangout-cat" ng-click="takeToProjectList('justMarried')">
                         <picture>
                             <source media="(min-width: 768px)" srcset=images/newlymarried.jpg>
                             <img alt="Category Image" srcset=images/newlymarried.jpg>
                         </picture>
-                        <a href="#" class="gl-img-overlay-effect">
+                        <a class="gl-img-overlay-effect">
                             <span class="gl-cat-title">Just Married</span>
                         </a>
                     </div>
                     <!-- END -->
                     <!-- CATEGORY ITEM -->
-                    <div class="gl-listing-cat-item gl-dbl-height gl-fashion-cat">
+                    <div class="gl-listing-cat-item gl-dbl-height gl-fashion-cat" ng-click="takeToProjectList('oldAgeFriendly')">
                         <picture>
                             <source media="(min-width: 480px)" srcset=images/old.jpg>
                             <img alt="Category Image" srcset=images/old.jpg>
                         </picture>
-                        <a href="#" class="gl-img-overlay-effect">
+                        <a class="gl-img-overlay-effect">
                             <span class="gl-cat-title">Elderly</span>
                         </a>
                     </div>
                     <!-- END -->
                     <!-- CATEGORY ITEM -->
-                    <div class="gl-listing-cat-item gl-food-cafe-cat">
+                    <div class="gl-listing-cat-item gl-food-cafe-cat" ng-click="takeToProjectList('kids')">
                         <picture>
                             <source media="(min-width: 480px)" srcset=images/kids.jpg>
                             <img alt="Category Image" srcset=images/kids.jpg>
                         </picture>
-                        <a href="#" class="gl-img-overlay-effect">
+                        <a class="gl-img-overlay-effect">
                             <span class="gl-cat-title">Children</span>
                         </a>
                     </div>
                     <!-- END -->
                     <!-- CATEGORY ITEM -->
-                    <div class="gl-listing-cat-item gl-dbl-width gl-office-cat">
+                    <div class="gl-listing-cat-item gl-dbl-width gl-office-cat" ng-click="takeToProjectList('bachelors')">
                         <picture>
                             <source media="(min-width: 480px)" srcset=images/bachelors.jpg>
                             <img alt="Category Image" srcset=images/bachelors.jpg>
                         </picture>
-                        <a href="#" class="gl-img-overlay-effect">
+                        <a class="gl-img-overlay-effect">
                             <span class="gl-cat-title">Bachelors</span>
                         </a>
                     </div>
@@ -184,68 +184,24 @@
                 <!-- WRAPPER -->
                 <div class="gl-featured-listing-wrapper">
                     <!-- FEATURED ITEMS -->
-                    <div class="gl-featured-items col-md-4 col-sm-4 col-xs-12" data-wow-duration="1s" data-wow-delay=".3s">
+                    <div class="gl-featured-items col-md-4 col-sm-4 col-xs-12" data-wow-duration="1s" data-wow-delay=".3s" ng-repeat="project in topRated">
                         <div class="gl-feat-items-img-wrapper">
                             <picture>
-                                <source media="(min-width: 768px)" srcset=images/placeholder-standard.jpg>
-                                <img alt="Featured Listing" srcset=images/placeholder-standard.jpg>
+                                <source media="(min-width: 768px)" srcset={{project.imgUrl}}>
+                                <img alt="Featured Listing" srcset={{project.imgUrl}}>
                             </picture>
                         </div>
                         <div class="gl-feat-item-details">
                             <span class="gl-item-rating">
-              <i class="ion-android-star-outline"></i>
-              4.5
-            </span>
+                              <i class="ion-android-star-outline"></i>
+                              {{project.rating}}
+                            </span>
                             <h3>
-              <a href="#">Office Rent</a>
-            </h3>
+                              <a href="#">{{project.projectName}}</a>
+                            </h3>
                             <div class="gl-item-location">
                                 <i class="ion-ios-location-outline"></i>
-                                <span>Road 3, West Portland, USA</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END -->
-                    <!-- FEATURED ITEMS -->
-                    <div class="gl-featured-items col-md-4 col-sm-4 col-xs-12" data-wow-duration="1s" data-wow-delay=".5s">
-                        <div class="gl-feat-items-img-wrapper">
-                            <picture>
-                                <source media="(min-width: 768px)" srcset=images/placeholder-standard.jpg><img alt="Featured Listing" srcset=images/placeholder-standard.jpg>
-                            </picture>
-                        </div>
-                        <div class="gl-feat-item-details">
-                            <span class="gl-item-rating">
-              <i class="ion-android-star-outline"></i>
-              4.5
-            </span>
-                            <h3>
-              <a href="#">Lake Heaven</a>
-            </h3>
-                            <div class="gl-item-location">
-                                <i class="ion-ios-location-outline"></i>
-                                <span>Road 3, West Portland, USA</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END -->
-                    <!-- FEATURED ITEMS -->
-                    <div class="gl-featured-items col-md-4 col-sm-4 col-xs-12" data-wow-duration="1s" data-wow-delay=".7s">
-                        <div class="gl-feat-items-img-wrapper">
-                            <picture>
-                                <source media="(min-width: 768px)" srcset=images/placeholder-standard.jpg><img alt="Featured Listing" srcset=images/placeholder-standard.jpg>
-                            </picture>
-                        </div>
-                        <div class="gl-feat-item-details">
-                            <span class="gl-item-rating">
-              <i class="ion-android-star-outline"></i>
-              4.5
-            </span>
-                            <h3>
-              <a href="#">Cafe Hapus</a>
-            </h3>
-                            <div class="gl-item-location">
-                                <i class="ion-ios-location-outline"></i>
-                                <span>Road 3, West Portland, USA</span>
+                                <span>{{project.displayLocation}}</span>
                             </div>
                         </div>
                     </div>
@@ -254,7 +210,7 @@
                 <!-- END -->
                 <!-- MORE BTN -->
                 <div class="gl-more-btn-wrapper">
-                    <a href="#" class="gl-more-btn gl-btn">More</a>
+                    <a href="#/project-list/topRated" class="gl-more-btn gl-btn">More</a>
                 </div>
                 <!-- END -->
             </div>
