@@ -59,3 +59,40 @@ box-shadow: 2px 5px 2px rgba(0, 0, 0, 0.1), inset 2px 2px 1px #f0f0f0;
     -ms-transform: scale(0.6);
     -webkit-transform: scale(0.6);
 }
+
+
+.close-animatedModal{
+	float: right;
+	margin: 20px;
+	font-size: 1.4em;
+	cursor: pointer;
+}
+
+.gl-icon-btn img{
+	width:24px;
+	height:24px;
+	margin-right:10px;
+}
+
+.logo{
+	width:60%;
+}
+
+footer .gl-footer-top-wrapper{
+	background-color: #fff;
+}
+
+@media only screen and (max-width: 1199px) and (min-width: 992px){
+
+	footer .gl-footer-top-wrapper .gl-footer-widget{
+	border-left: 1px solid #c5c5c5 !important; 
+	width: 33%;
+}
+
+footer .gl-footer-top-wrapper .gl-footer-widget:first-child{
+	width: 33%;
+	border-left:0px !important;
+}
+
+}
+

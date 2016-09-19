@@ -14,6 +14,7 @@
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="stylesheet" href="css/business.style.css">
     <link rel="stylesheet" href="css/custom.style.css">
+   
 </head>
 
 <body ng-app="roofWebsite" class="gl-search-template gl-search-style-map-right gl-search-style-alt">
@@ -30,12 +31,19 @@
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
     <script>
-    var config = {
-        apiKey: "AIzaSyD_4bPp5HKryXDzaQwfRhqAU5SsSAdDIJ0",
-        authDomain: "roofpik-948d0.firebaseapp.com",
-        databaseURL: "https://roofpik-948d0.firebaseio.com",
-        storageBucket: "roofpik-948d0.appspot.com",
-    };
+    // var config = {
+    //     apiKey: "AIzaSyD_4bPp5HKryXDzaQwfRhqAU5SsSAdDIJ0",
+    //     authDomain: "roofpik-948d0.firebaseapp.com",
+    //     databaseURL: "https://roofpik-948d0.firebaseio.com",
+    //     storageBucket: "roofpik-948d0.appspot.com",
+    // };
+  var config = {
+    apiKey: "AIzaSyCKaEjpBt-dv65ktLuLmEj8NwdAAkD9Ba4",
+    authDomain: "project-313476129231192088.firebaseapp.com",
+    databaseURL: "https://project-313476129231192088.firebaseio.com",
+    storageBucket: "project-313476129231192088.appspot.com",
+    messagingSenderId: "1045198624069"
+  };
 
     firebase.initializeApp(config);
     </script>
@@ -45,8 +53,6 @@
     <script src="js/controller/home.ctrl.js"></script>
     <script src="js/controller/write-reviews.ctrl.js"></script>
 
-    <script src="js/controller/list.ctrl.js" ></script>
-    <script src="js/controller/home.ctrl.js" ></script>
     <script src="templates/modal/search.ctrl.js" ></script>
 
     <!-- Google Map -->

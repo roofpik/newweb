@@ -1,10 +1,16 @@
 <md-content>
-    <div ng-include="'navigation/auth.html'"></div>
-    <div ng-include="'navigation/header.html'"></div>
+    <div id="gl-circle-loader-wrapper">
+        <div id="gl-circle-loader-center">
+            <div class="gl-circle-load">
+                <img src="images/ploading.gif" alt="Page Loader">
+            </div>
+        </div>
+    </div>
+    <div ng-include="'navigation/auth.html'" class="start"></div>
+    <div ng-include="'navigation/header.html'" class="start"></div>
     <!-- HERO IMAGE -->
-  
-    <section class="gl-hero-img-wrapper">
-	<div ng-include="'templates/modal/search.html'"></div>
+    <section class="gl-hero-img-wrapper start">
+        <div ng-include="'templates/modal/search.html'"></div>
         <div class="container">
             <div class="row">
                 <div class="gl-elements-content-wrapper">
@@ -34,17 +40,21 @@
     </section>
     <!-- HERO IMAGE END -->
     <!-- ICON WITH TEXT/SERVICES -->
-    <section class="gl-service-section-wrapper gl-section-wrapper" id="gl-next-section">
+    <section class="gl-service-section-wrapper gl-section-wrapper start" id="gl-next-section">
         <div class="container">
             <div class="row">
+                <div class="gl-section-headings">
+                    <h1>How it works?</h1>
+                    <p>Verified reviews and ratings for hundreds of projects help you find the best project for rent or purchase</p>
+                </div>
                 <div class="gl-service-we-offer">
                     <!-- ICON WITH TEXT -->
                     <div class="gl-icon-top-with-text col-md-4 col-sm-4 col-xs-12" data-wow-duration="1s" data-wow-delay=".3s">
                         <div class="gl-icon-wrapper">
                             <img src="images/fingerprint-icon.png" alt="Trusted">
                         </div>
-                        <h3>Trusted Service</h3>
-                        <p>On the other hand, we denounce great deal come indignation and dislike</p>
+                        <h3>Real Reviews, Real People</h3>
+                        <p>Join to see detailed, verified reviews on residential projects and localities.</p>
                     </div>
                     <!-- END -->
                     <!-- ICON WITH TEXT -->
@@ -52,17 +62,17 @@
                         <div class="gl-icon-wrapper">
                             <img src="images/shield-icon.png" alt="Quality">
                         </div>
-                        <h3>Quality Assured</h3>
-                        <p>On the other hand, we denounce great deal come indignation and dislike</p>
+                        <h3>Find Best Projects</h3>
+                        <p>Compare projects and select the best project for rent or purchase.</p>
                     </div>
                     <!-- END -->
                     <!-- ICON WITH TEXT -->
                     <div class="gl-icon-top-with-text col-md-4 col-sm-4 col-xs-12" data-wow-duration="1s" data-wow-delay=".7s">
                         <div class="gl-icon-wrapper">
-                            <img src="images/location-pin.png" alt="Location">
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
                         </div>
-                        <h3>Easy Location</h3>
-                        <p>On the other hand, we denounce great deal come indignation and dislike</p>
+                        <h3>Roofpik's Support</h3>
+                        <p>Share your review, or get help from roofpik to resolve issues.</p>
                     </div>
                 </div>
                 <!-- END -->
@@ -71,7 +81,7 @@
     </section>
     <!-- ICON WITH TEXT/SERVICES END -->
     <!-- WRITE A REVIEW -->
-    <section class="gl-how-it-works-section gl-custom-section gl-section-wrapper">
+    <section class="gl-how-it-works-section gl-custom-section gl-section-wrapper start">
         <div class="container">
             <div class="row">
                 <div class="gl-custom-sec-content">
@@ -91,7 +101,7 @@
     </section>
     <!-- WRITE A REVIEW END -->
     <!-- WHAT YOU NEED SECTION -->
-    <section class="gl-what-you-need-section gl-section-wrapper">
+    <section class="gl-what-you-need-section gl-section-wrapper start">
         <div class="container">
             <div class="row">
                 <!-- SECTION HEADINGS -->
@@ -162,7 +172,7 @@
     </section>
     <!-- WHAT YOU NEED SECTION END -->
     <!-- FEATURED LISTINGS -->
-    <section class="gl-feat-listing-section gl-section-wrapper">
+    <section class="gl-feat-listing-section gl-section-wrapper start">
         <div class="container">
             <div class="row">
                 <!-- SECTION HEADINGS -->
@@ -252,7 +262,7 @@
     </section>
     <!-- FEATURED LISTINGS END -->
     <!-- HOW IT WORKS -->
-    <section class="gl-how-it-works-section gl-custom-section gl-section-wrapper">
+    <section class="gl-how-it-works-section gl-custom-section gl-section-wrapper start">
         <div class="container">
             <div class="row">
                 <div class="gl-custom-sec-content">
@@ -272,7 +282,7 @@
     </section>
     <!-- HOW IT WORKS END -->
     <!-- CTA -->
-    <section class="gl-cta-section">
+    <section class="gl-cta-section start">
         <div class="container">
             <div class="row">
                 <div class="gl-cta-content-wrapper">
@@ -290,7 +300,5 @@
         </div>
     </section>
     <!-- CTA END -->
-    <div ng-include="'navigation/footer.html'"></div>
-
-
+    <div ng-include="'navigation/footer.html'" class="start"></div>
 </md-content>

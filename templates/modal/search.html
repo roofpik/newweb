@@ -3,13 +3,13 @@
 <!--DEMO01-->
 <div id="animatedModal" ng-controller="searchCtrl">
     <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID  class="close-animatedModal" -->
-    <div class="close-animatedModal">
-        CLOSE MODAL
-    </div>
     <div class="modal-content">
         <section>
             <div class="container">
                 <div class="row">
+                    <div class="close-animatedModal">
+                        X
+                    </div>
                     <div class="gl-elements-content-wrapper">
                         <!-- DIRECTORY FORM -->
                         <div class="gl-directory-searchbar gl-bz-directory-searchbar">
@@ -18,15 +18,10 @@
                                 <fieldset>
                                     <input type="text" name="gl-business-keyword" id="SearchQuery" class="gl-directory-input" placeholder="Search by project, builder, landmark or locality" ng-model="search.query" ng-change="searchfn()">
                                 </fieldset>
-                                <button type="submit" class="gl-icon-btn"><i class="fa fa-search"></i> Search</button>
+                                <button type="submit" class="gl-icon-btn"><img src="images/ploading.gif" ng-show="search.process" />Search</button>
                             </form>
                         </div>
                         <!-- END -->
-                    </div>
-                </div>
-                <div id="gl-circle-loader-center">
-                    <div class="gl-circle-load-search">
-                        <img src="images/ploading.gif" alt="Page Loader" ng-show="search.process">
                     </div>
                 </div>
                 <!-- Row -->

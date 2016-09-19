@@ -223,8 +223,8 @@ InfoBubble.prototype.buildDom_ = function() {
   // Close button
   var close = this.close_ = document.createElement('IMG');
   close.style['position'] = 'absolute';
-  close.style['margin-top'] = '5px';
-  close.style['margin-right'] = '5px';
+  close.style['margin-top'] = '-20px';
+  close.style['margin-right'] = '-20px';
   close.style['height'] = '24px';
   close.style['width'] = '24px';
   close.style['border'] = 0;
