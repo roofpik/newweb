@@ -1,5 +1,6 @@
 app.controller('listCtrl', function($scope, $timeout, $stateParams) {
     console.log($stateParams.from);
+    var center = {};
 
     var types= ['family', 'justMarried', 'oldAgeFriendly', 'kids', 'bachelors'];
 
@@ -45,9 +46,13 @@ app.controller('listCtrl', function($scope, $timeout, $stateParams) {
     function initializeProjects(projects) {
         console.log(Object.keys(projects).length);
         var count = 0;
+        var latitude = 0;
+        var longitude = 0;
         angular.forEach(projects, function(value, key) {
             count++;
             var data = [];
+            latitude += value.lat;
+            longitude += value.lng;
             data.push(value.lat);
             data.push(value.lng);
             // data.push('placeholder-standard.jpg');
@@ -58,6 +63,8 @@ app.controller('listCtrl', function($scope, $timeout, $stateParams) {
             data.push('gl-real-estate-icon');
             allProjects.push(data);
             if (count == Object.keys(projects).length) {
+                center.lat = latitude/count;
+                center.lng= longitude/count;
                 initializeMap();
             }
         })
@@ -71,7 +78,7 @@ app.controller('listCtrl', function($scope, $timeout, $stateParams) {
             zoom: 15,
             scrollwheel: false,
             styles: [{ "featureType": "administrative.neighborhood", "elementType": "geometry", "stylers": [{ "visibility": "on" }] }, { "featureType": "administrative.land_parcel", "elementType": "geometry.fill", "stylers": [{ "visibility": "simplified" }, { "hue": "#ffa900" }] }],
-            center: new google.maps.LatLng(28.4595, 77.0266)
+            center: new google.maps.LatLng(center.lat, center.lng)
         });
 
 

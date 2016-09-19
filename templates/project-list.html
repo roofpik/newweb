@@ -29,6 +29,10 @@
                                     </picture>
                                 </div>
                                 <div class="gl-feat-item-details">
+                                    <span class="gl-item-rating" ng-if="project.rating">
+                                      <i class="ion-android-star-outline"></i>
+                                      {{project.rating}}
+                                    </span>
                                     <h3>
                                     <a href="#">{{project.projectName}}</a>
                                     </h3>
