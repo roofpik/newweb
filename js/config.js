@@ -26,6 +26,12 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
             templateUrl: 'templates/contact-us.html',
             controller: 'contactUsCtrl'
         });
+    $stateProvider
+        .state('about-us', {
+            url: '/about-us',
+            templateUrl: 'templates/about-us.html',
+            controller: 'aboutUsCtrl'
+        });
 
     $stateProvider
         .state('write-reviews', {

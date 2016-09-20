@@ -25639,6 +25639,11 @@ header.gl-header .gl-header-bottombar .gl-header-main-menu .container-fluid .gl-
   font-weight: 300;
   color: #888888;
 }
+
+.gl-about-company-text {
+    background-color: #fff !important;
+    padding: 15px !important;
+}
 .gl-similar-listing-wrapper .gl-featured-items {
   margin-bottom: 20px;
 }
@@ -26260,15 +26265,16 @@ footer .gl-footer-bottom-wrapper ul li a:hover {
 }
 .gl-expert-team-section .gl-agents-box .gl-agents-img-wrapper {
   width: 100%;
-  height: 200px;
+  height: 230px;
   display: block;
   overflow: hidden;
   position: relative;
   text-align: center;
 }
+
 @media only screen and (max-width: 767px), only screen and (min-width: 992px) and (max-width: 1199px) {
   .gl-expert-team-section .gl-agents-box .gl-agents-img-wrapper {
-    height: 170px;
+    height: 230px;
   }
 }
 .gl-expert-team-section .gl-agents-box .gl-agents-img-wrapper img {
