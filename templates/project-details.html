@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="gl-blog-details-wrapper">
-                    <div class="gl-blog-heading-metas" style="margin-top:40px;">
+                    <div class="gl-blog-heading-metas" id="reviewHeading">
                         <h1 class="gl-blog-titles">{{projectName}}</h1>
                         <!-- <ul>
                         <li class="gl-blog-post-date">March 21, 2016</li>
@@ -38,7 +38,7 @@
                                             <div class="gl-comment-title-description">
                                                 <h4 ng-show="!review.anonymous">{{review.userName}}</h4>
                                                 <h4 ng-show="review.anonymous">Anonymous</h4>
-                                                <span class="gl-comments-date">| {{review.createdDate | date:'medium'}}</span>
+                                                <p class="gl-comments-date">| {{review.createdDate | date:'medium'}}</p>
                                             </div>
                                         </div>
                                         <p>{{review.reviewText}}</p>
@@ -108,7 +108,7 @@
                                                 <div flex="80">
                                                     <p>Is the project conveniently located?</p>
                                                 </div>
-                                                <div flex="20" style="text-align:right;padding-right:5px;">
+                                                <div flex="20" id="yesNoQues">
                                                     <p>{{review.projectConvenientlyLocated}}</p>
                                                 </div>
                                             </div>
@@ -116,7 +116,7 @@
                                                 <div flex="80">
                                                     <p>Do you have easy access to public transport?</p>
                                                 </div>
-                                                <div flex="20" style="text-align:right;padding-right:5px;">
+                                                <div flex="20" id="yesNoQues">
                                                     <p>{{review.easyAccessToPublicTransport}}</p>
                                                 </div>
                                             </div>
@@ -127,7 +127,7 @@
                             </div>
                             <div flex="33">
                                 <div class="rating-summary">
-                                    <h4 style="border-bottom:1px solid #e6e6e6;">OVERALL RATING({{allRatings.overallRating}})</h4>
+                                    <h4 class="overall-ratings-headings">OVERALL RATING({{allRatings.overallRating}})</h4>
                                     <h3>
                                         <span ng-repeat="rate in [1,2,3,4,5] track by $index" >
                                             <i class="icon ion-ios-star" ng-class="($index<=(allRatings.overallRating-1))?'golden':'grey'"></i> 
@@ -136,10 +136,53 @@
                                     <h5>Ratings from {{allRatings.overallRatingNum}} reviews</h5>
                                 </div>
                                 <div class="rating-summary">
-                                    <h4 style="border-bottom:1px solid #e6e6e6;">RATING SUMMARY</h4>
+                                    <h4 class="overall-ratings-headings">USER RATINGS</h4>
+                                    <div layout="row">
+                                        <div flex>Excellent</div>
+                                        <div flex>
+                                            <div class="progress-bar">
+                                                <span class="my-progress" id="excellentStar"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div layout="row">
+                                        <div flex>Very Good</div>
+                                        <div flex>
+                                            <div class="progress-bar">
+                                                <span class="my-progress" id="veryGoodStar"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div layout="row">
+                                        <div flex>Good</div>
+                                        <div flex>
+                                            <div class="progress-bar">
+                                                <span class="my-progress" id="goodStar"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div layout="row">
+                                        <div flex>Average</div>
+                                        <div flex>
+                                            <div class="progress-bar">
+                                                <span class="my-progress" id="averageStar"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div layout="row">
+                                        <div flex>Bad</div>
+                                        <div flex>
+                                            <div class="progress-bar">
+                                                <span class="my-progress" id="badStar"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rating-summary">
+                                    <h4 class="overall-ratings-headings">RATING SUMMARY</h4>
                                     <p>
                                         <span>Amenities({{allRatings.amenities}})</span>
-                                        <span style="float:right;">
+                                        <span class="overall-ratings">
                                             <span ng-repeat="rate in [1,2,3,4,5] track by $index" >
                                                 <i class="icon ion-ios-star" ng-class="($index<=(allRatings.amenities-1))?'golden':'grey'"></i> 
                                             </span>
@@ -147,7 +190,7 @@
                                     </p>
                                     <p>
                                         <span>Security({{allRatings.security}})</span>
-                                        <span style="float:right;">
+                                        <span class="overall-ratings">
                                             <span ng-repeat="rate in [1,2,3,4,5] track by $index" >
                                                 <i class="icon ion-ios-star" ng-class="($index<=(allRatings.security-1))?'golden':'grey'"></i> 
                                             </span>
@@ -155,7 +198,7 @@
                                     </p>
                                     <p>
                                         <span>Open And Green Areas({{allRatings.openAndGreenAreas}})</span>
-                                        <span style="float:right;">
+                                        <span class="overall-ratings">
                                             <span ng-repeat="rate in [1,2,3,4,5] track by $index" >
                                                 <i class="icon ion-ios-star" ng-class="($index<=(allRatings.openAndGreenAreas-1))?'golden':'grey'"></i> 
                                             </span>
@@ -163,7 +206,7 @@
                                     </p>
                                     <p>
                                         <span>Electricity And Water Supply({{allRatings.electricityAndWaterSupply}})</span>
-                                        <span style="float:right;">
+                                        <span class="overall-ratings">
                                             <span ng-repeat="rate in [1,2,3,4,5] track by $index" >
                                             <i class="icon ion-ios-star" ng-class="($index<=(allRatings.electricityAndWaterSupply-1))?'golden':'grey'"></i>
                                             </span>
@@ -171,7 +214,7 @@
                                     </p>
                                     <p>
                                         <span>Convenience Of House Maids({{allRatings.convenienceOfHouseMaids}})</span>
-                                        <span style="float:right;">
+                                        <span class="overall-ratings">
                                             <span ng-repeat="rate in [1,2,3,4,5] track by $index" >
                                                 <i class="icon ion-ios-star" ng-class="($index<=(allRatings.convenienceOfHouseMaids-1))?'golden':'grey'"></i>
                                             </span>
@@ -179,7 +222,7 @@
                                     </p>
                                     <p>
                                         <span>Convenience Of Parking({{allRatings.convenienceOfParking}})</span>
-                                        <span style="float:right;">
+                                        <span class="overall-ratings">
                                             <span ng-repeat="rate in [1,2,3,4,5] track by $index" >
                                                 <i class="icon ion-ios-star" ng-class="($index<=(allRatings.convenienceOfParking-1))?'golden':'grey'"></i>
                                             </span>

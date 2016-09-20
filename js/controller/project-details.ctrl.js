@@ -1,11 +1,11 @@
 app.controller('projectDetailsCtrl', function($scope, $timeout, $stateParams){
-	console.log('project details');
+	// console.log('project details');
 	var rates = [1,2,3,4,5];
 	$scope.projectName = $stateParams.name;
 	$scope.projectId = $stateParams.id;
 	$scope.reviews = {};
 	db.ref('reviews/-KPmH9oIem1N1_s4qpCv/residential/'+$scope.projectId).once('value', function(snapshot){
-		console.log(snapshot.val());
+		// console.log(snapshot.val());
 		$timeout(function(){
 			$scope.reviews = snapshot.val();
 			angular.forEach($scope.reviews, function(value, key){
@@ -15,8 +15,13 @@ app.controller('projectDetailsCtrl', function($scope, $timeout, $stateParams){
 	}).then(function(){
 		db.ref('ratingReview/-KPmH9oIem1N1_s4qpCv/residential/'+$scope.projectId).once('value', function(snapshot){
 			$timeout(function(){
-				console.log(snapshot.val());
+				// console.log(snapshot.val());
 				$scope.allRatings = snapshot.val();
+				$("#excellentStar").css("width", ($scope.allRatings.fiveStar/$scope.allRatings.overallRatingNum)*100+'%');
+				$("#veryGoodStar").css("width", ($scope.allRatings.fourStar/$scope.allRatings.overallRatingNum)*100+'%');
+				$("#goodStar").css("width", ($scope.allRatings.threeStar/$scope.allRatings.overallRatingNum)*100+'%');
+				$("#averageStar").css("width", ($scope.allRatings.twoStar/$scope.allRatings.overallRatingNum)*100+'%');
+				$("#badStar").css("width", ($scope.allRatings.oneStar/$scope.allRatings.overallRatingNum)*100+'%');
 			}, 50);
 		})
 	})

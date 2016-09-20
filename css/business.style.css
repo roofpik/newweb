@@ -22135,6 +22135,37 @@ style="padding-right: 0px;"
   margin-top:50px;
 }
 
+#reviewHeading {
+  margin-top:40px;
+}
+
+.overall-ratings {
+  float:right;
+}
+
+.overall-ratings-headings {
+  border-bottom:1px solid #e6e6e6;
+}
+
+#yesNoQues {
+  text-align:right;
+  padding-right:5px;
+}
+
+.progress-bar {
+    background-color: #e6e6e6;
+    width: 96%;
+    height: 15px;
+    margin: 5px;
+    position:relative;
+}
+
+.my-progress {
+    background-color: #1AB0D3;
+    height: 15px;
+    position: absolute;
+}
+
 .gl-post-comments-wrapper .rating-summary {
   background-color: #fff;
   padding: 10px;
