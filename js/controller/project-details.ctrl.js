@@ -4,6 +4,7 @@ app.controller('projectDetailsCtrl', function($scope, $timeout, $stateParams){
 	$scope.projectName = $stateParams.name;
 	$scope.projectId = $stateParams.id;
 	$scope.reviews = {};
+	$scope.dataLoaded = false;
 	db.ref('reviews/-KPmH9oIem1N1_s4qpCv/residential/'+$scope.projectId).once('value', function(snapshot){
 		// console.log(snapshot.val());
 		$timeout(function(){
@@ -22,6 +23,7 @@ app.controller('projectDetailsCtrl', function($scope, $timeout, $stateParams){
 				$("#goodStar").css("width", ($scope.allRatings.threeStar/$scope.allRatings.overallRatingNum)*100+'%');
 				$("#averageStar").css("width", ($scope.allRatings.twoStar/$scope.allRatings.overallRatingNum)*100+'%');
 				$("#badStar").css("width", ($scope.allRatings.oneStar/$scope.allRatings.overallRatingNum)*100+'%');
+				$scope.dataLoaded = true;
 			}, 50);
 		})
 	})
