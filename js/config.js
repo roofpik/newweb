@@ -14,6 +14,12 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
             templateUrl: 'templates/project-list.html',
             controller: 'listCtrl'
         });
+    $stateProvider
+        .state('project-details', {
+            url: '/project-details/:id/:name',
+            templateUrl: 'templates/project-details.html',
+            controller: 'projectDetailsCtrl'
+        });
 
     $stateProvider
         .state('write-reviews', {

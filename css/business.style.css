@@ -22061,11 +22061,37 @@ form.gl-review-submission-form fieldset.gl-submit-wrapper input.gl-btn:hover {
   color: #454545;
   padding-right: 10px;
   margin: 0;
+  /*display: inline-block;*/
+  /**display: inline;*/
+  *zoom: 1;
+  float: left;
+}
+.gl-post-comments-wrapper .gl-comments .gl-comment-text .gl-username-date h4 {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #454545;
+  padding-right: 10px;
+  margin: 1px 0 0 0;
   display: inline-block;
   *display: inline;
   *zoom: 1;
   float: left;
 }
+.gl-post-comments-wrapper .gl-comments .gl-comment-text .gl-comment-title-description {
+  width:100%;
+  display:inline-block;
+}
+.gl-post-comments-wrapper .gl-comments .gl-comment-text .starRatings{
+  text-align: right;
+}
+
+.gl-post-comments-wrapper .gl-comments .gl-comment-text .emptyRating{
+  padding-right:0px;
+}
+
+style="padding-right: 0px;"
+
 .gl-post-comments-wrapper .gl-comments .gl-comment-text .gl-username-date span.gl-comments-date {
   font-family: 'PT Sans', sans-serif;
   font-size: 14px;
@@ -22079,11 +22105,11 @@ form.gl-review-submission-form fieldset.gl-submit-wrapper input.gl-btn:hover {
   float: left;
   position: relative;
 }
-.gl-post-comments-wrapper .gl-comments .gl-comment-text .gl-username-date span.gl-comments-date:before {
+/*.gl-post-comments-wrapper .gl-comments .gl-comment-text .gl-username-date span.gl-comments-date:before {
   content: '|';
   position: absolute;
   left: 0;
-}
+}*/
 .gl-post-comments-wrapper .gl-comments .gl-comment-text p {
   display: block;
   overflow: hidden;
@@ -22104,6 +22130,43 @@ form.gl-review-submission-form fieldset.gl-submit-wrapper input.gl-btn:hover {
   -o-transition: all 0.35s ease;
   transition: all 0.35s ease;
 }
+
+.gl-post-comments-wrapper .gl-comments .gl-comment-text .other-params {
+  margin-top:50px;
+}
+
+.gl-post-comments-wrapper .rating-summary {
+  background-color: #fff;
+  padding: 10px;
+  font-size: 13px;
+  margin: 0 0 10px 10px;
+}
+
+.golden {
+  color:#ffdb4d;
+}
+
+.grey {
+  color:#a6a6a6;
+}
+
+.roofpikGreen {
+  color:#1AB0D3 !important;
+}
+
+.gl-post-comments-wrapper .gl-comments .gl-comment-text .moreLess {
+    font-family: 'PT Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #bababa;
+  -webkit-transition: all 0.35s ease;
+  -moz-transition: all 0.35s ease;
+  -ms-transition: all 0.35s ease;
+  -o-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+  float:right;
+}
+
 .gl-comments-form-wrapper {
   display: block;
   overflow: hidden;

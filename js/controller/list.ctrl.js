@@ -1,4 +1,4 @@
-app.controller('listCtrl', function($scope, $timeout, $stateParams) {
+app.controller('listCtrl', function($scope, $timeout, $stateParams, $state) {
     console.log($stateParams.from);
     var center = {};
 
@@ -163,6 +163,11 @@ app.controller('listCtrl', function($scope, $timeout, $stateParams) {
         AutoCenter();
 
         $(".gm-style-iw").next("div").hide();
+    }
+
+    $scope.selectProject = function(pro){
+        console.log(pro);
+        $state.go('project-details', {id: pro.projectId, name: pro.projectName});
     }
 
     // db.ref('projects/-KPmH9oIem1N1_s4qpCv/residential').once('value', function(snapshot) {

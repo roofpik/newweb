@@ -21,7 +21,7 @@
                         <!-- SEARCH META END -->
                         <div class="gl-search-result-wrapper">
                             <!-- FEATURED ITEMS -->
-                            <div class="gl-featured-items col-md-6 col-sm-12 col-xs-12" data-wow-duration="1s" data-wow-delay=".3s" ng-repeat="project in projects">
+                            <div class="gl-featured-items col-md-6 col-sm-12 col-xs-12" data-wow-duration="1s" data-wow-delay=".3s" ng-repeat="project in projects" ng-click="selectProject(project)">
                                 <div class="gl-feat-items-img-wrapper">
                                     <picture>
                                         <source media="(min-width: 768px)" srcset={{project.imgUrl}}>

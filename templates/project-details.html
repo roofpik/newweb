@@ -1,0 +1,205 @@
+<md-content>
+    <div ng-include="'navigation/auth.html'"></div>
+    <div ng-include="'navigation/header.html'"></div>
+    <!-- PAGE CONTETNT -->
+    <section class="gl-page-content-section">
+        <div class="container">
+            <div class="row">
+                <div class="gl-blog-details-wrapper">
+                    <div class="gl-blog-heading-metas" style="margin-top:40px;">
+                        <h1 class="gl-blog-titles">{{projectName}}</h1>
+                        <!-- <ul>
+                        <li class="gl-blog-post-date">March 21, 2016</li>
+                        <li class="gl-author"><a href="#">admin</a></li>
+                        <li class="gl-comments"><a href="#">3 Comments</a></li>
+                      </ul> -->
+                    </div>
+                    <div class="gl-post-comments-wrapper">
+                        <h3 class="gl-blog-sec-title">REVIEWS</h3>
+                        <!-- Reviews -->
+                        <div layout="row">
+                            <div flex="66">
+                                <div class="gl-comments" ng-repeat="review in reviews">
+                                    <!-- USER IMG -->
+                                    <div class="gl-user-img">
+                                        <img src="images/noImage.png" alt="User" class="gl-lazy">
+                                    </div>
+                                    <!-- END -->
+                                    <!-- TEXT -->
+                                    <div class="gl-comment-text">
+                                        <div class="gl-username-date">
+                                            <div class="gl-comment-title-description">
+                                                <h3>
+                                                    <span ng-repeat="rate in [1,2,3,4,5] track by $index"><i class="icon ion-ios-star" ng-class="($index<=(review.overallRating-1))?'golden':'grey'"></i> </span>
+                                                    <!-- <span ng-repeat="counter in starrating(5-(review.overallRating)) track by $index"><i class="icon ion-ios-star-outline"></i></span> -->
+                                                </h3>
+                                                <h3 ng-show="!review.anonymous">{{review.reviewTitle}}</h3>
+                                            </div>
+                                            <div class="gl-comment-title-description">
+                                                <h4 ng-show="!review.anonymous">{{review.userName}}</h4>
+                                                <h4 ng-show="review.anonymous">Anonymous</h4>
+                                                <span class="gl-comments-date">| {{review.createdDate | date:'medium'}}</span>
+                                            </div>
+                                        </div>
+                                        <p>{{review.reviewText}}</p>
+                                        <p ng-click="showMore(review)" class="moreLess" ng-class="review.moreOrLess=='Show More'? 'roofpikGreen':'roofpikGrey'">{{review.moreOrLess}}</p>
+                                        <div ng-show="review.showRest" class="other-params">
+                                            <div layout="row" ng-show="review.ratings.security">
+                                                <div flex>
+                                                    <p>Security</p>
+                                                </div>
+                                                <div flex class="starRatings">
+                                                    <h4>
+                                                        <span ng-repeat="rate in [1,2,3,4,5] track by $index"><i class="icon ion-ios-star" ng-class="($index<=(review.ratings.security-1))?'golden':'grey'"></i> </span>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                            <div layout="row" ng-show="review.ratings.amenities">
+                                                <div flex>
+                                                    <p>Amenities</p>
+                                                </div>
+                                                <div flex class="starRatings">
+                                                    <h4>
+                                                        <span ng-repeat="rate in [1,2,3,4,5] track by $index"><i class="icon ion-ios-star" ng-class="($index<=(review.ratings.amenities-1))?'golden':'grey'"></i> </span>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                            <div layout="row" ng-show="review.ratings.openAndGreenAreas">
+                                                <div flex>
+                                                    <p>Open and Green Areas</p>
+                                                </div>
+                                                <div flex class="starRatings">
+                                                    <h4>
+                                                        <span ng-repeat="rate in [1,2,3,4,5] track by $index"><i class="icon ion-ios-star" ng-class="($index<=(review.ratings.openAndGreenAreas-1))?'golden':'grey'"></i> </span>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                            <div layout="row" ng-show="review.ratings.electricityAndWaterSupply">
+                                                <div flex>
+                                                    <p>Electricity and Water Supply</p>
+                                                </div>
+                                                <div flex class="starRatings">
+                                                    <h4>
+                                                        <span ng-repeat="rate in [1,2,3,4,5] track by $index"><i class="icon ion-ios-star" ng-class="($index<=(review.ratings.electricityAndWaterSupply-1))?'golden':'grey'"></i> </span>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                            <div layout="row" ng-show="review.ratings.convenienceOfHouseMaids">
+                                                <div flex>
+                                                    <p>Convenience of Housemaids</p>
+                                                </div>
+                                                <div flex class="starRatings">
+                                                    <h4>
+                                                        <span ng-repeat="rate in [1,2,3,4,5] track by $index"><i class="icon ion-ios-star" ng-class="($index<=(review.ratings.convenienceOfHouseMaids-1))?'golden':'grey'"></i> </span>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                            <div layout="row" ng-show="review.ratings.convenienceOfParking">
+                                                <div flex>
+                                                    <p>Convenience of Parking</p>
+                                                </div>
+                                                <div flex class="starRatings">
+                                                    <h4>
+                                                        <span ng-repeat="rate in [1,2,3,4,5] track by $index"><i class="icon ion-ios-star" ng-class="($index<=(review.ratings.convenienceOfParking-1))?'golden':'grey'"></i> </span>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                            <div layout="row">
+                                                <div flex="80">
+                                                    <p>Is the project conveniently located?</p>
+                                                </div>
+                                                <div flex="20" style="text-align:right;padding-right:5px;">
+                                                    <p>{{review.projectConvenientlyLocated}}</p>
+                                                </div>
+                                            </div>
+                                            <div layout="row">
+                                                <div flex="80">
+                                                    <p>Do you have easy access to public transport?</p>
+                                                </div>
+                                                <div flex="20" style="text-align:right;padding-right:5px;">
+                                                    <p>{{review.easyAccessToPublicTransport}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- END -->
+                                </div>
+                            </div>
+                            <div flex="33">
+                                <div class="rating-summary">
+                                    <h4 style="border-bottom:1px solid #e6e6e6;">OVERALL RATING({{allRatings.overallRating}})</h4>
+                                    <h3>
+                                        <span ng-repeat="rate in [1,2,3,4,5] track by $index" >
+                                            <i class="icon ion-ios-star" ng-class="($index<=(allRatings.overallRating-1))?'golden':'grey'"></i> 
+                                        </span>
+                                    </h3>
+                                    <h5>Ratings from {{allRatings.overallRatingNum}} reviews</h5>
+                                </div>
+                                <div class="rating-summary">
+                                    <h4 style="border-bottom:1px solid #e6e6e6;">RATING SUMMARY</h4>
+                                    <p>
+                                        <span>Amenities({{allRatings.amenities}})</span>
+                                        <span style="float:right;">
+                                            <span ng-repeat="rate in [1,2,3,4,5] track by $index" >
+                                                <i class="icon ion-ios-star" ng-class="($index<=(allRatings.amenities-1))?'golden':'grey'"></i> 
+                                            </span>
+                                        </span>
+                                    </p>
+                                    <p>
+                                        <span>Security({{allRatings.security}})</span>
+                                        <span style="float:right;">
+                                            <span ng-repeat="rate in [1,2,3,4,5] track by $index" >
+                                                <i class="icon ion-ios-star" ng-class="($index<=(allRatings.security-1))?'golden':'grey'"></i> 
+                                            </span>
+                                        </span>
+                                    </p>
+                                    <p>
+                                        <span>Open And Green Areas({{allRatings.openAndGreenAreas}})</span>
+                                        <span style="float:right;">
+                                            <span ng-repeat="rate in [1,2,3,4,5] track by $index" >
+                                                <i class="icon ion-ios-star" ng-class="($index<=(allRatings.openAndGreenAreas-1))?'golden':'grey'"></i> 
+                                            </span>
+                                        </span>
+                                    </p>
+                                    <p>
+                                        <span>Electricity And Water Supply({{allRatings.electricityAndWaterSupply}})</span>
+                                        <span style="float:right;">
+                                            <span ng-repeat="rate in [1,2,3,4,5] track by $index" >
+                                            <i class="icon ion-ios-star" ng-class="($index<=(allRatings.electricityAndWaterSupply-1))?'golden':'grey'"></i>
+                                            </span>
+                                        </span>
+                                    </p>
+                                    <p>
+                                        <span>Convenience Of House Maids({{allRatings.convenienceOfHouseMaids}})</span>
+                                        <span style="float:right;">
+                                            <span ng-repeat="rate in [1,2,3,4,5] track by $index" >
+                                                <i class="icon ion-ios-star" ng-class="($index<=(allRatings.convenienceOfHouseMaids-1))?'golden':'grey'"></i>
+                                            </span>
+                                        </span>
+                                    </p>
+                                    <p>
+                                        <span>Convenience Of Parking({{allRatings.convenienceOfParking}})</span>
+                                        <span style="float:right;">
+                                            <span ng-repeat="rate in [1,2,3,4,5] track by $index" >
+                                                <i class="icon ion-ios-star" ng-class="($index<=(allRatings.convenienceOfParking-1))?'golden':'grey'"></i>
+                                            </span>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- PAGE CONTETNT END -->
+    <div ng-include="'navigation/footer.html'"></div>
+    <script src="js/infobubble-richmarker.js"></script>
+    <style>
+    footer {
+        display: none;
+    }
+    </style>
+</md-content>
