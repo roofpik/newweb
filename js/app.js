@@ -1,8 +1,8 @@
-var app = angular.module('roofWebsite', ['ngMaterial', 'ui.router']);
+var app = angular.module('roofWebsite', ['ngMaterial', 'ui.router', 'ngMessages']);
 var db = firebase.database();
 
 app.config(['$mdThemingProvider', '$mdIconProvider', function($mdThemingProvider, $mdIconProvider) {
-
+    
     var customBlueMap = $mdThemingProvider.extendPalette('teal', {
         'contrastDefaultColor': 'light',
         'contrastDarkColors': ['50'],

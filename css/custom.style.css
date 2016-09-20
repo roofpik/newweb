@@ -82,7 +82,7 @@ footer .gl-footer-top-wrapper{
 	background-color: #fff;
 }
 
-@media only screen and (max-width: 1199px) and (min-width: 992px){
+@media only screen and (min-width: 778px){
 
 	footer .gl-footer-top-wrapper .gl-footer-widget{
 	border-left: 1px solid #c5c5c5 !important; 
@@ -96,3 +96,32 @@ footer .gl-footer-top-wrapper .gl-footer-widget:first-child{
 
 }
 
+
+.gl-side-menu-widget-wrap .gl-login-form input{
+	color:#484848;
+}
+
+
+.signup, .forgetpassword{
+	display:none;
+}
+
+
+md-input-container .md-errors-spacer{
+	min-height: 0px;
+}
+
+
+
+.gl-circle-load{
+
+	width: 150px;
+	text-align: center;
+
+}
+
+.gl-circle-load img{
+
+	width: 80px;
+
+}

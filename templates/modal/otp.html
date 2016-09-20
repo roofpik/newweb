@@ -1,0 +1,38 @@
+<!--Call your modal-->
+<a id="otp" href="#otpModal"></a>
+<!--DEMO01-->
+<div id="otpModal" ng-controller="searchCtrl">
+    <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID  class="close-otpModal" -->
+    <div class="modal-content">
+        <section>
+            <div class="container">
+                <div class="row">
+                </div>
+                <md-content layout-padding>
+                    <form name="userForm">
+                        <div layout="row" layout-xs="column" layout-sm="column" layout-align="space-between center">
+                            <div  class="close-otpModal">
+                                X
+                            </div>
+                            <div>
+                                <h4>
+            We have sent you an email. Kindly verify your email id.
+          </h4>
+                            </div>
+                        </div>
+                    </form>
+                </md-content>
+            </div>
+        </section>
+    </div>
+</div>
+<script src="js/otpModal.min.js"></script>
+<script>
+$("#otp").otpModal();
+
+function openOtp() {
+
+    $("#otp").click();
+
+}
+</script>

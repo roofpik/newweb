@@ -1,29 +1,30 @@
-    <!-- HEADER -->
-    <header class="gl-header">
-        <!-- BOTTOM BAR/NAVIGATION -->
-        <div class="gl-header-bottombar">
-            <!-- Navigation Menu start-->
-            <nav class="navbar gl-header-main-menu" role="navigation">
-                <div class="container-fluid">
-                    <!-- Navbar Toggle -->
-                    <div class="navbar-header">
-                        <!-- Logo -->
-                        <a class="navbar-brand" href="index.html"><img class="logo" src="http://roofpik.com/img/icon/logo.png" alt="Roofpik"></a>
-                    </div>
-                    <!-- Navbar Toggle End -->
-                    <!-- navbar-collapse start-->
-                    <!-- navbar-collapse end-->
-                    <div class="gl-extra-btns-wrapper">
-                        <!-- PROFILE BTN -->
-                        <span id="gl-side-menu-btn">     Sign In </span>
-                        <i class="fa fa-map-marker" aria-hidden="true" style="margin-left:20px;"></i>
-                        <span>Gurgaon</span>
-                        <!-- PROFILE BTN END -->
-                    </div>
+<!-- HEADER -->
+<header class="gl-header" ng-controller="headerCtrl">
+    <!-- BOTTOM BAR/NAVIGATION -->
+    <div class="gl-header-bottombar">
+        <!-- Navigation Menu start-->
+        <nav class="navbar gl-header-main-menu" role="navigation">
+            <div class="container-fluid">
+                <!-- Navbar Toggle -->
+                <div class="navbar-header">
+                    <!-- Logo -->
+                    <a class="navbar-brand" href="index.html"><img class="logo" src="http://roofpik.com/img/icon/logo.png" alt="Roofpik"></a>
                 </div>
-            </nav>
-            <!-- Navigation Menu end-->
-        </div>
-        <!-- END -->
-    </header>
-    <!-- HEADER END -->
+                <!-- Navbar Toggle End -->
+                <!-- navbar-collapse start-->
+                <!-- navbar-collapse end-->
+                <div class="gl-extra-btns-wrapper">
+                    <!-- PROFILE BTN -->
+                    <span id="gl-side-menu-btn" ng-show="!login.status"> Sign In </span>
+                    <span ng-show="login.status"> Logout </span>
+                    <i class="fa fa-map-marker" aria-hidden="true" style="margin-left:20px;"></i>
+                    <span>Gurgaon</span>
+                    <!-- PROFILE BTN END -->
+                </div>
+            </div>
+        </nav>
+        <!-- Navigation Menu end-->
+    </div>
+    <!-- END -->
+</header>
+<!-- HEADER END -->

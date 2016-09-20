@@ -1,6 +1,6 @@
-app.controller('homeCtrl', function($scope){
+app.controller('homeCtrl', function($scope, $rootScope){
 
-
+$rootScope.loginStatus = false;
 
 	
 })
