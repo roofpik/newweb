@@ -27066,7 +27066,7 @@ header.gl-header .gl-header-bottombar .gl-header-main-menu .container-fluid .gl-
 .gl-elements-page .gl-elements-shortcode-section .gl-element-type-wrapper:last-child {
   margin-bottom: 0;
 }
-.gl-elements-page .gl-elements-shortcode-section .gl-element-type-wrapper h3.gl-element-title {
+.gl-elements-shortcode-section .gl-element-type-wrapper h3.gl-element-title {
   display: block;
   margin: 0 0 50px;
   overflow: hidden;
