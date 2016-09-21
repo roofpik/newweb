@@ -19585,7 +19585,26 @@ Accordion
 .gl-accordion-item.panel .gl-accordion-item-wrapper.panel-heading {
   border-bottom: 0;
 }
-.gl-accordion-item.panel .gl-accordion-item-wrapper a {
+
+.faq .displayedData {
+    background-color: #fff;
+    display: block;
+    padding: 15px 30px;
+    margin-bottom: 20px;
+}
+.faq .displayedData h3 {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: #454545;
+  margin: 0 0 0;
+  line-height: 1.5;
+}
+.faq .displayedData .accordion-icon {
+  font-size: 24px;
+  float:right;
+}
+/*.gl-accordion-item.panel .gl-accordion-item-wrapper a {
   display: block;
   padding: 15px 30px;
   background-color: transparent;
@@ -19627,7 +19646,7 @@ Accordion
   line-height: 24px;
   margin: 0;
   text-align: left;
-}
+}*/
 .gl-tab-style-1 .gl-tab-nav-btns ul.nav-tabs {
   border-bottom: 0;
 }
