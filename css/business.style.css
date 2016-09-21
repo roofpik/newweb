@@ -19604,7 +19604,7 @@ Accordion
   font-size: 24px;
   float:right;
 }
-/*.gl-accordion-item.panel .gl-accordion-item-wrapper a {
+.gl-accordion-item.panel .gl-accordion-item-wrapper a {
   display: block;
   padding: 15px 30px;
   background-color: transparent;
@@ -19646,7 +19646,7 @@ Accordion
   line-height: 24px;
   margin: 0;
   text-align: left;
-}*/
+}
 .gl-tab-style-1 .gl-tab-nav-btns ul.nav-tabs {
   border-bottom: 0;
 }
