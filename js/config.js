@@ -38,6 +38,12 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
             templateUrl: 'templates/faq.html',
             controller: 'faqCtrl'
         });
+    $stateProvider
+        .state('career-n-goals', {
+            url: '/career-n-goals',
+            templateUrl: 'templates/career-n-goals.html',
+            controller: 'careerAndGoalsCtrl'
+        });
 
     $stateProvider
         .state('write-reviews', {
@@ -46,6 +52,6 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
             controller: 'writeReviewsCtrl'
         });
 
-    $urlRouterProvider.otherwise('/project-list');
+    $urlRouterProvider.otherwise('/home');
 
 }]);

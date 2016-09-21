@@ -11,4 +11,8 @@ app.controller('homeCtrl', function($scope, $state, $timeout){
 			$scope.topRated = snapshot.val();
 		}, 1000);
 	})
+
+	$scope.takeToProjectDetails = function(project){
+		$state.go('project-details', {id:project.projectId, name: project.projectName});
+	}
 })
