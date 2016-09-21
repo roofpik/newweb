@@ -1,102 +1,124 @@
-<md-content>
+<md-content class="faq">
     <div ng-include="'navigation/auth.html'"></div>
     <div ng-include="'navigation/header.html'"></div>
-<section class="gl-elements-shortcode-section">
-  <div class="container">
-    <div class="row">
+      <style>
+      button.accordion {
+          background-color: #fff;
+          color: #444;
+          cursor: pointer;
+          padding: 18px;
+          width: 100%;
+          border: none;
+          text-align: left;
+          outline: none;
+          font-size: 17px;
+          transition: 0.4s;
+          border:1px solid #e6e6e6;
+      }
 
-      <!-- *****************
-      Accordion 
-      ***************** -->
-      <div class="gl-element-type-wrapper">
-        <!-- Element Name -->
-        <h3 class="gl-element-title">Accordion</h3>
-        <!-- End -->
+      button.accordion:after {
+        content: '\02795'; /* Unicode character for "plus" sign (+) */
+        font-size: 13px;
+        color: #777;
+        float: right;
+        margin-left: 5px;
+      }
 
-        <div class="gl-element-wrapper">
+      button.accordion.active:after {
+          content: "\2796"; /* Unicode character for "minus" sign (-) */
+      }
 
-          <!-- Accorion With Collapse Icon -->
-          <div class="gl-accordion-with-icon gl-left-side-col">
-            <div class="panel-group" id="gl-accordion-icon" role="tablist" aria-multiselectable="true">
-              <!-- Accordion item -->
-              <div class="panel panel-default gl-accordion-item">
-                <!-- header -->
-                <div class="gl-accordion-item-wrapper panel-heading" role="tab" id="gl-accordion-1">
-                  <a role="button" data-toggle="collapse" data-parent="#gl-accordion-icon" href="#gl-accordion-1-details" aria-expanded="true" aria-controls="gl-accordion-1-details" class="collapsed">
-                    <h3>First Section</h3>
-                    <span class="gl-toggle-symbol">
-                      <i class="ion-ios-plus-empty"></i>
-                    </span>
-                  </a>
-                </div>
-                <!-- END -->
+      div.panel {
+        padding: 18px;
+        line-height: 25px;
+        display: none;
+        background-color: #f2f2f2;
+        border: 1px solid #ccc;
+      }
 
-                <!-- Details -->
-                <div id="gl-accordion-1-details" class="panel-collapse collapse gl-accordion-details" role="tabpanel" aria-labelledby="gl-accordionone">
-                  <div class="panel-body">
-                    <p>On the other hand, we denounce with righteous indignation and dislike men beguiled and demoralized by the charms of pleasure  of the moment, blinded belongs to those who</p>
-                  </div>
-                </div>
-                <!-- END -->
-              </div>
+      div.panel.show {
+          display: block;
+      }
+      .faq-list {
+        margin-bottom:50px;
+      }
+      </style>
+      <section class="gl-elements-shortcode-section">
+        <div class="container">
+          <div class="row">
+
+            <!-- *****************
+            Accordion 
+            ***************** -->
+            <div class="gl-element-type-wrapper">
+              <!-- Element Name -->
+              <h3 class="gl-element-title">FAQ's</h3>
               <!-- End -->
 
-              <!-- Accordion item -->
-              <div class="panel panel-default gl-accordion-item">
-                <!-- header -->
-                <div class="gl-accordion-item-wrapper panel-heading" role="tab" id="gl-accordion-2">
-                  <a role="button" data-toggle="collapse" data-parent="#gl-accordion-icon" href="#gl-accordion-2-details" aria-expanded="true" aria-controls="gl-accordion-2-details" class="collapsed">
-                    <h3>Second Section</h3>
-                    <span class="gl-toggle-symbol">
-                      <i class="ion-ios-plus-empty"></i>
-                    </span>
-                  </a>
-                </div>
-                <!-- END -->
+              <div class="gl-element-wrapper">
+                <div class="faq-list">
+                  <button class="accordion">What is Roofpik?</button>
+                  <div class="panel">
+                    <p>Roofpik is your very own Platform which captures your views on a residential project, under construction property and locality.</p>
+                  </div>
 
-                <!-- Details -->
-                <div id="gl-accordion-2-details" class="panel-collapse collapse gl-accordion-details" role="tabpanel" aria-labelledby="gl-accordiontwo">
-                  <div class="panel-body">
-                    <p>On the other hand, we denounce with righteous indignation and dislike men beguiled and demoralized by the charms of pleasure  of the moment, blinded belongs to those who</p>
+                  <button class="accordion">Why do we need reviews?</button>
+                  <div class="panel">
+                    <p>We rely on reviews for the littlest of things, yet there is no unbiased forum or source of information which provides genuine reviews from people who have the knowledge about a project or locality. Roofpik is gathering this information for users to access information which helps them make an informed decisions.</p>
+                  </div>
+
+                  <button class="accordion">What sort of things do we need to write about?</button>
+                  <div class="panel">
+                    <p>The review form captures information and ratings for structured parameters to enable a statistic analysis which will be helpful for users. Along with this, you also have a free text box for you to write whatever you want, giving your insider view on a project or locality. </p>
+                  </div>
+
+                  <button class="accordion">What do we get for writing a review?</button>
+                  <div class="panel">
+                    <p>Your few seconds today will help someone else in making an important decision. This very platform will help you in the future at some point to access reviews that other users have written. We are also working collaboratively with an NGO, Nanhi Kali, to contribute towards girl education for every review that you write and we will keep you informed of the progress of this if you chose to receive updates.</p>
+                  </div>
+
+                  <button class="accordion">Can I write more than one review?</button>
+                  <div class="panel">
+                    <p>Of course! You can write as many reviews that you like based on your experience of living there, or visiting a place.</p>
+                  </div>
+
+                  <button class="accordion">Why do I need to share my mobile number or address?</button>
+                  <div class="panel">
+                    <p>We need to ensure that the reviews that are written are validated and written by genuine users. This helps us ensure that Roofpik only contains information from real users, to eliminate fake information and reviews. We adhere strictly to our privacy policy and commit to not sharing your personal information with anyone. You can access our privacy policy HERE. </p>
+                  </div>
+
+                  <button class="accordion">Where is Roofpik operational?</button>
+                  <div class="panel">
+                    <p>At present, you can write about any residential project, under construction property or locality in Gurgaon. We will eventually be expanding and reaching out to other users across multiple cities</p>
+                  </div>
+
+                  <button class="accordion">When will a user be able to access reviews?</button>
+                  <div class="panel">
+                    <p>Once a user writes a review, this will go through an internal validation process after which it will be made live. This is when other users will be able to access this information.</p>
+                  </div>
+
+                  <button class="accordion">How am I contributing to girl child education?</button>
+                  <div class="panel">
+                    <p>Roofpik have a collaborative relationship with an NGO, Nanhi Kali who work in providing a girl child the gift of education. Roofpik have made a commitment to contribute towards this gift for every review that you write. We will be emailing the details of the girl child whose education you have contributed to by writing your review. </p>
                   </div>
                 </div>
-                <!-- END -->
               </div>
-              <!-- End -->
-
-              <!-- Accordion item -->
-              <div class="panel panel-default gl-accordion-item">
-                <!-- header -->
-                <div class="gl-accordion-item-wrapper panel-heading" role="tab" id="gl-accordion-3">
-                  <a role="button" data-toggle="collapse" data-parent="#gl-accordion-icon" href="#gl-accordion-3-details" aria-expanded="true" aria-controls="gl-accordion-3-details" class="collapsed">
-                    <h3>Third Section</h3>
-                    <span class="gl-toggle-symbol">
-                      <i class="ion-ios-plus-empty"></i>
-                    </span>
-                  </a>
-                </div>
-                <!-- END -->
-
-                <!-- Details -->
-                <div id="gl-accordion-3-details" class="panel-collapse collapse gl-accordion-details" role="tabpanel" aria-labelledby="gl-accordionthree">
-                  <div class="panel-body">
-                    <p>On the other hand, we denounce with righteous indignation and dislike men beguiled and demoralized by the charms of pleasure  of the moment, blinded belongs to those who</p>
-                  </div>
-                </div>
-                <!-- END -->
-              </div>
-              <!-- End -->
             </div>
+            <!-- Accordion End -->
           </div>
-          <!-- Accorion With Collapse Icon End -->
-
         </div>
-      </div>
-      <!-- Accordion End -->
-
-    </div>
-  </div>
-</section>
+      </section>
     <div ng-include="'navigation/footer.html'"></div>
     <script src="js/infobubble-richmarker.js"></script>
+    <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].onclick = function(){
+            this.classList.toggle("active");
+            this.nextElementSibling.classList.toggle("show");
+      }
+    }
+    </script>
 </md-content>
