@@ -62,7 +62,7 @@ app.controller('authCtrl', function($scope, authentication, $q, $rootScope) {
                 var r = authentication.signup(postData, emailDuplicate, $scope.user.password, q);
                 r.then(function(response1) {
                     $('#gl-side-menu-close-button').click();
-                    $('#gl-circle-loader-wrapper').fadeOut();
+                    $('#gl-circle-loader-wrapper').hide();
                     swal("Welcome!", "You have successfully registered!", "success");
                     $rootScope.loginStatus = true;
 
@@ -81,15 +81,16 @@ app.controller('authCtrl', function($scope, authentication, $q, $rootScope) {
     }
 
     $scope.login = function() {
-    	$('#gl-circle-loader-wrapper').fadeIn();
+    	$('#gl-circle-loader-wrapper').show();
         var q = $q.defer();
         var login = authentication.login($scope.user.email, $scope.user.password, q);
         login.then(function(response) {
         	 $('#gl-side-menu-close-button').click();
-            $('#gl-circle-loader-wrapper').fadeOut();
+            $('#gl-circle-loader-wrapper').hide();
             $rootScope.loginStatus = true;
             swal("Welcome!", "You have successfully loged in!", "success");
         }, function(error) {
+        	$('#gl-circle-loader-wrapper').hide();
            swal("Not Logged In!", "Invalid email or password!", "error");
         })
     };
@@ -100,10 +101,10 @@ app.controller('authCtrl', function($scope, authentication, $q, $rootScope) {
         var reset = authentication.forgetPassword($scope.user.email, q);
         reset.then(function(response) {
         	 $('#gl-side-menu-close-button').click();
-        	$('#gl-circle-loader-wrapper').fadeOut();
+        	$('#gl-circle-loader-wrapper').hide();
             swal("Email sent!", "Please check your email to reset your password!", "success");
         }, function(error) {
-        	$('#gl-circle-loader-wrapper').fadeOut();
+        	$('#gl-circle-loader-wrapper').hide();
         	swal("Email not sent!", "Invalid email!", "error");
             console.log(error);
         })

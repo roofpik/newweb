@@ -1,13 +1,6 @@
 
 <md-content>
-    <div id="gl-circle-loader-wrapper">
-        <div id="gl-circle-loader-center">
-            <div class="gl-circle-load">
-                <img src="images/ploading.gif" alt="Page Loader">
-                <h3>Please Wait</h3>
-            </div>
-        </div>
-    </div>
+  
     <div ng-include="'navigation/auth.html'" class="start"></div>
     <div ng-include="'navigation/header.html'" class="start"></div>
     <!-- HERO IMAGE -->
@@ -186,7 +179,7 @@
                 <!-- WRAPPER -->
                 <div class="gl-featured-listing-wrapper">
                     <!-- FEATURED ITEMS -->
-                    <div class="gl-featured-items col-md-4 col-sm-4 col-xs-12" data-wow-duration="1s" data-wow-delay=".3s" ng-repeat="project in topRated">
+                    <div class="gl-featured-items col-md-4 col-sm-4 col-xs-12" data-wow-duration="1s" data-wow-delay=".3s" ng-repeat="project in topRated" ng-click="takeToProjectDetails(project)">
                         <div class="gl-feat-items-img-wrapper">
                             <picture>
                                 <source media="(min-width: 768px)" srcset={{project.imgUrl}}>

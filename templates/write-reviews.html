@@ -18,12 +18,36 @@
         <div class="container">
             <div class="row">
                 <div layout="row" class="">
-                    <div flex="75" class="md-padding review-form">
+                    <div flex="75" class="md-padding review-form" id="outer-box">
+                        <div id="gl-review-loader-wrapper" ng-hide="loginStatus">
+                            <div id="gl-review-loader-center">
+                                <div class="gl-review-load">
+                                    <h2>Please Login First</h2>
+                                    <a ng-click="openLogin()" class="gl-btn gl-large-btn gl-btn-color-3">Login/Signup</a>
+                                </div>
+                            </div>
+                        </div>
                         <form>
+                        {{ctrl.querySearch}}
                             <div class="md-padding" flex>
-                                <md-input-container class="md-block">
-                                    <input ng-model="review.projectName" placeholder="Project Name">
-                                </md-input-container>
+                           <!--  <ul>
+                            <li ng-repeat="t in ctrl.test">
+                            {{t}}
+                            </li>
+                            </ul> -->
+                                <!--    <md-input-container class="md-block">
+                                    <md-autocomplete md-selected-item="ctrl.selectedItem" md-search-text-change="ctrl.searchTextChange(ctrl.searchText)" md-search-text="ctrl.searchText" md-selected-item-change="ctrl.selectedItemChange(item)" md-items="item in ctrl.querySearch(ctrl.searchText)" md-item-text="item.name" md-min-length="0" placeholder="What is your favorite US state?">
+                                        <md-item-template>
+                                            {{item.name}}
+                                            
+                                </md-input-container> -->
+                                <md-autocomplete flex md-selected-item="ctrl.selectedItem" md-search-text="ctrl.searchText" md-items="item in ctrl.querySearch(ctrl.searchText)" md-delay="300" md-floating-label="Search Github Users">
+                                    <md-item-template>
+                                    {{ctrl.querySearch}}
+                                        <span md-highlight-text="ctrl.searchText">{{item.name}}</span>
+                                   
+                                    </md-item-template>
+                                </md-autocomplete>
                             </div>
                             <div layout="row" class="md-padding">
                                 <label>Are you a</label>

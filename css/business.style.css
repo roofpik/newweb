@@ -27075,6 +27075,16 @@ header.gl-header .gl-header-bottombar .gl-header-main-menu .container-fluid .gl-
   border: 1px solid #eaeaea;
   text-align: center;
 }
+
+.job-profiles{
+      display: block;
+    margin: 0 0 50px;
+    overflow: hidden;
+    padding: 15px 0;
+    background-color: #f1f1f1;
+    border: 1px solid #eaeaea;
+    text-align: center;
+}
 .gl-elements-page .gl-elements-shortcode-section .gl-element-type-wrapper .gl-element-wrapper {
   display: block;
   overflow: hidden;

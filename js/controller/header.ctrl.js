@@ -8,7 +8,6 @@ app.controller('headerCtrl', function($scope, $timeout, $rootScope) {
         console.log($rootScope.loginStatus);
         $scope.login.status = $rootScope.loginStatus;
 
-
     });
 
 

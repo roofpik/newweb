@@ -2,7 +2,6 @@
 
 
 app.controller('homeCtrl', function($scope, $state, $timeout, $rootScope){
-	$rootScope.loginStatus = false;
 
 	$scope.takeToProjectList = function(param){
 		console.log(param);
@@ -17,8 +16,13 @@ app.controller('homeCtrl', function($scope, $state, $timeout, $rootScope){
 		}, 1000);
 	})
 
+
 	$scope.gotoWriteReviews = function(){
 		$state.go('write-reviews');
+	}
+
+	$scope.takeToProjectDetails = function(project){
+		$state.go('project-details', {id:project.projectId, name: project.projectName});
 	}
 
 })
