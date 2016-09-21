@@ -1,7 +1,7 @@
 app.controller('authCtrl', function($scope, authentication, $q, $rootScope) {
     $scope.user = {};
 
-    firebase.auth().signOut();
+    // firebase.auth().signOut();
 
     $scope.showSignup = function() {
         $('.login').hide();
@@ -72,32 +72,39 @@ app.controller('authCtrl', function($scope, authentication, $q, $rootScope) {
                 $('#gl-circle-loader-wrapper').hide();
             }
         }, function(errors) {
-            $('#gl-side-menu-close-button').click();
+            
             $('#gl-circle-loader-wrapper').hide();
-            alert("User already exists");
+            swal("Not registered!", "You are already registered!", "error");
         });
         // Get a key for a new Post.
 
     }
 
     $scope.login = function() {
+    	$('#gl-circle-loader-wrapper').fadeIn();
         var q = $q.defer();
         var login = authentication.login($scope.user.email, $scope.user.password, q);
         login.then(function(response) {
-            console.log(response);
+        	 $('#gl-side-menu-close-button').click();
+            $('#gl-circle-loader-wrapper').fadeOut();
             $rootScope.loginStatus = true;
+            swal("Welcome!", "You have successfully loged in!", "success");
         }, function(error) {
-            console.log(error);
+           swal("Not Logged In!", "Invalid email or password!", "error");
         })
     };
 
     $scope.forgetPassword = function() {
-
+    	$('#gl-circle-loader-wrapper').fadeIn();
         var q = $q.defer();
         var reset = authentication.forgetPassword($scope.user.email, q);
         reset.then(function(response) {
-            console.log(response);
+        	 $('#gl-side-menu-close-button').click();
+        	$('#gl-circle-loader-wrapper').fadeOut();
+            swal("Email sent!", "Please check your email to reset your password!", "success");
         }, function(error) {
+        	$('#gl-circle-loader-wrapper').fadeOut();
+        	swal("Email not sent!", "Invalid email!", "error");
             console.log(error);
         })
 

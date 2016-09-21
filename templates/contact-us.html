@@ -1,0 +1,56 @@
+<md-content>
+    <div ng-include="'navigation/auth.html'"></div>
+    <div ng-include="'navigation/header.html'"></div>
+    <!-- GOOGLE MAP -->
+    <section class="gl-google-map-section">
+      <div id="gl-contact-map"></div>
+    </section>
+    <!-- GOOGLE MAP END -->
+
+    <!-- PAGE CONTETNT -->
+    <section class="gl-page-content-section">
+      <div class="gl-inner-section">
+        <div class="container">
+          <div class="row">
+            <!-- Image -->
+            <div class="gl-contact-form-wrapper gl-left-side col-md-6 col-sm-6 col-xs-12">
+              <h3 class="gl-single-title">Contact Us</h3>
+
+              <form action="#">
+                <input type="text" name="gl-contact-name" id="gl-contact-name" placeholder="Name" ng-model="contactUs.name">
+                <input type="email" name="gl-contact-email" id="gl-contact-email" placeholder="Email" ng-model="contactUs.email">
+                <input type="number" name="gl-contact-email" id="gl-contact-email" placeholder="Contact Number" ng-model="contactUs.mobno">
+                <textarea name="gl-contact-message" id="gl-contact-message" cols="30" rows="10" placeholder="Message" ng-model="contactUs.message"></textarea>
+
+                <div layout="row">
+                    <md-button class="md-raised md-warn" ng-click="submitFormData()">Submit</md-button>
+                </div>
+              </form>
+            </div>
+            <!-- END -->
+
+            <!-- About Text -->
+            <div class="gl-company-addresses-wrapper gl-right-side col-md-6 col-sm-6 col-xs-12">
+
+              <div class="gl-address-col">
+                <!-- ADDRESSES -->
+                <div class="gl-address">
+                  <h3 class="gl-single-title">Gurgaon Office</h3>
+                  <ul>
+                    <li class="gl-address-location">250, Vipul Trade Center, Sector 48, Gurgaon</li>
+                    <li class="gl-address-phone">+91 124 438 4167</li>
+                    <li class="gl-address-email">contact@roofpik.com</li>
+                  </ul>
+                </div>
+                <!-- END -->
+              </div>
+            </div>
+            <!-- About Text End -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- PAGE CONTETNT END -->
+    <div ng-include="'navigation/footer.html'"></div>
+    <script src="js/infobubble-richmarker.js"></script>
+</md-content>
