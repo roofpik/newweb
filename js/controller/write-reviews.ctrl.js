@@ -1,4 +1,4 @@
-app.controller('writeReviewsCtrl', function($scope, $rootScope, $q, $log, $http) {
+app.controller('writeReviewsCtrl', function($scope, $rootScope, $q, $log, $http, $timeout) {
     // var self = this;
     // var results;
     // self.simulateQuery = false;
@@ -10,39 +10,151 @@ app.controller('writeReviewsCtrl', function($scope, $rootScope, $q, $log, $http)
     //     $scope.ctrl.states = test(data);
     //     console.log($scope.ctrl.states);
     // });
+    $scope.search = {};
+    $scope.search.process = false;
+
+    var temquery;
+    var t;
+
+    $scope.ctrl.searchTextChange  = function(txt){
 
 
-    $scope.ctrl.querySearch = function(query) {
-        //return $http.get("https://api.github.com/search/users", {params: {q: query}})
-        // return $http.get("https://api.github.com/search/users", {params: {q: query}})
-        //     .then(function(response){
-        //         console.log(response.data.items)
-        //       return response.data.items;
-        //     })
-        return $http({
-                url: 'http://139.162.3.205/api/searchProject',
-                method: "POST",
-                params: {
-                    query: query
-                }
-            })
-            .success(function(response) {
-                // return response;
-                var obj = [];
+
+         if (!$scope.search.process) {
+
+            temquery = $scope.search.query = txt;
+            $scope.search.process = true;
+            $timeout.cancel(t);
+            $http({
+                    url: 'http://139.162.3.205/api/searchProject',
+                    method: "GET",
+                    params: {
+                        query: $scope.search.query
+                    }
+                })
+                .success(function(response) {
+                    console.log(response);
+                     var obj = [];
                 var i = 0;
                 for (var key in response) {
                     // skip loop if the property is from prototype
-                    obj[i] = response[key].name;
-                    i++;
+                 //   console.log(response[key])
+                    obj.push(response[key].name.toString());
+                  
                 }
-                console.log(obj);
-                $scope.ctrl.test = obj;
-                return obj;
-                // var t = test(response);
-                // console.log(t);
-                // return t;
+              console.log(obj);
+              //  return obj;
+               $timeout(function() {
+               $scope.ctrl.data = obj
+           }, 500);
+                    $scope.search.process = false;
+                    if (temquery != $scope.search.query) {
+                        $scope.ctrl.searchTextChange();
+                    }
+                });
 
+            t = $timeout(function() {
+
+                if ($scope.search.process) {
+                    $scope.search.process = false;
+
+                    $scope.ctrl.searchTextChange();
+
+
+                }
+
+            }, 5000)
+        }
+
+    
+
+        // $http.get("http://139.162.3.205/api/searchProject", {params: {query: txt}})
+        //     .success(function(response){
+              
+        //          var obj = [];
+        //         var i = 0;
+        //         for (var key in response) {
+        //             // skip loop if the property is from prototype
+        //          //   console.log(response[key])
+        //             obj.push(response[key].name.toString());
+                  
+        //         }
+        //       console.log(obj);
+        //       //  return obj;
+               
+        //        $scope.ctrl.data = obj
+
+
+        //    // //   return response.data.items;
+        //     })
+
+    }
+
+
+    $scope.ctrl.querySearch = function(que) {
+      
+        // return $http.get("https://api.github.com/search/users", {params: {q: que}})
+        //     .then(function(response){
+        //         console.log(response.data.items)
+        //          var obj = [];
+        //         var i = 0;
+        //         for (var key in response.data.items) {
+        //             // skip loop if the property is from prototype
+        //             console.log(response.data.items[key])
+        //             obj[i] = response.data.items[key].login;
+        //             i++;
+        //         }
+        //         console.log(obj);
+        //         $scope.ctrl.test = obj;
+        //         return obj;
+
+
+        //    //   return response.data.items;
+        //     });
+
+            return $http.get("http://139.162.3.205/api/searchProject", {params: {query: que}})
+            .success(function(response){
+              
+                 var obj = [];
+                var i = 0;
+                for (var key in response) {
+                    // skip loop if the property is from prototype
+                 //   console.log(response[key])
+                    obj.push(response[key].name.toString());
+                  
+                }
+              console.log(obj);
+                return obj;
+               
+               
+
+
+           // //   return response.data.items;
             })
+        // return $http({
+        //         url: 'http://139.162.3.205/api/searchProject',
+        //         method: "POST",
+        //         params: {
+        //             query: query
+        //         }
+        //     })
+        //     .success(function(response) {
+        //         // return response;
+        //         var obj = [];
+        //         var i = 0;
+        //         for (var key in response) {
+        //             // skip loop if the property is from prototype
+        //             obj[i] = response[key].name;
+        //             i++;
+        //         }
+        //         console.log(obj);
+        //         $scope.ctrl.test = obj;
+        //         return obj;
+        //         // var t = test(response);
+        //         // console.log(t);
+        //         // return t;
+
+        //     })
     }
 
     function test(data) {

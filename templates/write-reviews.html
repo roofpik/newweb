@@ -28,24 +28,16 @@
                             </div>
                         </div>
                         <form>
-                        {{ctrl.querySearch}}
                             <div class="md-padding" flex>
-                           <!--  <ul>
-                            <li ng-repeat="t in ctrl.test">
-                            {{t}}
-                            </li>
-                            </ul> -->
                                 <!--    <md-input-container class="md-block">
                                     <md-autocomplete md-selected-item="ctrl.selectedItem" md-search-text-change="ctrl.searchTextChange(ctrl.searchText)" md-search-text="ctrl.searchText" md-selected-item-change="ctrl.selectedItemChange(item)" md-items="item in ctrl.querySearch(ctrl.searchText)" md-item-text="item.name" md-min-length="0" placeholder="What is your favorite US state?">
                                         <md-item-template>
                                             {{item.name}}
                                             
                                 </md-input-container> -->
-                                <md-autocomplete flex md-selected-item="ctrl.selectedItem" md-search-text="ctrl.searchText" md-items="item in ctrl.querySearch(ctrl.searchText)" md-delay="300" md-floating-label="Search Github Users">
+                                <md-autocomplete flex md-selected-item="ctrl.selectedItem" md-search-text="ctrl.searchText" md-items="item in ctrl.data" md-item-text="item1" md-delay="300" md-floating-label="Search by project/locality name" md-search-text-change="ctrl.searchTextChange(ctrl.searchText)">
                                     <md-item-template>
-                                    {{ctrl.querySearch}}
-                                        <span md-highlight-text="ctrl.searchText">{{item.name}}</span>
-                                   
+                                        <span md-highlight-text="ctrl.searchText">{{item}}</span>
                                     </md-item-template>
                                 </md-autocomplete>
                             </div>
