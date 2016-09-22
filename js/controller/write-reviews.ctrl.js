@@ -1,237 +1,43 @@
-app.controller('writeReviewsCtrl', function($scope, $rootScope, $q, $log, $http, $timeout) {
-    // var self = this;
-    // var results;
-    // self.simulateQuery = false;
-    // self.isDisabled = false;
-    $scope.ctrl = {};
-    // var t = loadAll();
-    // t.then(function(data) {
-    //     console.log(data)
-    //     $scope.ctrl.states = test(data);
-    //     console.log($scope.ctrl.states);
-    // });
-    $scope.search = {};
-    $scope.search.process = false;
+app.controller('writeReviewsCtrl', function($scope, $rootScope, $q, $log, $http, $timeout, $mdToast) {
 
-    var temquery;
-    var t;
-
-    $scope.ctrl.searchTextChange  = function(txt){
-
-
-
-         if (!$scope.search.process) {
-
-            temquery = $scope.search.query = txt;
-            $scope.search.process = true;
-            $timeout.cancel(t);
-            $http({
-                    url: 'http://139.162.3.205/api/searchProject',
-                    method: "GET",
-                    params: {
-                        query: $scope.search.query
-                    }
-                })
-                .success(function(response) {
-                    console.log(response);
-                     var obj = [];
-                var i = 0;
-                for (var key in response) {
-                    // skip loop if the property is from prototype
-                 //   console.log(response[key])
-                    obj.push(response[key].name.toString());
-                  
-                }
-              console.log(obj);
-              //  return obj;
-               $timeout(function() {
-               $scope.ctrl.data = obj
-           }, 500);
-                    $scope.search.process = false;
-                    if (temquery != $scope.search.query) {
-                        $scope.ctrl.searchTextChange();
-                    }
-                });
-
-            t = $timeout(function() {
-
-                if ($scope.search.process) {
-                    $scope.search.process = false;
-
-                    $scope.ctrl.searchTextChange();
-
-
-                }
-
-            }, 5000)
-        }
-
-    
-
-        // $http.get("http://139.162.3.205/api/searchProject", {params: {query: txt}})
-        //     .success(function(response){
-              
-        //          var obj = [];
-        //         var i = 0;
-        //         for (var key in response) {
-        //             // skip loop if the property is from prototype
-        //          //   console.log(response[key])
-        //             obj.push(response[key].name.toString());
-                  
-        //         }
-        //       console.log(obj);
-        //       //  return obj;
-               
-        //        $scope.ctrl.data = obj
-
-
-        //    // //   return response.data.items;
-        //     })
-
+    $scope.review = {
+        ratings: {}
     }
+    $scope.selectedItem = '';
 
+    $scope.projectLocality = [];
 
-    $scope.ctrl.querySearch = function(que) {
-      
-        // return $http.get("https://api.github.com/search/users", {params: {q: que}})
-        //     .then(function(response){
-        //         console.log(response.data.items)
-        //          var obj = [];
-        //         var i = 0;
-        //         for (var key in response.data.items) {
-        //             // skip loop if the property is from prototype
-        //             console.log(response.data.items[key])
-        //             obj[i] = response.data.items[key].login;
-        //             i++;
-        //         }
-        //         console.log(obj);
-        //         $scope.ctrl.test = obj;
-        //         return obj;
-
-
-        //    //   return response.data.items;
-        //     });
-
-            return $http.get("http://139.162.3.205/api/searchProject", {params: {query: que}})
-            .success(function(response){
-              
-                 var obj = [];
-                var i = 0;
-                for (var key in response) {
-                    // skip loop if the property is from prototype
-                 //   console.log(response[key])
-                    obj.push(response[key].name.toString());
-                  
+    db.ref('search').once('value', function(snapshot){
+        // console.log(snapshot.val());
+        var count = 0;
+        $timeout(function(){
+            angular.forEach(snapshot.val(), function(value, key){
+                count++;
+                if(value.type != 'Developer'){
+                    $scope.projectLocality.push(value);
                 }
-              console.log(obj);
-                return obj;
-               
-               
-
-
-           // //   return response.data.items;
+                if(count ==Object.keys(snapshot.val()).length){
+                    // console.log($scope.projectLocality);
+                }
             })
-        // return $http({
-        //         url: 'http://139.162.3.205/api/searchProject',
-        //         method: "POST",
-        //         params: {
-        //             query: query
-        //         }
-        //     })
-        //     .success(function(response) {
-        //         // return response;
-        //         var obj = [];
-        //         var i = 0;
-        //         for (var key in response) {
-        //             // skip loop if the property is from prototype
-        //             obj[i] = response[key].name;
-        //             i++;
-        //         }
-        //         console.log(obj);
-        //         $scope.ctrl.test = obj;
-        //         return obj;
-        //         // var t = test(response);
-        //         // console.log(t);
-        //         // return t;
+        },100);
+    })
 
-        //     })
-    }
-
-    function test(data) {
-        var obj = [];
-        var i = 0;
-        for (var key in data) {
-            // skip loop if the property is from prototype
-            obj[i] = data[key];
-            i++;
+    $scope.nameEntered = function(){
+        // console.log($scope.selectedItem);
+        if($scope.selectedItem.length > 0){
+            $scope.showList = true;
+        } else {
+            $scope.showList = false;
         }
-
-        return obj;
     }
-    // $scope.ctrl.selectedItemChange = selectedItemChange;
-    // $scope.ctrl.searchTextChange = searchTextChange;
-    // $scope.ctrl.newState = newState;
 
-
-    // function searchTextChange(text) {
-    //     $log.info('Text changed to ' + text);
-    // }
-
-    // function selectedItemChange(item) {
-    //     $log.info('Item changed to ' + JSON.stringify(item));
-    // }
-
-    // function newState(state) {
-    //     alert("Sorry! You'll need to create a Constitution for " + state + " first!");
-    // }
-
-
-    // $scope.ctrl.querySearch = querySearch;
-
-
-    // function querySearch(query) {
-
-    //     var results = query ? $scope.ctrl.states.filter(createFilterFor(query)) : $scope.ctrl.states,
-    //         deferred;
-
-    //     if ($scope.ctrl.simulateQuery) {
-    //         deferred = $q.defer();
-    //         $timeout(function() { deferred.resolve(results); }, Math.random() * 1000, false);
-    //         return deferred.promise;
-    //     } else {
-
-    //         return results;
-    //     }
-    // }
-
-
-    // function loadAll() {
-    //     q = $q.defer();
-    //     $scope.ctrl.query = '';
-    //     $http({
-    //             url: 'http://139.162.3.205/api/searchProject',
-    //             method: "POST",
-    //             params: {
-    //                 query: $scope.ctrl.query
-    //             }
-    //         })
-    //         .success(function(response) {
-    //             q.resolve(response);
-    //         });
-
-    //     return q.promise;
-
-    // }
-
-
-    // function createFilterFor(query) {
-    //     var lowercaseQuery = angular.lowercase(query);
-
-    //     return function filterFn(state) {
-    //         return (state.name.indexOf(lowercaseQuery) === 0);
-    //     };
-
-    // }
+    $scope.selectProjectLocality = function(val){
+        // console.log(val);
+        $scope.selectedItem = val.name;
+        $scope.selectedProjectOrLocality = val;
+        $scope.showList = false;
+    }
 
     $scope.ratingsObject = {
         iconOn: 'ion-ios-star', //Optional
@@ -246,46 +52,91 @@ app.controller('writeReviewsCtrl', function($scope, $rootScope, $q, $log, $http,
         }
     };
 
-    $scope.review = {
-        projectName: "",
-        title: "",
-        who: "",
-        location: "",
-        transport: "",
-        useful: "",
-        overall: 0,
-        security: 0,
-        amenities: 0,
-        green: 0,
-        electricity: 0,
-        housemaids: 0,
-        parking: 0
-    }
 
     $scope.ratingsCallback = function(rating, index) {
-        console.log('Selected rating is : ', rating, ' and index is ', index);
+        // console.log('Selected rating is : ', rating, ' and index is ', index);
 
         if (index == 1) {
-            $scope.review['overall'] = rating;
+            $scope.review.overallRating = rating;
         } else if (index == 2) {
-            $scope.review['security'] = rating;
+            $scope.review.ratings.security = rating;
         } else if (index == 3) {
-            $scope.review['amenities'] = rating;
+            $scope.review.ratings.amenities = rating;
         } else if (index == 4) {
-            $scope.review['green'] = rating;
+            $scope.review.ratings.openAndGreenAreas= rating;
         } else if (index == 5) {
-            $scope.review['electricity'] = rating;
+            $scope.review.ratings.electricityAndWaterSupply= rating;
         } else if (index == 6) {
-            $scope.review['housemaids'] = rating;
+            $scope.review.ratings.convenienceOfHouseMaids= rating;
         } else if (index == 7) {
-            $scope.review['parking'] = rating;
+            $scope.review.ratings.convenienceOfParking= rating;
         }
 
-        console.log($scope.review);
+        // console.log($scope.review);
     };
 
     $scope.submitReview = function(review) {
-        console.log(review);
+
+        var user = firebase.auth().currentUser;
+        console.log(user);
+        $scope.review.userName = user.displayName;
+        $scope.review.userId = user.uid;
+        $scope.review.blocked = false;
+        $scope.review.createdDate = new Date().getTime();
+        $scope.review.status = 'live';
+        console.log($scope.selectedProjectOrLocality);
+        console.log($scope.selectedProjectOrLocality.type);
+        if($scope.selectedProjectOrLocality.type == 'Project'){
+            var newKey = db.ref('reviews/-KPmH9oIem1N1_s4qpCv/residential/'+$scope.selectedProjectOrLocality.id).push().key;
+            var updates = {};
+            $scope.useReviewData = {
+                projectId: $scope.selectedProjectOrLocality.id,
+                projectName: $scope.selectedProjectOrLocality.name,
+                cityId: '-KPmH9oIem1N1_s4qpCv',
+                cityName: 'Gurgaon',
+                reviewTitle: $scope.review.reviewTitle,
+                status : 'live'
+            }
+            updates['reviews/-KPmH9oIem1N1_s4qpCv/residential/'+$scope.selectedProjectOrLocality.id+'/'+newKey] = $scope.review;
+            updates['userReviews/'+user.uid+'/residential/'+newKey] = $scope.useReviewData
+            db.ref().update(updates).then(function(){
+                console.log('review successfully submitted');
+                $timeout(function(){
+                    $scope.review = {};
+                    $scope.selectedItem = '';
+                    $scope.selectedProjectOrLocality = {};
+                    $mdToast.show($mdToast.simple().textContent('Your review has been successfully submitted'));
+                },50);
+            })
+            // db.ref('reviews/-KPmH9oIem1N1_s4qpCv/residential/'+$scope.selectedProjectOrLocality.id).push($scope.review).then(function(){
+            //     console.log('project review submitted');
+            // });
+        } else if($scope.selectedProjectOrLocality.type == 'Locality'){
+            var newKey = db.ref('reviews/-KPmH9oIem1N1_s4qpCv/residential/'+$scope.selectedProjectOrLocality.id).push().key;
+            var updates = {};
+            $scope.useReviewData = {
+                locationId: $scope.selectedProjectOrLocality.id,
+                locationName: $scope.selectedProjectOrLocality.name,
+                cityId: '-KPmH9oIem1N1_s4qpCv',
+                cityName: 'Gurgaon',
+                reviewTitle: $scope.review.reviewTitle,
+                status : 'live'
+            }
+            updates['reviews/-KPmH9oIem1N1_s4qpCv/locality/'+$scope.selectedProjectOrLocality.id+'/'+newKey] = $scope.review;
+            updates['userReviews/'+user.uid+'/locality/'+newKey] = $scope.useReviewData
+            db.ref().update(updates).then(function(){
+                console.log('review successfully submitted');
+                $timeout(function(){
+                    $scope.review = {};
+                    $scope.selectedItem = '';
+                    $scope.selectedProjectOrLocality = {};
+                    $mdToast.show($mdToast.simple().textContent('Your review has been successfully submitted'));
+                },50);
+            })
+            // db.ref('reviews/-KPmH9oIem1N1_s4qpCv/locality/'+$scope.selectedProjectOrLocality.id).push($scope.review).then(function(){
+            //     console.log('locality review submitted');
+            // });
+        }
     }
 
     $scope.openLogin = function() {
