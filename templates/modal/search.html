@@ -29,12 +29,12 @@
                     <!-- Job item -->
                     <div class="panel panel-default gl-job-list-item" ng-repeat="project in projects">
                         <!-- Job Excerpt -->
-                        <div class="gl-job-list-item-wrapper panel-heading" role="tab" id="jobOne">
-                            <a role="button" data-toggle="collapse" data-parent="#featured-job" aria-expanded="true" aria-controls="jobOneDetails">
+                        <div class="gl-job-list-item-wrapper panel-heading" role="tab" ng-click="searchClick(project)">
+                            <a role="button">
                                 <!-- LOGO -->
-                                <div class="gl-job-company-logo gl-job-item-part">
+                            <!--     <div class="gl-job-company-logo gl-job-item-part">
                                     <img src="images/placeholder-small.jpg" alt="Deep Purple inc" class="gl-lazy">
-                                </div>
+                                </div> -->
                                 <!-- END -->
                                 <!-- JOB POSTION & COMPANY NAME -->
                                 <div class="gl-job-position-company gl-job-item-part">

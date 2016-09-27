@@ -20398,7 +20398,7 @@ a.gl-tag-btn:last-child {
   *display: inline;
   *zoom: 1;
   float: left;
-  /*padding-left: 25px;*/
+  padding-left: 25px;
 }
 .gl-featured-items .gl-feat-item-metas {
   display: block;
@@ -26195,7 +26195,7 @@ h3.gl-single-title {
   background-color: #fc4a52;
 }
 .gl-about-page-header-wrapper {
-  background-image: url("../images/page-header-bg.jpg");
+  background-image: url("../images/about-roofpik.jpg");
   background-size: cover;
   background-position: center;
   text-align: center;

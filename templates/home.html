@@ -21,9 +21,9 @@
                     <div class="gl-directory-searchbar gl-bz-directory-searchbar" onclick="openSeacrh()">
                         <form action="#" id="gl-bz-directory-form">
                             <fieldset>
-                                <input type="text" name="gl-business-keyword" id="gl-business-keyword" class="gl-directory-input" placeholder="Search by project, builder, landmark or locality">
+                                <input type="text" class="gl-directory-input" placeholder="Search by project, builder, landmark or locality">
                             </fieldset>
-                            <button type="submit" class="gl-icon-btn"><i class="fa fa-search"></i> Search</button>
+                            <button class="gl-icon-btn"><i class="fa fa-search"></i> Search</button>
                         </form>
                     </div>
                     <!-- END -->
@@ -184,6 +184,7 @@
                                 <source media="(min-width: 768px)" srcset={{project.imgUrl}}>
                                 <img alt="Featured Listing" srcset={{project.imgUrl}}>
                             </picture>
+                              <span class="gl-price-tag">#{{$index+1}} of {{projectNum}} projects in Gurgaon</span>
                         </div>
                         <div class="gl-feat-item-details">
                             <span class="gl-item-rating">
@@ -194,8 +195,7 @@
                               <a href="#">{{project.projectName}}</a>
                             </h3>
                             <div class="gl-item-location">
-                                <span>{{project.displayLocation}}</span>&nbsp;<i class="ion-ios-location-outline"></i>
-                                <span style="margin-left:0px;">#{{$index+1}} of {{projectNum}} projects in Gurgaon</span>
+                         <i class="ion-ios-location-outline"></i>       <span>{{project.displayLocation}}</span>
                             </div>
                         </div>
                     </div>
@@ -204,7 +204,7 @@
                 <!-- END -->
                 <!-- MORE BTN -->
                 <div class="gl-more-btn-wrapper">
-                    <a href="#/project-list/topRated" class="gl-more-btn gl-btn">More</a>
+                    <a href="#/project-list/topRated//" class="gl-more-btn gl-btn">More</a>
                 </div>
                 <!-- END -->
             </div>

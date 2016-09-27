@@ -27,6 +27,7 @@
                                         <source media="(min-width: 768px)" srcset={{project.imgUrl}}>
                                         <img alt="Category Image" srcset={{project.imgUrl}}>
                                     </picture>
+                                    <span class="gl-price-tag">#{{$index+1}} of {{numProjects}} projects in Gurgaon</span>
                                 </div>
                                 <div class="gl-feat-item-details">
                                     <span class="gl-item-rating" ng-if="project.rating">
@@ -38,8 +39,8 @@
                                     </h3>
                                     <div class="gl-item-location">
                                         
-                                        <span>{{project.displayLocation}}</span> &nbsp;<i class="ion-ios-location-outline"></i>
-                                        <span style="margin-left:0px;">#{{$index+1}} of {{numResults}} projects in Gurgaon</span>
+                                   <i class="ion-ios-location-outline"></i>     <span>{{project.displayLocation}}</span>
+                                        
                                     </div>
                                 </div>
                             </div>

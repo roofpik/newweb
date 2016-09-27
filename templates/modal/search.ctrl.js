@@ -1,9 +1,10 @@
-app.controller('searchCtrl', function($scope, $http, $timeout) {
+app.controller('searchCtrl', function($scope, $http, $timeout, $state) {
     $scope.search = {};
     $scope.search.process = false;
 
     var temquery;
     var t;
+
 
     $scope.searchfn = function() {
 
@@ -43,5 +44,16 @@ app.controller('searchCtrl', function($scope, $http, $timeout) {
         }
 
     };
+
+    $scope.searchClick = function(data){
+        console.log(data);
+        if(data.type == 'Project'){
+             $state.go('project-details', { id: data.id, name: data.name });
+        }
+        else{
+            $state.go('project-list', { from: 'topRated', type: data.type, id: data.id });
+        }
+
+    }
 
 });

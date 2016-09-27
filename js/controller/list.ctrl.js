@@ -1,27 +1,63 @@
 app.controller('listCtrl', function($scope, $timeout, $stateParams, $state) {
     console.log($stateParams.from);
     var center = {};
+    var type = $stateParams.type || null;
+    var id = $stateParams.id || null;
+    console.log(type);
+    $scope.projects = [];
+    var types = ['family', 'justMarried', 'oldAgeFriendly', 'kids', 'bachelors'];
 
-    var types= ['family', 'justMarried', 'oldAgeFriendly', 'kids', 'bachelors'];
+    if ($stateParams.from == 'topRated') {
+        db.ref('topRated').once('value', function(dataSnapshot) {
+            console.log(dataSnapshot.val());
+            $timeout(function() {
+                $scope.numProjects = Object.keys(dataSnapshot.val()).length;
 
-    if($stateParams.from == 'topRated'){
-        db.ref('topRated').once('value', function(dataSnapshot){
-            $timeout(function(){
-                console.log(dataSnapshot.val());
-                console.log(Object.keys(dataSnapshot.val()).length);
-                $scope.numResults = Object.keys(dataSnapshot.val()).length;
-                $scope.projects = dataSnapshot.val();
-                initializeProjects(dataSnapshot.val());
+                if (type == 'Developer') {
+
+                    for (key in dataSnapshot.val()) {
+                        if (dataSnapshot.val()[key].developerId == id) {
+                            $scope.projects.push(dataSnapshot.val()[key]);
+
+                        } else {
+                            //  var index = dataSnapshot.val().indexOf(dataSnapshot.val()[key]);
+
+                        }
+                    }
+
+
+
+                } else if (type == 'Locality') {
+                    for (key in dataSnapshot.val()) {
+                        if (dataSnapshot.val()[key].developerId == id) {
+                            $scope.projects.push(dataSnapshot.val()[key]);
+                        } else {
+
+
+                        }
+                    }
+
+
+
+                } else {
+                    $scope.projects = dataSnapshot.val();
+
+                }
+                $scope.numResults = Object.keys($scope.projects).length;
+                initializeProjects($scope.projects);
+
             }, 100);
         });
     } else {
-        for(var i = 0; i < 5; i++){
-            if($stateParams.from == types[i]){
-                console.log($stateParams.from+'List');
-                db.ref($stateParams.from+'List').once('value', function(dataSnapshot){
-                    $timeout(function(){
+        for (var i = 0; i < 5; i++) {
+            if ($stateParams.from == types[i]) {
+                console.log($stateParams.from + 'List');
+                db.ref($stateParams.from + 'List').once('value', function(dataSnapshot) {
+                    $timeout(function() {
                         console.log(dataSnapshot.val());
                         console.log(Object.keys(dataSnapshot.val()).length);
+                        $scope.numProjects = Object.keys(dataSnapshot.val()).length;
+
                         $scope.numResults = Object.keys(dataSnapshot.val()).length;
                         $scope.projects = dataSnapshot.val();
                         initializeProjects(dataSnapshot.val());
@@ -63,8 +99,8 @@ app.controller('listCtrl', function($scope, $timeout, $stateParams, $state) {
             data.push('gl-real-estate-icon');
             allProjects.push(data);
             if (count == Object.keys(projects).length) {
-                center.lat = latitude/count;
-                center.lng= longitude/count;
+                center.lat = latitude / count;
+                center.lng = longitude / count;
                 initializeMap();
             }
         })
@@ -165,9 +201,9 @@ app.controller('listCtrl', function($scope, $timeout, $stateParams, $state) {
         $(".gm-style-iw").next("div").hide();
     }
 
-    $scope.selectProject = function(pro){
+    $scope.selectProject = function(pro) {
         console.log(pro);
-        $state.go('project-details', {id: pro.projectId, name: pro.projectName});
+        $state.go('project-details', { id: pro.projectId, name: pro.projectName });
     }
 
     // db.ref('projects/-KPmH9oIem1N1_s4qpCv/residential').once('value', function(snapshot) {
