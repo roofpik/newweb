@@ -5,7 +5,7 @@
 
 .gl-hero-img-wrapper .container .gl-elements-content-wrapper .gl-directory-searchbar form fieldset input {
     width: 98%;
-        margin-left: 2%;
+    margin-left: 2%;
 }
 
 :focus::-webkit-input-placeholder {
@@ -30,8 +30,8 @@
     color: #585858 !important;
 }
 
-.white-background{
-    background:#fff;
+.white-background {
+    background: #fff;
 }
 
 .gl-hero-img-wrapper .container .gl-elements-content-wrapper .gl-directory-searchbar form fieldset {
@@ -121,22 +121,22 @@ md-input-container .md-errors-spacer {
     position: absolute;
     opacity: 0.8;
     z-index: 999;
-
 }
-.gl-review-loader-center{
+
+.gl-review-loader-center {
     width: 100%;
     height: 100%;
     position: relative;
 }
 
-.gl-how-it-works-section .gl-custom-sec-content a{
+.gl-how-it-works-section .gl-custom-sec-content a {
     font-size: 1.4em;
 }
 
-#outer-box{
-	 display:block;
-  position:relative;
-	padding:0px;
+#outer-box {
+    display: block;
+    position: relative;
+    padding: 0px;
 }
 
 .gl-review-load {
@@ -155,40 +155,43 @@ md-input-container .md-errors-spacer {
     -moz-transform: scale(0.6);
 }
 
-.gl-review-load a{
-
-	font-size:1.5em;
+.gl-review-load a {
+    font-size: 1.5em;
 }
 
-
-.loading-hide{
-    display:none;
+.loading-hide {
+    display: none;
 }
 
-.gl-side-menu-close-button{
-    top:90px;
+.gl-side-menu-close-button {
+    top: 90px;
 }
 
 @media only screen and (max-width: 778px) {
-.gl-hero-img-wrapper{
-padding-top:100px;
+    .gl-hero-img-wrapper {
+        padding-top: 100px;
+    }
+    .gl-hero-img-wrapper .container .gl-elements-content-wrapper h2.gl-hero-text-heading {
+        font-size: 20px;
+    }
+    .gl-hero-img-wrapper .container .gl-elements-content-wrapper .gl-directory-searchbar form fieldset {
+        border-radius: 0px;
+        border: 1px solid #ccc;
+    }
 }
 
-.gl-hero-img-wrapper .container .gl-elements-content-wrapper h2.gl-hero-text-heading{
-    font-size:20px;
+.nanhi-kali {
+    color: #4cb4f5;
+    cursor: pointer;
 }
 
-.gl-hero-img-wrapper .container .gl-elements-content-wrapper .gl-directory-searchbar form fieldset{
-    border-radius: 0px;
-    border: 1px solid #ccc;
+.gl-ranges {
+    font-size: 14px;
+    margin-left: 2px;
 }
 
-
-}
-
-
-.nanhi-kali{
-   color:#4cb4f5;
-   cursor: pointer;
-
+.gl-project-description {
+    background-color: #fff;
+    margin: 5px;
+    padding: 10px;
 }

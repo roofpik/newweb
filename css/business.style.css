@@ -20398,7 +20398,7 @@ a.gl-tag-btn:last-child {
   *display: inline;
   *zoom: 1;
   float: left;
-  padding-left: 25px;
+  /*padding-left: 25px;*/
 }
 .gl-featured-items .gl-feat-item-metas {
   display: block;
@@ -26573,6 +26573,13 @@ body.gl-blog-page .gl-page-content-section .gl-blog-details-wrapper {
   color: #fc4a52;
 }
 .gl-blog-sec-title {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  color: #454545;
+  margin: 0 0 35px;
+}
+.gl-standout-features-title {
   font-family: 'PT Sans', sans-serif;
   font-size: 21px;
   font-weight: 400;

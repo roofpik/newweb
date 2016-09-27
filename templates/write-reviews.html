@@ -10,6 +10,25 @@
 .rating span {
     font-size: 30px;
 }
+.searchList {
+    max-height: 200px;
+    overflow: scroll;
+    border: 1px solid #f2f2f2;
+    margin: -16px auto 8px auto;
+    width: 100%;
+    box-shadow: 5px 6px 10px 0 rgba(0,0,0,0.2);
+}
+.review-search-list {
+    padding: 0px;
+}
+.review-search-item {
+    border-bottom:1px solid #e6e6e6;
+    background-color:#f2f2f2;
+}
+
+md-radio-group {
+    float:right;
+}
 </style>
 <md-content>
     <div ng-include="'navigation/auth.html'"></div>
@@ -27,33 +46,42 @@
                                 </div>
                             </div>
                         </div>
-                        <form>
-                            <div class="md-padding" flex>
-                                <!--    <md-input-container class="md-block">
-                                    <md-autocomplete md-selected-item="ctrl.selectedItem" md-search-text-change="ctrl.searchTextChange(ctrl.searchText)" md-search-text="ctrl.searchText" md-selected-item-change="ctrl.selectedItemChange(item)" md-items="item in ctrl.querySearch(ctrl.searchText)" md-item-text="item.name" md-min-length="0" placeholder="What is your favorite US state?">
-                                        <md-item-template>
-                                            {{item.name}}
-                                            
-                                </md-input-container> -->
-                                <md-autocomplete flex md-selected-item="ctrl.selectedItem" md-search-text="ctrl.searchText" md-items="item in ctrl.data" md-item-text="item1" md-delay="300" md-floating-label="Search by project/locality name" md-search-text-change="ctrl.searchTextChange(ctrl.searchText)">
-                                    <md-item-template>
-                                        <span md-highlight-text="ctrl.searchText">{{item}}</span>
-                                    </md-item-template>
-                                </md-autocomplete>
-                            </div>
+                        <form name="review-form">
                             <div layout="row" class="md-padding">
-                                <label>Are you a</label>
+                                <div flex>
+                                    <md-input-container class="md-block">
+                                        <input ng-model="selectedItem" placeholder="Select Project/Locality" ng-change="nameEntered()" required>
+                                    </md-input-container>
+                                    <div class="searchList" ng-show="showList">
+                                        <md-list class="review-search-list">
+                                            <md-list-item ng-repeat="item in projectLocality|filter:selectedItem" class="review-search-item" ng-click="selectProjectLocality(item)">
+                                                {{item.name}}
+                                            </md-list-item>
+                                        </md-list>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="showRequired">
+                                <div layout="row">
+                                    <div flex="75"></div>
+                                    <div flex="25">
+                                        (*Required)
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div layout="row" class="md-padding">
+                                Are you a *
                                 <span flex></span>
-                                <md-radio-group ng-model="review.who" layout="row" class="md-warn">
-                                    <md-radio-button value="owner"> Owner </md-radio-button>
-                                    <md-radio-button value="tenant"> Tenant </md-radio-button>
-                                    <md-radio-button value="visitor"> Visitor </md-radio-button>
+                                <md-radio-group ng-model="review.userType" layout="row" class="md-warn" required>
+                                    <md-radio-button value="Owner"> Owner </md-radio-button>
+                                    <md-radio-button value="Tenant"> Tenant </md-radio-button>
+                                    <md-radio-button value="Visitor"> Visitor </md-radio-button>
                                 </md-radio-group>
                             </div>
                             <md-divider></md-divider>
                             <div layout="row" class="md-padding rating">
                                 <div flex="30">
-                                    Overall rating
+                                    Overall rating *
                                 </div>
                                 <span flex></span>
                                 <div flex="20">
@@ -61,6 +89,21 @@
                                 </div>
                             </div>
                             <md-divider></md-divider>
+                            <div layout="row" class="md-padding">
+                                <div flex>
+                                    <md-input-container class="md-block">
+                                        <input ng-model="review.reviewTitle" placeholder="Review Title" required>
+                                    </md-input-container>
+                                </div>
+                            </div>
+                            <div layout="row" >
+                                <div flex class="md-padding">
+                                    <md-input-container class="md-block">
+                                        <textarea ng-model="review.reviewText" md-maxlength="500" rows="5" placeholder="Write your review" required></textarea>
+                                    </md-input-container>
+                                </div>
+                            </div>
+                            
                             <div layout="row" class="md-padding rating">
                                 <div flex="30">
                                     Security
@@ -122,49 +165,41 @@
                             </div>
                             <md-divider></md-divider>
                             <div layout="row" class="md-padding">
-                                <div flex>
+                                <div flex="75">
                                     Is the project conveniently located ?
                                 </div>
-                                <md-radio-group ng-model="review.location" layout="row" class="md-warn">
-                                    <md-radio-button value="yes"> Yes</md-radio-button>
-                                    <md-radio-button value="no"> No </md-radio-button>
-                                </md-radio-group>
+                                <div flex="25">
+                                    <md-radio-group ng-model="review.projectConvenientlyLocated" layout="row" class="md-warn">
+                                        <md-radio-button value="Yes"> Yes</md-radio-button>
+                                        <md-radio-button value="No"> No </md-radio-button>
+                                    </md-radio-group>
+                                </div>
                             </div>
                             <div layout="row" class="md-padding">
-                                <div flex>
+                                <div flex="75">
                                     Do you have easy access to public transport ?
                                 </div>
-                                <md-radio-group ng-model="review.transport" layout="row" class="md-warn">
-                                    <md-radio-button value="yes"> Yes </md-radio-button>
-                                    <md-radio-button value="no"> No </md-radio-button>
-                                </md-radio-group>
+                                <div flex="25">
+                                    <md-radio-group ng-model="review.easyAccessToPublicTransport" layout="row" class="md-warn">
+                                        <md-radio-button value="Yes"> Yes </md-radio-button>
+                                        <md-radio-button value="No"> No </md-radio-button>
+                                    </md-radio-group>
+                                </div>
                             </div>
                             <div layout="row" class="md-padding">
-                                <div flex>
+                                <div flex="75">
                                     Do you think a property reviewing platform like this would be useful for you in the future ?
                                 </div>
-                                <md-radio-group ng-model="review.useful" layout="row" class="md-warn">
-                                    <md-radio-button value="yes"> Yes </md-radio-button>
-                                    <md-radio-button value="no"> No </md-radio-button>
-                                </md-radio-group>
-                            </div>
-                            <div layout="row" class="md-padding">
-                                <div flex>
-                                    <md-input-container class="md-block">
-                                        <input ng-model="review.title" placeholder="Review Title">
-                                    </md-input-container>
-                                </div>
-                            </div>
-                            <div layout="row" class="md-padding">
-                                <div flex class="md-padding">
-                                    <md-input-container class="md-block">
-                                        <textarea ng-model="review.reviews" md-maxlength="500" rows="5" placeholder="Write your review"></textarea>
-                                    </md-input-container>
+                                <div flex="25">
+                                    <md-radio-group ng-model="review.useful" layout="row" class="md-warn">
+                                        <md-radio-button value="Yes"> Yes </md-radio-button>
+                                        <md-radio-button value="No"> No </md-radio-button>
+                                    </md-radio-group>
                                 </div>
                             </div>
                         </form>
                         <div layout="row" layout-align="end center">
-                            <md-button class="md-raised md-warn" ng-click="submitReview(review)">Submit</md-button>
+                            <md-button class="md-raised md-warn" ng-click="submitReview(review)" ng-disabled="review-form.$invalid">Submit</md-button>
                         </div>
                     </div>
                     <div flex="25" class="md-padding review-tips">
