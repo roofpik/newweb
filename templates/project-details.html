@@ -2,18 +2,52 @@
     <div ng-include="'navigation/auth.html'"></div>
     <div ng-include="'navigation/header.html'"></div>
     <!-- PAGE CONTETNT -->
+
+    <!-- FEATURED IMAGE -->
+    <section class="gl-featured-image-wrapper">
+        <picture>
+            <source media="(min-width: 768px)" srcset=images/placeholder-featured-post.jpg>
+            <img alt="Featured Image" srcset=images/placeholder-featured-post.jpg>
+        </picture>
+    </section>
+    <!-- FEATURED IMAGE END -->
     <section class="gl-page-content-section">
         <div class="container" ng-show="dataLoaded">
             <div class="row">
                 <div class="gl-blog-details-wrapper">
                     <div class="gl-blog-heading-metas" id="reviewHeading">
                         <h1 class="gl-blog-titles">{{projectName}}</h1>
-                        <!-- <ul>
-                        <li class="gl-blog-post-date">March 21, 2016</li>
-                        <li class="gl-author"><a href="#">admin</a></li>
-                        <li class="gl-comments"><a href="#">3 Comments</a></li>
-                      </ul> -->
+                        <p class="gl-comments-date">{{project.projectDetails.address.displayLocation}}</p>
+                        <p class="gl-comments-date">{{project.projectStatus}}</p>
+                        <p class="gl-comments-date">{{bhkAvailable}}</p>
                     </div>
+                    <div layout="row" class="gl-search-meta-wrapper" ng-show="project.standoutFeatures">
+                        <div class="gl-search-tags">
+                          <a class="gl-tag-btn" ng-repeat="tag in features">{{tag}}</a>
+                        </div>
+                    </div>
+                    <div layout="row">
+                        <!-- <div flex>
+                            <h3 class="gl-standout-features-title">Area</h3>
+                        </div> -->
+                        <div flex class="gl-project-description">
+                            <p><span class="roofpikGreen" ng-show="project.area">Area</span>  <span class="gl-ranges">{{project.area.min}} Sq.Ft. - {{project.area.max}} Sq.Ft.</span></p>
+                            <p><span class="roofpikGreen" ng-show="project.price">Rent</span>  <span class="gl-ranges">&#8377; {{project.price.rent.min}} - &#8377; {{project.price.rent.max}}</span></p>
+                            <p><span class="roofpikGreen" ng-show="project.price">Buy</span>  <span class="gl-ranges">&#8377; {{project.price.buy.min}} - &#8377; {{project.price.buy.max}}</span></p>
+                            </br>
+                            <p class="gl-comments-date">{{project.projectDetails.address.addressLine1}} <i class="ion-ios-location-outline"></i></p>
+                            <p class="gl-comments-date">{{project.projectDetails.address.addressLine2}}</p>
+                        </div>
+                        <div flex class="gl-project-description" ng-show="project.pricingLinks">
+                            <div layout-align="center">
+                            <md-radio-group ng-model="review.userType" layout="row" class="md-warn" required>
+                                <md-radio-button value="buy"> Buy </md-radio-button>
+                                <md-radio-button value="rent"> Rent </md-radio-button>
+                            </md-radio-group>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="gl-post-comments-wrapper">
                         <h3 class="gl-blog-sec-title">REVIEWS</h3>
                         <!-- Reviews -->
@@ -127,7 +161,7 @@
                             </div>
                             <div flex="33">
                                 <div class="rating-summary">
-                                    <h4 class="overall-ratings-headings">OVERALL RATING({{allRatings.overallRating}})</h4>
+                                    <h4 class="overall-ratings-headings">OVERALL RATING ({{allRatings.overallRating}})</h4>
                                     <h3>
                                         <span ng-repeat="rate in [1,2,3,4,5] track by $index" >
                                             <i class="icon ion-ios-star" ng-class="($index<=(allRatings.overallRating-1))?'golden':'grey'"></i> 
@@ -138,7 +172,7 @@
                                 <div class="rating-summary">
                                     <h4 class="overall-ratings-headings">USER RATINGS</h4>
                                     <div layout="row">
-                                        <div flex>Excellent</div>
+                                        <div flex>Excellent <span class="roofpikGreen">({{allRatings.fiveStar}})</span></div>
                                         <div flex>
                                             <div class="progress-bar">
                                                 <span class="my-progress" id="excellentStar"></span>
@@ -146,7 +180,7 @@
                                         </div>
                                     </div>
                                     <div layout="row">
-                                        <div flex>Very Good</div>
+                                        <div flex>Very Good <span class="roofpikGreen">({{allRatings.fourStar}})</span></div>
                                         <div flex>
                                             <div class="progress-bar">
                                                 <span class="my-progress" id="veryGoodStar"></span>
@@ -154,7 +188,7 @@
                                         </div>
                                     </div>
                                     <div layout="row">
-                                        <div flex>Good</div>
+                                        <div flex>Good <span class="roofpikGreen">({{allRatings.threeStar}})</span></div>
                                         <div flex>
                                             <div class="progress-bar">
                                                 <span class="my-progress" id="goodStar"></span>
@@ -162,7 +196,7 @@
                                         </div>
                                     </div>
                                     <div layout="row">
-                                        <div flex>Average</div>
+                                        <div flex>Average <span class="roofpikGreen">({{allRatings.twoStar}})</span></div>
                                         <div flex>
                                             <div class="progress-bar">
                                                 <span class="my-progress" id="averageStar"></span>
@@ -170,7 +204,7 @@
                                         </div>
                                     </div>
                                     <div layout="row">
-                                        <div flex>Bad</div>
+                                        <div flex>Bad <span class="roofpikGreen">({{allRatings.oneStar}})</span></div>
                                         <div flex>
                                             <div class="progress-bar">
                                                 <span class="my-progress" id="badStar"></span>
@@ -180,48 +214,48 @@
                                 </div>
                                 <div class="rating-summary">
                                     <h4 class="overall-ratings-headings">RATING SUMMARY</h4>
-                                    <p>
-                                        <span>Amenities({{allRatings.amenities}})</span>
+                                    <p ng-show="allRatings.amenities">
+                                        <span>Amenities <span class="roofpikGreen">({{allRatings.amenities}})</span></span>
                                         <span class="overall-ratings">
                                             <span ng-repeat="rate in [1,2,3,4,5] track by $index" >
                                                 <i class="icon ion-ios-star" ng-class="($index<=(allRatings.amenities-1))?'golden':'grey'"></i> 
                                             </span>
                                         </span>
                                     </p>
-                                    <p>
-                                        <span>Security({{allRatings.security}})</span>
+                                    <p ng-show="allRatings.security">
+                                        <span>Security <span class="roofpikGreen">({{allRatings.security}})</span></span>
                                         <span class="overall-ratings">
                                             <span ng-repeat="rate in [1,2,3,4,5] track by $index" >
                                                 <i class="icon ion-ios-star" ng-class="($index<=(allRatings.security-1))?'golden':'grey'"></i> 
                                             </span>
                                         </span>
                                     </p>
-                                    <p>
-                                        <span>Open And Green Areas({{allRatings.openAndGreenAreas}})</span>
+                                    <p ng-show="allRatings.openAndGreenAreas">
+                                        <span>Open And Green Areas <span class="roofpikGreen">({{allRatings.openAndGreenAreas}})</span></span>
                                         <span class="overall-ratings">
                                             <span ng-repeat="rate in [1,2,3,4,5] track by $index" >
                                                 <i class="icon ion-ios-star" ng-class="($index<=(allRatings.openAndGreenAreas-1))?'golden':'grey'"></i> 
                                             </span>
                                         </span>
                                     </p>
-                                    <p>
-                                        <span>Electricity And Water Supply({{allRatings.electricityAndWaterSupply}})</span>
+                                    <p ng-show="allRatings.electricityAndWaterSupply">
+                                        <span>Electricity And Water Supply <span class="roofpikGreen">({{allRatings.electricityAndWaterSupply}})</span></span>
                                         <span class="overall-ratings">
                                             <span ng-repeat="rate in [1,2,3,4,5] track by $index" >
                                             <i class="icon ion-ios-star" ng-class="($index<=(allRatings.electricityAndWaterSupply-1))?'golden':'grey'"></i>
                                             </span>
                                         </span>
                                     </p>
-                                    <p>
-                                        <span>Convenience Of House Maids({{allRatings.convenienceOfHouseMaids}})</span>
+                                    <p ng-show="allRatings.convenienceOfHouseMaids">
+                                        <span>Convenience Of House Maids <span class="roofpikGreen">({{allRatings.convenienceOfHouseMaids}})</span></span>
                                         <span class="overall-ratings">
                                             <span ng-repeat="rate in [1,2,3,4,5] track by $index" >
                                                 <i class="icon ion-ios-star" ng-class="($index<=(allRatings.convenienceOfHouseMaids-1))?'golden':'grey'"></i>
                                             </span>
                                         </span>
                                     </p>
-                                    <p>
-                                        <span>Convenience Of Parking({{allRatings.convenienceOfParking}})</span>
+                                    <p ng-show="allRatings.convenienceOfParking">
+                                        <span>Convenience Of Parking <span class="roofpikGreen">({{allRatings.convenienceOfParking}})</span></span>
                                         <span class="overall-ratings">
                                             <span ng-repeat="rate in [1,2,3,4,5] track by $index" >
                                                 <i class="icon ion-ios-star" ng-class="($index<=(allRatings.convenienceOfParking-1))?'golden':'grey'"></i>

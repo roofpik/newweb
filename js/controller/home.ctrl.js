@@ -9,9 +9,18 @@ app.controller('homeCtrl', function($scope, $state, $timeout, $rootScope){
 	}
 	$scope.topRated = {};
 
-	db.ref('topRated').limitToFirst(3).once('value', function(snapshot){
+	db.ref('topRated').once('value', function(snapshot){
 		console.log(snapshot.val());
+
 		$timeout(function(){
+			$scope.projectNum = Object.keys(snapshot.val()).length;
+			var count = 0;
+			angular.forEach($scope.topRated, function(value, key){
+				if(count<3){
+					$scope.topRated[key] = value;
+				}
+				count++;
+			})
 			$scope.topRated = snapshot.val();
 		}, 1000);
 	})
