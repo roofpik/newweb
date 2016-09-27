@@ -39,11 +39,39 @@
                             <p class="gl-comments-date">{{project.projectDetails.address.addressLine2}}</p>
                         </div>
                         <div flex class="gl-project-description" ng-show="project.pricingLinks">
-                            <div layout-align="center">
-                            <md-radio-group ng-model="review.userType" layout="row" class="md-warn" required>
-                                <md-radio-button value="buy"> Buy </md-radio-button>
-                                <md-radio-button value="rent"> Rent </md-radio-button>
-                            </md-radio-group>
+                            <div layout="row" class="gl-buy-rent-links">
+                                <div class="gl-buy" flex>
+                                    <span ng-click="selectBuyRent('buy')">Buy  <i class="ion-checkmark-round" ng-show="buySelected"></i></span>
+                                </div>
+                                <div class="gl-rent" flex>
+                                    <span ng-click="selectBuyRent('rent')">Rent  <i class="ion-checkmark-round" ng-show="rentSelected"></i></span>
+                                </div>
+                            </div>
+                            <div layout="row" layout-align="center">
+                                <div class="projectBuyLinks" ng-show="buySelected">
+                                    <div class="cf">
+                                        <a href="{{buyLinks.cf}}">
+                                        <img src="images/cf.jpg" style="margin: 26px;height: 80px;width: 150px;border: 1px solid #ccc;border-radius: 5px;">
+                                        </a>
+                                    </div>
+                                    <div class="mb">
+                                        <img src="images/mb.png" style="margin: 26px;height: 80px;width: 150px;border: 1px solid #ccc;border-radius: 5px;">
+                                    </div>
+                                    <div class="acres">
+                                        <img src="images/acres.png" style="margin: 26px;height: 80px;width: 150px;border: 1px solid #ccc;border-radius: 5px;">
+                                    </div>
+                                </div>
+                                <div class="projectRentLinks" ng-show="rentSelected">
+                                    <div class="cf">
+                                        <img src="images/cf.jpg" style="margin: 26px;height: 80px;width: 150px;border: 1px solid #ccc;border-radius: 5px;">
+                                    </div>
+                                    <div class="mb">
+                                        <img src="images/mb.png" style="margin: 26px;height: 80px;width: 150px;border: 1px solid #ccc;border-radius: 5px;">
+                                    </div>
+                                    <div class="acres">
+                                        <img src="images/acres.png" style="margin: 26px;height: 80px;width: 150px;border: 1px solid #ccc;border-radius: 5px;">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

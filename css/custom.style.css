@@ -165,3 +165,23 @@ md-input-container .md-errors-spacer {
     margin: 5px;
     padding:10px;
 }
+.gl-buy-rent-links {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.gl-buy span{
+    padding: 10px 20px;
+    background-color: #ffcccc;
+    /* border: 1px solid #ff9999; */
+    border-radius: 3px;
+    color: #ff6666;
+}
+
+.gl-rent span{
+    padding: 10px 20px;
+    background-color: #d6f5d6;
+    /* border: 1px solid #ff9999; */
+    border-radius: 3px;
+    color: #00e6ac;
+}

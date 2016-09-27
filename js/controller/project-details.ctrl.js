@@ -7,6 +7,9 @@ app.controller('projectDetailsCtrl', function($scope, $timeout, $stateParams){
 	$scope.features = [];
 	$scope.bhkAvailable = '';
 	$scope.dataLoaded = false;
+	$scope.buyLinks = {};
+	$scope.rentLinks = {};
+
 	db.ref('projects/-KPmH9oIem1N1_s4qpCv/residential/'+$scope.projectId).once('value', function(snapshot){
 		$timeout(function(){
 			$scope.project = snapshot.val();
@@ -14,10 +17,23 @@ app.controller('projectDetailsCtrl', function($scope, $timeout, $stateParams){
 			angular.forEach($scope.project.standoutFeatures, function(value, key){
 				$scope.features.push(key);
 			})
+			if($scope.project.pricingLinks['99Acres']){
+				$scope.buyLinks.acres = $scope.project.pricingLinks['99Acres'].buy;
+				$scope.rentLinks.acres = $scope.project.pricingLinks['99Acres'].rent;
+			}
+			if($scope.project.pricingLinks.commonFloor){
+				$scope.buyLinks.mb = $scope.project.pricingLinks.commonFloor.buy;
+				$scope.rentLinks.mb = $scope.project.pricingLinks.commonFloor.rent;
+			}
+			if($scope.project.pricingLinks.magicBricks){
+				$scope.buyLinks.cf = $scope.project.pricingLinks.magicBricks.buy;
+				$scope.rentLinks.cf = $scope.project.pricingLinks.magicBricks.rent;
+			}
+			console.log($scope.buyLinks);
+			
 			console.log($scope.project.bhk);
 			angular.forEach($scope.project.bhk, function(value, key){
 				if(value){
-
 					$scope.bhkAvailable = $scope.bhkAvailable+ key+', ';
 				}
 			})
@@ -60,6 +76,20 @@ app.controller('projectDetailsCtrl', function($scope, $timeout, $stateParams){
   			review.moreOrLess = 'Show Less';
   		} else {
   			review.moreOrLess = "Show More";
+  		}
+  	}
+
+  	$scope.buySelected = true;
+  	$scope.rentSelected = false;
+
+  	$scope.selectBuyRent = function(value){
+  		console.log(value);
+  		if(value == 'buy'){
+  			$scope.buySelected = true;
+  			$scope.rentSelected = false;
+  		} else {
+   			$scope.buySelected = false;
+  			$scope.rentSelected = true; 			
   		}
   	}
 })
