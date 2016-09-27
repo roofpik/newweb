@@ -21,18 +21,30 @@ app.controller('authCtrl', function($scope, authentication, $q, $rootScope) {
         $('.forgetpassword').show();
     };
 
-    function getReferralCode() {
+   function getReferralCode(fname, lname) {
         var refchar;
         var refnum;
-        $scope.user.fname = replaceSpaces($scope.user.fname);
-        var fnameLength = $scope.user.fname.length;
+        // console.log(fname);
+        fname = replaceSpaces(fname);
+        var fnameLength = fname.length;
+        // console.log(fname);
         if (fnameLength > 4) {
-            refchar = $scope.user.fname.substring(0, 4);
+            refchar = fname.substring(0, 4);
         } else {
-            refchar = $scope.user.fname.substring(0, fnameLength) + $scope.user.lname.substring(0, (4 - fnameLength));
+            refchar = fname.substring(0, fnameLength) + lname.substring(0, (4 - fnameLength));
         }
         refnum = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
+        // console.log(refchar + refnum);
         return refchar + refnum;
+    }
+
+
+       function replaceSpaces(str) {
+        var mystring = str;
+        var newchar = ' '
+        mystring = mystring.split('.').join(newchar);
+        mystring = mystring.replace(/ /g, '')
+        return mystring;
     }
 
 
@@ -41,11 +53,17 @@ app.controller('authCtrl', function($scope, authentication, $q, $rootScope) {
         var postData = {
             fname: $scope.user.firstname,
             lname: $scope.user.lastname,
-            email: $scope.user.email,
-            mobile: $scope.user.mobile,
-            createdTime: new Date().getTime(),
-            mobileFlag: false,
-            emailFlag: false
+            email:{
+                emailAddress: $scope.user.email,
+                emailVerified: false
+            },
+            
+            mobile: {
+              mobileNum:  $scope.user.mobile,
+              mobileVerified: false
+            },
+            createdDate: new Date().getTime(),
+            referral: null
         };
 
         var q = $q.defer();
@@ -58,6 +76,7 @@ app.controller('authCtrl', function($scope, authentication, $q, $rootScope) {
         t.then(function(response) {
 
             if (!response.userExists) {
+                postData.referral = getReferralCode(postData.fname, postData.lname);
                 q = $q.defer();
                 var r = authentication.signup(postData, emailDuplicate, $scope.user.password, q);
                 r.then(function(response1) {
@@ -118,9 +137,9 @@ app.service('authentication', function() {
 
     return {
         checkifuserexists: function(email, mobile, q) {
-            db.ref('temp/email/' + email).once('value', function(snapshotEmail) {
+            db.ref('userRegistration/email/' + email).once('value', function(snapshotEmail) {
 
-                db.ref('temp/mobile/' + mobile).once('value', function(snapshotMobile) {
+                db.ref('userRegistration/mobile/' + mobile).once('value', function(snapshotMobile) {
 
                     if ((snapshotMobile.val() != null) || (snapshotEmail.val() != null)) {
                         q.reject({
@@ -140,12 +159,14 @@ app.service('authentication', function() {
             // Write the new post's data simultaneously in the posts list and the user's post list.
             var updates = {};
             var registered;
+            console.log(userdata);
 
 
-            firebase.auth().createUserWithEmailAndPassword(userdata.email, password).then(function(user) {
+            firebase.auth().createUserWithEmailAndPassword(userdata.email.emailAddress, password).then(function(user) {
                 updates['/users/' + user.uid] = userdata;
-                updates['/tempUsers/email/' + emaild] = user.uid;
-                updates['/tempUsers/mobile/' + userdata.mobile] = user.uid;
+                updates['/userRegistration/emails/' + emaild] = user.uid;
+                updates['/userRegistration/mobile/' + userdata.mobile.mobileNum] = user.uid;
+                updates['/userRegistration/referrals/' + userdata.referral] = user.uid;
                 var user = firebase.auth().currentUser;
                 user.updateProfile({
                     displayName: userdata.fname + ' ' + userdata.lname

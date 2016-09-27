@@ -15,7 +15,7 @@ app.controller('searchCtrl', function($scope, $http, $timeout) {
             $timeout.cancel(t);
             $http({
                     url: 'http://139.162.3.205/api/searchProject',
-                    method: "POST",
+                    method: "GET",
                     params: {
                         query: $scope.search.query
                     }

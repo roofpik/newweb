@@ -1,21 +1,22 @@
-
 <md-content>
-  
-    <div ng-include="'navigation/auth.html'" class="start"></div>
-    <div ng-include="'navigation/header.html'" class="start"></div>
+    <div ng-include="'navigation/loading.html'"></div>
+    <div ng-include="'navigation/auth.html'" class="loading-hide"></div>
+    <div ng-include="'navigation/header.html'" class="loading-hide"></div>
     <!-- HERO IMAGE -->
-    <section class="gl-hero-img-wrapper start">
+    <section class="gl-hero-img-wrapper loading-hide">
         <div ng-include="'templates/modal/search.html'"></div>
         <div class="container">
             <div class="row">
                 <div class="gl-elements-content-wrapper">
                     <div id="typed-strings">
-                        <p>Let’s <span class="gl-color-text">discover</span> great places to live</p>
-                        <p>Find Top Rated <span class="gl-color-text">Projects</span> In Gurgaon</p>
-                        <p>Find The <span class="gl-color-text">Best Places</span> In Gurgaon</p>
+                         
+
+                        <p>Write a<span class="gl-color-text"> review</span> about your project or locality </p>
+                        <p>Find Top Rated <span class="gl-color-text">projects</span> by users</p>
+                        <p>Search best<span class="gl-color-text"> projects</span> in Gurgaon</p>
                     </div>
                     <h2 id="gl-slogan" class="gl-hero-text-heading"></h2>
-                    <p class="gl-hero-text-paragraph">World's first propery reviewing platform</p>
+                    <p class="gl-hero-text-paragraph">India's largest property reviewing platform</p>
                     <!-- DIRECTORY FORM -->
                     <div class="gl-directory-searchbar gl-bz-directory-searchbar" onclick="openSeacrh()">
                         <form action="#" id="gl-bz-directory-form">
@@ -26,20 +27,18 @@
                         </form>
                     </div>
                     <!-- END -->
-                    <div class="gl-scroll-down-wrapper">
-                        <a href="#gl-next-section" class="gl-scroll-down"><i class="ion-chevron-down"></i></a>
-                    </div>
+                 
                 </div>
             </div>
         </div>
     </section>
     <!-- HERO IMAGE END -->
     <!-- ICON WITH TEXT/SERVICES -->
-    <section class="gl-service-section-wrapper gl-section-wrapper start" id="gl-next-section">
+    <section class="gl-service-section-wrapper gl-section-wrapper loading-hide" id="gl-next-section">
         <div class="container">
             <div class="row">
                 <div class="gl-section-headings">
-                    <h1>How it works?</h1>
+                    <h1>What we do?</h1>
                     <p>Verified reviews and ratings for hundreds of projects help you find the best project for rent or purchase</p>
                 </div>
                 <div class="gl-service-we-offer">
@@ -76,12 +75,12 @@
     </section>
     <!-- ICON WITH TEXT/SERVICES END -->
     <!-- WRITE A REVIEW -->
-    <section class="gl-how-it-works-section gl-custom-section gl-section-wrapper start">
+    <section class="gl-how-it-works-section gl-custom-section gl-section-wrapper loading-hide white-background">
         <div class="container">
             <div class="row">
                 <div class="gl-custom-sec-content">
-                    <h1>1000+ Reviews</h1>
-                    <p>Write a review and help someone find a home. For every review we help a girl child with one day of education. </p>
+                    <h1>2000+ Reviews</h1>
+                    <p>Write a review and help someone find a home. In association with <span class="nanhi-kali"> Nanhi Kali </span>, for every review written we sponsor one day of education for a girl child. </p>
                     <a ng-click="gotoWriteReviews()" class="gl-btn gl-more-btn">Write Review Now</a>
                 </div>
             </div>
@@ -89,14 +88,14 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="gl-custom-image-wrapper">
-                    <img src="images/review-home.png" alt="Custom Image" class="gl-lazy review-home">
+                    <img src="images/review-home.jpg" alt="Custom Image" class="gl-lazy review-home">
                 </div>
             </div>
         </div>
     </section>
     <!-- WRITE A REVIEW END -->
     <!-- WHAT YOU NEED SECTION -->
-    <section class="gl-what-you-need-section gl-section-wrapper start">
+    <section class="gl-what-you-need-section gl-section-wrapper loading-hide">
         <div class="container">
             <div class="row">
                 <!-- SECTION HEADINGS -->
@@ -167,7 +166,7 @@
     </section>
     <!-- WHAT YOU NEED SECTION END -->
     <!-- FEATURED LISTINGS -->
-    <section class="gl-feat-listing-section gl-section-wrapper start">
+    <section class="gl-feat-listing-section gl-section-wrapper loading-hide">
         <div class="container">
             <div class="row">
                 <!-- SECTION HEADINGS -->
@@ -213,7 +212,7 @@
     </section>
     <!-- FEATURED LISTINGS END -->
     <!-- HOW IT WORKS -->
-    <section class="gl-how-it-works-section gl-custom-section gl-section-wrapper start">
+<!--     <section class="gl-how-it-works-section gl-custom-section gl-section-wrapper loading-hide">
         <div class="container">
             <div class="row">
                 <div class="gl-custom-sec-content">
@@ -230,14 +229,14 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- HOW IT WORKS END -->
     <!-- CTA -->
-    <section class="gl-cta-section start">
+<!--     <section class="gl-cta-section loading-hide">
         <div class="container">
             <div class="row">
                 <div class="gl-cta-content-wrapper">
-                    <p> Get best glimpse app for mobile and other small <span class="gl-bold-font">devices</span> from playstore </p>
+                    <p> We are coming soon for android and ios <span class="gl-bold-font">devices</span> </p>
                     <ul>
                         <li>
                             <a href="#" class="gl-google-play-btn"></a>
@@ -249,7 +248,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- CTA END -->
-    <div ng-include="'navigation/footer.html'" class="start"></div>
+    <div ng-include="'navigation/footer.html'" class="loading-hide"></div>
 </md-content>

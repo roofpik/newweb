@@ -25,7 +25,7 @@
     jQuery;
     ! function(t) {
         t(window).load(function() {
-            t("#gl-circle-loader-wrapper").fadeOut(500)
+//            t("#gl-circle-loader-wrapper").fadeOut(500)
         })
     }(jQuery),
     function(t) {
