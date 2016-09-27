@@ -36,8 +36,8 @@ md-radio-group {
     <section class="gl-elements-shortcode-section">
         <div class="container">
             <div class="row">
-                <div layout="row" class="">
-                    <div flex="75" class="md-padding review-form" id="outer-box">
+                <div layout="row" class="" layout-xs="column" >
+                    <div flex="75" flex-xs="100" class="md-padding review-form" id="outer-box">
                         <div id="gl-review-loader-wrapper" ng-hide="loginStatus">
                             <div id="gl-review-loader-center">
                                 <div class="gl-review-load">
@@ -69,7 +69,7 @@ md-radio-group {
                                     </div>
                                 </div>
                             </div> -->
-                            <div layout="row" class="md-padding">
+                            <div layout="row" class="md-padding" layout-sm="column">
                                 Are you a *
                                 <span flex></span>
                                 <md-radio-group ng-model="review.userType" layout="row" class="md-warn" required>
@@ -79,12 +79,11 @@ md-radio-group {
                                 </md-radio-group>
                             </div>
                             <md-divider></md-divider>
-                            <div layout="row" class="md-padding rating">
-                                <div flex="30">
+                            <div layout="row" class="md-padding rating" layout-sm="column">
+                                <div flex>
                                     Overall rating *
                                 </div>
-                                <span flex></span>
-                                <div flex="20">
+                                <div layout="row" flex layout-align="end center">
                                     <ionic-ratings ratingsobj='ratingsObject' index='1'></ionic-ratings>
                                 </div>
                             </div>
@@ -104,71 +103,65 @@ md-radio-group {
                                 </div>
                             </div>
                             
-                            <div layout="row" class="md-padding rating">
-                                <div flex="30">
+                            <div layout="row" class="md-padding rating" layout-sm="column">
+                                <div flex>
                                     Security
                                 </div>
-                                <span flex></span>
-                                <div flex="20">
+                                <div layout="row" flex layout-align="end center">
                                     <ionic-ratings ratingsobj='ratingsObject' index='2'></ionic-ratings>
                                 </div>
                             </div>
                             <md-divider></md-divider>
-                            <div layout="row" class="md-padding rating">
-                                <div flex="30">
+                            <div layout="row" class="md-padding rating" layout-sm="column">
+                                <div flex>
                                     Amenities
                                 </div>
-                                <span flex></span>
-                                <div flex="20">
+                                <div layout="row" flex layout-align="end center">
                                     <ionic-ratings ratingsobj='ratingsObject' index='3'></ionic-ratings>
                                 </div>
                             </div>
                             <md-divider></md-divider>
-                            <div layout="row" class="md-padding rating">
-                                <div flex="30">
+                            <div layout="row" class="md-padding rating" layout-sm="column">
+                                <div flex>
                                     Open and green areas
                                 </div>
-                                <span flex></span>
-                                <div flex="20">
+                                <div layout="row" flex layout-align="end center">
                                     <ionic-ratings ratingsobj='ratingsObject' index='4'></ionic-ratings>
                                 </div>
                             </div>
                             <md-divider></md-divider>
-                            <div layout="row" class="md-padding rating">
-                                <div flex="30">
+                            <div layout="row" class="md-padding rating" layout-sm="column">
+                                <div flex>
                                     Electricity and water supply
                                 </div>
-                                <span flex></span>
-                                <div flex="20">
+                                <div layout="row" flex layout-align="end center">
                                     <ionic-ratings ratingsobj='ratingsObject' index='5'></ionic-ratings>
                                 </div>
                             </div>
                             <md-divider></md-divider>
-                            <div layout="row" class="md-padding rating">
-                                <div flex="30">
+                            <div layout="row" class="md-padding rating" layout-sm="column">
+                                <div flex>
                                     Convinience of housemaids
                                 </div>
-                                <span flex></span>
-                                <div flex="20">
+                                <div layout="row" flex layout-align="end center">
                                     <ionic-ratings ratingsobj='ratingsObject' index='6'></ionic-ratings>
                                 </div>
                             </div>
                             <md-divider></md-divider>
-                            <div layout="row" class="md-padding rating">
-                                <div flex="30">
+                            <div layout="row" class="md-padding rating" layout-sm="column">
+                                <div flex>
                                     Convinience of parking
                                 </div>
-                                <span flex></span>
-                                <div flex="20">
+                                <div layout="row" flex layout-align="end center">
                                     <ionic-ratings ratingsobj='ratingsObject' index='7'></ionic-ratings>
                                 </div>
                             </div>
                             <md-divider></md-divider>
                             <div layout="row" class="md-padding">
-                                <div flex="75">
+                                <div flex>
                                     Is the project conveniently located ?
                                 </div>
-                                <div flex="25">
+                                <div layout="row" flex layout-align="end center">
                                     <md-radio-group ng-model="review.projectConvenientlyLocated" layout="row" class="md-warn">
                                         <md-radio-button value="Yes"> Yes</md-radio-button>
                                         <md-radio-button value="No"> No </md-radio-button>
@@ -176,10 +169,10 @@ md-radio-group {
                                 </div>
                             </div>
                             <div layout="row" class="md-padding">
-                                <div flex="75">
+                                <div flex>
                                     Do you have easy access to public transport ?
                                 </div>
-                                <div flex="25">
+                                <div layout="row" flex layout-align="end center">
                                     <md-radio-group ng-model="review.easyAccessToPublicTransport" layout="row" class="md-warn">
                                         <md-radio-button value="Yes"> Yes </md-radio-button>
                                         <md-radio-button value="No"> No </md-radio-button>
@@ -187,10 +180,10 @@ md-radio-group {
                                 </div>
                             </div>
                             <div layout="row" class="md-padding">
-                                <div flex="75">
+                                <div flex>
                                     Do you think a property reviewing platform like this would be useful for you in the future ?
                                 </div>
-                                <div flex="25">
+                                <div layout="row" flex layout-align="end center">
                                     <md-radio-group ng-model="review.useful" layout="row" class="md-warn">
                                         <md-radio-button value="Yes"> Yes </md-radio-button>
                                         <md-radio-button value="No"> No </md-radio-button>
@@ -202,7 +195,7 @@ md-radio-group {
                             <md-button class="md-raised md-warn" ng-click="submitReview(review)" ng-disabled="review-form.$invalid">Submit</md-button>
                         </div>
                     </div>
-                    <div flex="25" class="md-padding review-tips">
+                    <div flex="25 grow" class="md-padding review-tips">
                         <h3 class="gl-sub-heading">Review Writing Tips</h3>
                         <p><b>Help your fellow apartment seeker get the most out of your review with the following tips:</b></p>
                         <p><b>Be Specific </b>- Don't just complain about something but rather describe specific thing you do or don't like. Explain what happened. We've found users lend more weight to a review with details.</p>
