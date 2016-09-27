@@ -52,6 +52,20 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
             controller: 'writeReviewsCtrl'
         });
 
+        $stateProvider
+        .state('email-verify', {
+            url: '/email-verify',
+            templateUrl: 'templates/email-verify.html',
+            controller: 'emailVerifyCtrl'
+        });
+
+        $stateProvider
+        .state('registration', {
+            url: '/registration',
+            templateUrl: 'templates/registration.html',
+            controller: 'registrationCtrl'
+        });
+
     $urlRouterProvider.otherwise('/home');
 
 }]);

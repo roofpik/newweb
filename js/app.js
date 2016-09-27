@@ -5,7 +5,7 @@ var db = firebase.database();
 app.run(function($rootScope, $timeout) {
     // localStorage.clear();
     $rootScope.loginStatus = false;
-
+    $rootScope.loading = true;
     firebase.auth().onAuthStateChanged(function(user) {
         // Sign-out successful.
         console.log(user);
