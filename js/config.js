@@ -4,8 +4,8 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
     $stateProvider
         .state('home', {
             url: '/home',
-            templateUrl: 'templates/home.html',
-            controller: 'homeCtrl'
+            templateUrl: 'templates/home.html'
+            // controller: 'homeCtrl'
         });
 
     $stateProvider
