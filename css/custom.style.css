@@ -178,10 +178,31 @@ md-input-container .md-errors-spacer {
         border-radius: 0px;
         border: 1px solid #ccc;
     }
+
+    .navbar-header .navbar-brand{
+            padding: 15px 0;
+    }
+        .navbar-header .navbar-brand .logo{
+            width: 44%;
+                display: inline;
+    }
+
+    .gl-header-main-menu .gl-extra-btns-wrapper{
+            right: 35px !important;
+    }
+
+    .gl-footer-logo, .gl-contact-info{
+        display:none;
+    }
+
+    #outer-box, .review-tips{
+        padding: 15px 0;
+        font-size: 12px;
+    }
 }
 
 .nanhi-kali {
-    color: #4cb4f5;
+    color: #059fff;
     cursor: pointer;
 }
 
@@ -215,3 +236,248 @@ md-input-container .md-errors-spacer {
     border-radius: 3px;
     color: #00e6ac;
 }
+
+
+
+
+
+.gl-overview-widget {
+  width: 100%;
+  border: 1px solid #ededed;
+}
+.gl-overview-widget .gl-overview-wrapper {
+  padding: 55px 70px 30px;
+  display: block;
+  background-color: #ffffff;
+}
+@media only screen and (max-width: 767px) {
+  .gl-overview-widget .gl-overview-wrapper {
+    padding: 55px 30px 30px;
+
+  }
+
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .gl-overview-widget .gl-overview-wrapper {
+    padding: 55px 25px 30px;
+  }
+
+
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .gl-overview-widget .gl-overview-wrapper {
+    padding: 55px 45px 30px;
+  }
+}
+.gl-overview-widget .gl-overview-wrapper h3 {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  color: #454545;
+  margin: 0 0 25px;
+  display: block;
+}
+.gl-overview-widget .gl-overview-wrapper ul {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 0px;
+}
+.gl-overview-widget .gl-overview-wrapper ul li {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: #bababa;
+  display: block;
+  padding: 15px 0;
+  border-top: 1px solid #f3f3f3;
+}
+.gl-overview-widget .gl-overview-wrapper ul li span {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: #888888;
+  float: right;
+}
+.gl-overview-widget .gl-overview-btns-wrapper {
+  height: 60px;
+  border-top: 1px solid #ededed;
+}
+.gl-overview-widget .gl-overview-btns-wrapper .gl-overview-price {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  float: left;
+  line-height: 60px;
+  padding-left: 70px;
+  padding-right: 15px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  color: #ff5400;
+  width: calc(100% - 120px);
+  border-right: 1px solid #ededed;
+}
+@media only screen and (max-width: 767px) {
+  .gl-overview-widget .gl-overview-btns-wrapper .gl-overview-price {
+    padding-left: 30px;
+  }
+
+  footer .gl-footer-top-wrapper .gl-footer-widget:last-child{
+    border:0px;
+  }
+
+  footer .gl-footer-top-wrapper{
+    padding:50px 0;
+  }
+   .gl-how-it-works-section{
+    padding: 100px 30px;
+   }
+
+   .gl-page-header-wrapper{
+    padding-top:100px;
+   }
+
+   .gl-blog-sec-title{
+        margin: 20px auto 10px;
+    text-align: center;
+   }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .gl-overview-widget .gl-overview-btns-wrapper .gl-overview-price {
+    padding-left: 25px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .gl-overview-widget .gl-overview-btns-wrapper .gl-overview-price {
+    padding-left: 45px;
+  }
+}
+.gl-overview-widget .gl-overview-btns-wrapper a.gl-overview-btns {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  float: left;
+  text-align: center;
+  border-right: 1px solid #ededed;
+}
+.gl-overview-widget .gl-overview-btns-wrapper a.gl-overview-btns i {
+  font-size: 21px;
+  color: #888888;
+}
+.gl-overview-widget .gl-overview-btns-wrapper a.gl-overview-btns .gl-compare-btn {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  margin-top: 15px;
+}
+.gl-overview-widget .gl-overview-btns-wrapper a.gl-overview-btns .gl-compare-btn .icon-bar {
+  display: block;
+  width: 6px;
+  height: 2px;
+  border-radius: 0px;
+  background-color: #bababa;
+}
+.gl-overview-widget .gl-overview-btns-wrapper a.gl-overview-btns .gl-compare-btn .icon-bar:nth-child(2) {
+  width: 10px;
+  margin-top: 2px;
+}
+.gl-overview-widget .gl-overview-btns-wrapper a.gl-overview-btns .gl-compare-btn .icon-bar:nth-child(3) {
+  width: 8px;
+  margin-top: 2px;
+}
+.gl-overview-widget .gl-overview-btns-wrapper a.gl-overview-btns:last-child {
+  border-right: 0px solid;
+}
+
+#gl-side-menu-btn{
+    cursor: pointer;
+}
+
+
+.gl-hero-img-wrapper {
+        /*background: url('http://static.ieplads.com/bmsjs/banners/99acres-hp/1920/1920-alind-gen-12-v2.jpg') center center no-repeat;*/
+        /*background: url('http://idealog.co.nz/media/images/blog/2013/11/cb-10-5087-001_phil_benton_builders.jpg') center center no-repeat;*/
+        background: url('../images/bg3.jpg') center center no-repeat;
+      /*background: linear-gradient(to bottom, #7493d8 0%, #2194d8 100%)*/
+  }
+
+  .gl-how-it-works-section{
+    background: url('../images/bg5.jpg') center center no-repeat;
+     background-size: cover;
+     padding: 100px 0;
+  }
+
+  .gl-how-it-works-section .container{
+    background: rgba(255, 255, 255, 0.56);
+    padding: 10px;
+}
+
+
+.gl-how-it-works-section .gl-custom-sec-content p{
+    color:#272727;
+}
+
+
+.gl-hero-img-wrapper .container .gl-elements-content-wrapper h2.gl-hero-text-heading{
+    color: #fff;
+    font-weight: 400;
+}
+
+.gl-hero-img-wrapper .container .gl-elements-content-wrapper p.gl-hero-text-paragraph{
+    color:#dadada;
+
+}
+
+.gl-hero-img-wrapper h2.gl-hero-text-heading .gl-color-text {
+  color: #fff;
+  font-weight: 700;
+}
+
+.gl-hero-img-wrapper .gl-directory-searchbar form button{
+        background: #5c5a69;
+    background: -moz-linear-gradient(top, #5c5a69 0%, #3f414a 100%);
+    background: -webkit-linear-gradient(top, #5c5a69 0%, #3f414a 100%);
+    background: linear-gradient(to bottom, #5c5a69 0%, #3f414a 100%);
+}
+
+.gl-hero-img-wrapper .container{
+    background: rgba(25, 25, 25, 0.51);
+}
+
+.rating-summary span{
+    font-size: 12px;
+}
+.gl-rating-widget .gl-overview-wrapper{
+padding:45px 15px 30px;
+}
+
+.gl-search-style-map-right .gl-page-content-section{
+    margin-top:40px;
+}
+
+
+.gl-hero-img-wrapper .no-background{
+    background: none;
+}
+
+.gl-page-header-wrapper:after{
+    opacity: 0.1;
+}
+.links li {
+    border: none !important;
+    padding: 5px 0 !important;
+}
+
+.links li span{
+    padding: 5px 10px ;
+    margin: 0px 10px 10px;
+    float: none !important;
+    font-size: 18px !important;
+}
+
+
+
+

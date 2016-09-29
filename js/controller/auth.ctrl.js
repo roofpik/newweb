@@ -63,7 +63,8 @@ app.controller('authCtrl', function($scope, authentication, $q, $rootScope) {
               mobileVerified: false
             },
             createdDate: new Date().getTime(),
-            referral: null
+            referral: null,
+            regType: 'website'
         };
 
         var q = $q.defer();

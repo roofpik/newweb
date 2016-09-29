@@ -85,13 +85,13 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
+  <!--       <div class="container-fluid">
             <div class="row">
                 <div class="gl-custom-image-wrapper">
                     <img src="images/review-home.jpg" alt="Custom Image" class="gl-lazy review-home">
                 </div>
             </div>
-        </div>
+        </div> -->
     </section>
     <!-- WRITE A REVIEW END -->
     <!-- WHAT YOU NEED SECTION -->
@@ -100,7 +100,7 @@
             <div class="row">
                 <!-- SECTION HEADINGS -->
                 <div class="gl-section-headings">
-                    <h1>What you need ?</h1>
+                    <h1>Find the best projects for!!</h1>
                     <p>Checkout and enjoy the biggest unlimited possiblities</p>
                 </div>
                 <!-- END -->
@@ -181,10 +181,10 @@
                     <div class="gl-featured-items col-md-4 col-sm-4 col-xs-12" data-wow-duration="1s" data-wow-delay=".3s" ng-repeat="project in topRated" ng-click="takeToProjectDetails(project)">
                         <div class="gl-feat-items-img-wrapper">
                             <picture>
-                                <source media="(min-width: 768px)" srcset={{project.imgUrl}}>
-                                <img alt="Featured Listing" srcset={{project.imgUrl}}>
+                                <source media="(min-width: 768px)" srcset="{{project.imgUrl}}">
+                                <img alt="Featured Listing" srcset="{{project.imgUrl}}">
                             </picture>
-                              <span class="gl-price-tag">#{{$index+1}} of {{projectNum}} projects in Gurgaon</span>
+                              <span class="gl-price-tag">#{{$index+1}} of {{projectNum}} projects in Gurgaon </span>
                         </div>
                         <div class="gl-feat-item-details">
                             <span class="gl-item-rating">

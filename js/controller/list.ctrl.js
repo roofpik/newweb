@@ -1,4 +1,4 @@
-app.controller('listCtrl', function($scope, $timeout, $stateParams, $state) {
+app.controller('listCtrl', function($scope, $timeout, $stateParams, $state, $rootScope) {
     console.log($stateParams.from);
     var center = {};
     var type = $stateParams.type || null;
@@ -45,6 +45,7 @@ app.controller('listCtrl', function($scope, $timeout, $stateParams, $state) {
                 }
                 $scope.numResults = Object.keys($scope.projects).length;
                 initializeProjects($scope.projects);
+                $rootScope.loading = false;
 
             }, 100);
         });
