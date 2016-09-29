@@ -1,4 +1,7 @@
 <md-content>
+<script>
+console.log("step 1");
+</script>
     <div ng-include="'navigation/loading.html'"></div>
     <div ng-include="'navigation/auth.html'" class="loading-hide"></div>
     <div ng-include="'navigation/header.html'" class="loading-hide"></div>
@@ -247,22 +250,9 @@
         </div>
     </section> -->
     <!-- CTA END -->
-    <div ng-include="'navigation/footer.html'" class="loading-hide"></div>
-</md-content>
-<script type="text/javascript" src="js/plugins.js"></script>
-<!-- <script type="text/javascript" src="js/scripts.js"></script> -->
-<script>
-$(document).ready(function() {
-
-    setTimeout(function() {
-        console.log('called');
-        $.getScript("js/scripts.js", function() {
-            //alert("Script loaded and executed.");
-        });
-        $.getScript("js/main.js", function() {
-            //alert("Script loaded and executed.");
-        });
-    }, 3000)
-
-})
+    <script>
+console.log("step 6");
 </script>
+<div ng-include="'navigation/footer.html'"></div>
+</md-content>
+
