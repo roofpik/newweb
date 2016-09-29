@@ -18,7 +18,7 @@ app.controller('homeCtrl', function($scope, $state, $timeout, $rootScope) {
                 }
             });
         });
-    }, 1000);
+    }, 3000);
 
     $scope.topRated = {};
 
