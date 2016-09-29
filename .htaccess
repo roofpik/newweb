@@ -1,17 +1,10 @@
-ExpiresActive On
-ExpiresDefault A0
+//Rewrite to www
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^roofpik.com[nc]
+RewriteRule ^(.*)$ http://www.roofpik.com/$1 [r=301,nc]
 
-# 1 YEAR - doesn't change often
-<FilesMatch "\.(flv|ico|pdf|avi|mov|ppt|doc|mp3|wmv|wav)$">
-ExpiresDefault A31536000
-</FilesMatch>
-
-# 1 WEEK - possible to be changed, unlikely
-<FilesMatch "\.(jpg|jpeg|png|gif|swf)$">
-ExpiresDefault A604800
-</FilesMatch>
-
-# 3 HOUR - core content, changes quickly
-<FilesMatch "\.(txt|xml|js|css)$">
-ExpiresDefault A10800
+//Caching schema
+<FilesMatch "\.(jpg|png|css|js)$">
+Header set Cache-Control "max-age=3600"
 </FilesMatch>
