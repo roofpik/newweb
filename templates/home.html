@@ -9,8 +9,6 @@
             <div class="row">
                 <div class="gl-elements-content-wrapper">
                     <div id="typed-strings">
-                         
-
                         <p>Write a<span class="gl-color-text"> review</span> about your project or locality </p>
                         <p>Find Top Rated <span class="gl-color-text">projects</span> by users</p>
                         <p>Search best<span class="gl-color-text"> projects</span> in Gurgaon</p>
@@ -27,7 +25,6 @@
                         </form>
                     </div>
                     <!-- END -->
-                 
                 </div>
             </div>
         </div>
@@ -85,7 +82,7 @@
                 </div>
             </div>
         </div>
-  <!--       <div class="container-fluid">
+        <!--       <div class="container-fluid">
             <div class="row">
                 <div class="gl-custom-image-wrapper">
                     <img src="images/review-home.jpg" alt="Custom Image" class="gl-lazy review-home">
@@ -184,7 +181,7 @@
                                 <source media="(min-width: 768px)" srcset="{{project.imgUrl}}">
                                 <img alt="Featured Listing" srcset="{{project.imgUrl}}">
                             </picture>
-                              <span class="gl-price-tag">#{{$index+1}} of {{projectNum}} projects in Gurgaon </span>
+                            <span class="gl-price-tag">#{{$index+1}} of {{projectNum}} projects in Gurgaon </span>
                         </div>
                         <div class="gl-feat-item-details">
                             <span class="gl-item-rating">
@@ -195,7 +192,7 @@
                               <a href="#">{{project.projectName}}</a>
                             </h3>
                             <div class="gl-item-location">
-                         <i class="ion-ios-location-outline"></i>       <span>{{project.displayLocation}}</span>
+                                <i class="ion-ios-location-outline"></i> <span>{{project.displayLocation}}</span>
                             </div>
                         </div>
                     </div>
@@ -212,7 +209,7 @@
     </section>
     <!-- FEATURED LISTINGS END -->
     <!-- HOW IT WORKS -->
-<!--     <section class="gl-how-it-works-section gl-custom-section gl-section-wrapper loading-hide">
+    <!--     <section class="gl-how-it-works-section gl-custom-section gl-section-wrapper loading-hide">
         <div class="container">
             <div class="row">
                 <div class="gl-custom-sec-content">
@@ -232,7 +229,7 @@
     </section> -->
     <!-- HOW IT WORKS END -->
     <!-- CTA -->
-<!--     <section class="gl-cta-section loading-hide">
+    <!--     <section class="gl-cta-section loading-hide">
         <div class="container">
             <div class="row">
                 <div class="gl-cta-content-wrapper">
@@ -252,3 +249,20 @@
     <!-- CTA END -->
     <div ng-include="'navigation/footer.html'" class="loading-hide"></div>
 </md-content>
+<script type="text/javascript" src="js/plugins.js"></script>
+<!-- <script type="text/javascript" src="js/scripts.js"></script> -->
+<script>
+$(document).ready(function() {
+
+    setTimeout(function() {
+        console.log('called');
+        $.getScript("js/scripts.js", function() {
+            //alert("Script loaded and executed.");
+        });
+        $.getScript("js/main.js", function() {
+            //alert("Script loaded and executed.");
+        });
+    }, 3000)
+
+})
+</script>

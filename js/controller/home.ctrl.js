@@ -6,18 +6,18 @@ app.controller('homeCtrl', function($scope, $state, $timeout, $rootScope) {
     }
     $timeout(function() {
         $rootScope.loading = false;
-        var $portfolioContainer = $('.gl-listing-categories-wrapper');
+        // var $portfolioContainer = $('.gl-listing-categories-wrapper');
 
-        $portfolioContainer.imagesLoaded(function() {
-            $portfolioContainer.isotope({
-                itemSelector: '.gl-listing-cat-item',
-                percentPosition: true,
-                masonry: {
-                    // use outer width of grid-sizer for columnWidth
-                    columnWidth: 1
-                }
-            });
-        });
+        // $portfolioContainer.imagesLoaded(function() {
+        //     $portfolioContainer.isotope({
+        //         itemSelector: '.gl-listing-cat-item',
+        //         percentPosition: true,
+        //         masonry: {
+        //             // use outer width of grid-sizer for columnWidth
+        //             columnWidth: 1
+        //         }
+        //     });
+        // });
     }, 3000);
 
     $scope.topRated = {};
