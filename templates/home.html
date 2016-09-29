@@ -2,7 +2,7 @@
 <script>
 console.log("step 1");
 </script>
-    <div ng-include="'navigation/loading.html'"></div>
+<!--     <div ng-include="'navigation/loading.html'"></div> -->
 
     <!--================================
             SIDE MENU
@@ -13,7 +13,7 @@ console.log("step 3");
 </script>
 <div class="gl-side-menu-overlay"></div>
 <!-- PAGE OVERLAY WHEN MENU ACTIVE END -->
-<div class="gl-side-menu-wrap" ng-controller="authCtrl">
+<div class="gl-side-menu-wrap">
     <div ng-include="'templates/modal/otp.html'"></div>
     <div class="gl-side-menu">
         <div class="gl-side-menu-widget-wrap">
@@ -126,7 +126,7 @@ console.log("step 4");
 
 
 <!-- HEADER -->
-<header class="gl-header" ng-controller="headerCtrl">
+<header class="gl-header">
     <!-- BOTTOM BAR/NAVIGATION -->
     <div class="gl-header-bottombar">
         <!-- Navigation Menu start-->
