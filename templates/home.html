@@ -3,9 +3,168 @@
 console.log("step 1");
 </script>
     <div ng-include="'navigation/loading.html'"></div>
-    <div ng-include="'navigation/auth.html'" class="loading-hide"></div>
-    <div ng-include="'navigation/header.html'" class="loading-hide"></div>
+
+    <!--================================
+            SIDE MENU
+=================================-->
+<!-- PAGE OVERLAY WHEN MENU ACTIVE -->
+<script>
+console.log("step 3");
+</script>
+<div class="gl-side-menu-overlay"></div>
+<!-- PAGE OVERLAY WHEN MENU ACTIVE END -->
+<div class="gl-side-menu-wrap" ng-controller="authCtrl">
+    <div ng-include="'templates/modal/otp.html'"></div>
+    <div class="gl-side-menu">
+        <div class="gl-side-menu-widget-wrap">
+            <div class="gl-login-form-wrapper login">
+                <h3>User Login</h3>
+                <!--         <p>Login to add new listing </p> -->
+                <div class="gl-login-form login">
+                    <form autocomplete="off" ng-submit="login()">
+                        <input type="text" name="gl-user-name" id="gl-user-input" ng-model="user.email" placeholder="Enter your email" autocomplete="off">
+                        <input type="password" name="gl-user-password" id="gl-user-password" ng-model="user.password" placeholder="password" autocomplete="off">
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+                <!--     <div class="gl-social-login-opt">
+                    <a href="#" class="gl-social-login-btn gl-facebook-login">Login with Facebook</a>
+                    <a href="#" class="gl-social-login-btn gl-google-login">Login with Google</a>
+                </div> -->
+                <div class="gl-other-options">
+                    <a ng-click="showForgetPassword()" class="gl-forgot-pass">Forget Password ?</a>
+                    <a ng-click="showSignup()" class="gl-signup">Sign up</a>
+                </div>
+            </div>
+            <div class="gl-login-form-wrapper signup">
+                <h3>User Signup</h3>
+                <!--         <p>Login to add new listing </p> -->
+                <div class="gl-login-form">
+                    <form autocomplete="off" name="signUp" ng-submit="register()">
+                        <!-- <input type="text" name="gl-user-fname" id="signup-user-input" placeholder="First Name" required>
+                        <input type="text" name="gl-user-lname" id="signup-user-input" placeholder="Last Name">
+                        <input type="text" name="gl-user-email" id="signup-user-input" placeholder="Email">
+                        <input type="text" name="gl-user-mobile" id="signup-user-input" placeholder="Mobile">
+                        <input type="password" name="gl-user-password" id="signup-user-password" placeholder="password">
+                        <button type="submit">Sign Up</button> -->
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>First Name *</label>
+                            <input required md-no-asterisk name="firstname" ng-model="user.firstname" placeholder="enter your first name">
+                            <div ng-messages="signUp.firstname.$error">
+                                <div ng-message="required">This is required.</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Last Name *</label>
+                            <input required md-no-asterisk name="lastname" ng-model="user.lastname" placeholder="Enter your last name">
+                            <div ng-messages="signUp.lastname.$error">
+                                <div ng-message="required">This is required.</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Mobile</label>
+                            <input name="mobile" ng-model="user.mobile" placeholder="10 Digit Mobile Number" required ng-pattern="/^[0-9]{10}$/" type="number">
+                            <div ng-messages="signUp.mobile.$error" role="alert" multiple>
+                                <div ng-message="required" class="my-message">You must supply a mobile number.</div>
+                                <div ng-message="pattern" class="my-message">That doesn't look like a valid mobile number.
+                                </div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>Email</label>
+                            <input required type="email" name="clientEmail" ng-model="user.email" minlength="6" maxlength="100" ng-pattern="/^.+@.+\..+$/" placeholder="john@email.com" />
+                            <div ng-messages="signUp.clientEmail.$error" role="alert">
+                                <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                                    Your email must be between 6 and 100 characters long and look like an e-mail address.
+                                </div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>Password *</label>
+                            <input required md-no-asterisk name="password" type="password" placeholder="must be more than 6 characters" ng-model="user.password" minlength="6">
+                            <div ng-messages="signUp.password.$error">
+                                <div ng-message="required">This is required.</div>
+                                <div ng-message="minlength">The password must be more than 6 characters long.</div>
+                            </div>
+                        </md-input-container>
+                        <div>
+                            <md-button type="submit">Submit</md-button>
+                        </div>
+                    </form>
+                </div>
+                <!--     <div class="gl-social-login-opt">
+                    <a href="#" class="gl-social-login-btn gl-facebook-login">Sign up with Facebook</a>
+                    <a href="#" class="gl-social-login-btn gl-google-login">Sign up with Google</a>
+                </div> -->
+                <div class="gl-other-options">
+                    <a ng-click="showForgetPassword()" class="gl-forgot-pass">Forget Password ?</a>
+                    <a ng-click="showLogin()" class="gl-signup">Login</a>
+                </div>
+            </div>
+            <div class="gl-login-form-wrapper forgetpassword">
+                <h3>Forget Password</h3>
+                <!--         <p>Login to add new listing </p> -->
+                <div class="gl-login-form">
+                    <form autocomplete="off" ng-submit="forgetPassword()">
+                        <input type="text" name="gl-user-name" id="forgot-user-input" placeholder="Enter your email" autocomplete="off" ng-model="user.email">
+                        <button type="submit">Reset Password</button>
+                    </form>
+                </div>
+                <div class="gl-other-options">
+                    <a ng-click="showLogin()" class="gl-forgot-pass">Login</a>
+                    <a ng-click="showSignup()" class="gl-signup">Sign up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="gl-side-menu-close-button" id="gl-side-menu-close-button">Close Menu</button>
+</div>
+<script>
+console.log("step 4");
+</script>
+<!-- SIDE MENU END -->
+
+
+<!-- HEADER -->
+<header class="gl-header" ng-controller="headerCtrl">
+    <!-- BOTTOM BAR/NAVIGATION -->
+    <div class="gl-header-bottombar">
+        <!-- Navigation Menu start-->
+        <nav class="navbar gl-header-main-menu" role="navigation">
+            <div class="container-fluid">
+                <!-- Navbar Toggle -->
+                <div class="navbar-header">
+                    <!-- Logo -->
+                    <a class="navbar-brand" href="/#/home"><img class="logo" src="../images/logo.png" alt="Roofpik"></a>
+                </div>
+                <!-- Navbar Toggle End -->
+                <!-- navbar-collapse start-->
+                <!-- navbar-collapse end-->
+                <div class="gl-extra-btns-wrapper">
+                    <!-- PROFILE BTN -->
+                    <span id="gl-side-menu-btn" ng-show="!login.status"> Sign In </span>
+                    <span ng-show="login.status" ng-click="logout()"> Logout </span>
+                    <i class="fa fa-map-marker" aria-hidden="true" style="margin-left:20px;"></i>
+                    <span>Gurgaon</span>
+                    <!-- PROFILE BTN END -->
+                </div>
+            </div>
+        </nav>
+        <!-- Navigation Menu end-->
+    </div>
+    <!-- END -->
+</header>
+
+<!-- HEADER END -->
+<script>
+console.log("step 5");
+</script>
+
+<!--     <div ng-include="'navigation/auth.html'" class="loading-hide"></div>
+
+    <div ng-include="'navigation/header.html'" class="loading-hide"></div> -->
     <!-- HERO IMAGE -->
+
     <section class="gl-hero-img-wrapper loading-hide">
         <div ng-include="'templates/modal/search.html'"></div>
         <div class="container">
@@ -253,6 +412,84 @@ console.log("step 1");
     <script>
 console.log("step 6");
 </script>
-<div ng-include="'navigation/footer.html'"></div>
+
+<!-- FOOTER -->
+<script>
+console.log('step 7');
+</script>
+<footer>
+    <!-- FOOTER TOP -->
+    <div class="gl-footer-top-wrapper">
+        <div class="container">
+            <div class="row">
+                <!-- FOOTER WIDGET -->
+                <div class="gl-footer-widget gl-footer-logo gl-footer-fixed-widget">
+                    <a href="#">
+                        <img src="../images/logo.png" alt="Roofpik">
+                    </a>
+                </div>
+                <!-- END -->
+                <!-- FOOTER WIDGET -->
+                <div class="gl-footer-widget gl-contact-info">
+                    <h3 class="gl-footer-widget-title">Contact info</h3>
+                    <div class="gl-footer-widget-content">
+                        <ul>
+                            <li><i class="fa fa-map-marker"></i>250, Vipul Trade Center, Sector 48, Gurgaon</li>
+                            <li><i class="fa fa-phone"></i>+91 124 438 4167</li>
+                            <li><i class="fa fa-envelope-o"></i>contact@roofpik.com</li>
+                            <li><i class="fa fa-globe"></i>www.roofpik.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- END -->
+                <!-- FOOTER WIDGET -->
+                <div class="gl-footer-widget gl-useful-links">
+                    <h3 class="gl-footer-widget-title">Company</h3>
+                    <div class="gl-footer-widget-content">
+                        <ul>
+                            <li><a ui-sref="about-us">About Us</a></li>
+                            <li><a ui-sref="faq">FAQ's</a></li>
+                            <li><a ui-sref="career-n-goals">Career &amp; Goal</a></li>
+                            <li><a ui-sref="contact-us">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- END -->
+            </div>
+        </div>
+    </div>
+    <!-- END -->
+    <!-- FOOTER BOTTOM -->
+    <div class="gl-footer-bottom-wrapper">
+        <div class="container">
+            <div class="row">
+                <!-- COPYRIGHT INFO -->
+                <div class="gl-copyright-info-wrapper">
+                    <p>Copyright &copy; 2016 AlphaBinary Technologies Pvt Ltd. All rights reserved</p>
+                </div>
+                <!-- COPYRIGHT INFO -->
+                <div class="gl-social-info-wrapper">
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com/roofpik">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.twitter.com/roofpik">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END -->
+</footer>
+<script type="text/javascript" src="js/plugins.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<!-- <div ng-include="'navigation/footer.html'"></div> -->
 </md-content>
 
