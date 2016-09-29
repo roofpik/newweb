@@ -20280,7 +20280,7 @@ a.gl-tag-btn:last-child {
   *display: inline;
   *zoom: 1;
   overflow: hidden;
-  background: url("../images/trending-badge.png") no-repeat center center;
+  /*background: url("../images/trending-badge.png") no-repeat center center;*/
   position: absolute;
   top: 0;
   left: 0;
