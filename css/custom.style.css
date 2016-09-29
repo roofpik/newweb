@@ -1,0 +1,483 @@
+.gl-extra-btns-wrapper {
+    line-height: 32px !important;
+    margin-left: 20px;
+}
+
+.gl-hero-img-wrapper .container .gl-elements-content-wrapper .gl-directory-searchbar form fieldset input {
+    width: 98%;
+    margin-left: 2%;
+}
+
+:focus::-webkit-input-placeholder {
+    opacity: 1;
+}
+
+:focus:-moz-placeholder {
+    opacity: 1;
+}
+
+:focus::-moz-placeholder {
+    opacity: 1;
+}
+
+:focus:-ms-input-placeholder {
+    opacity: 1;
+}
+
+.gl-google-login {
+    background-color: #fff;
+    border: 1px solid #fc313a !important;
+    color: #585858 !important;
+}
+
+.white-background {
+    background: #fff;
+}
+
+.gl-hero-img-wrapper .container .gl-elements-content-wrapper .gl-directory-searchbar form fieldset {
+    box-shadow: 2px 5px 2px rgba(0, 0, 0, 0.1), inset 2px 2px 1px #f0f0f0;
+}
+
+.gl-hero-img-wrapper .container .gl-elements-content-wrapper .gl-directory-searchbar form fieldset input {
+    border: 0px;
+}
+
+.gl-job-list-item .gl-job-list-item-wrapper a .gl-job-position-company h3 {
+    width: 100%;
+    padding-right: 0px;
+    margin-right: 0px;
+    border-right: 0px;
+}
+
+.gl-circle-load-search {
+    position: relative;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    transform: scale(0.6);
+    -o-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    -webkit-transform: scale(0.6);
+}
+
+.close-animatedModal {
+    float: right;
+    margin: 20px;
+    font-size: 1.4em;
+    cursor: pointer;
+}
+
+.gl-icon-btn img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.logo {
+    width: 60%;
+}
+
+footer .gl-footer-top-wrapper {
+    background-color: #fff;
+}
+
+@media only screen and (min-width: 778px) {
+    footer .gl-footer-top-wrapper .gl-footer-widget {
+        border-left: 1px solid #c5c5c5 !important;
+        width: 33%;
+    }
+    footer .gl-footer-top-wrapper .gl-footer-widget:first-child {
+        width: 33%;
+        border-left: 0px !important;
+    }
+}
+
+.gl-side-menu-widget-wrap .gl-login-form input {
+    color: #484848;
+}
+
+.signup,
+.forgetpassword {
+    display: none;
+}
+
+md-input-container .md-errors-spacer {
+    min-height: 0px;
+}
+
+.gl-circle-load {
+    width: 150px;
+    text-align: center;
+}
+
+.gl-circle-load img {
+    width: 80px;
+}
+
+#gl-review-loader-wrapper {
+    background-color: #ffffff;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    opacity: 0.8;
+    z-index: 999;
+}
+
+.gl-review-loader-center {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.gl-how-it-works-section .gl-custom-sec-content a {
+    font-size: 1.4em;
+}
+
+#outer-box {
+    display: block;
+    position: relative;
+    padding: 0px;
+}
+
+.gl-review-load {
+    width: 250px;
+    text-align: center;
+    position: absolute;
+    left: 30%;
+    top: 20%;
+    height: 80px;
+    margin-top: -40px;
+    margin-left: -40px;
+    transform: scale(0.6);
+    -o-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+}
+
+.gl-review-load a {
+    font-size: 1.5em;
+}
+
+.loading-hide {
+    display: none;
+}
+
+.gl-side-menu-close-button {
+    top: 90px;
+}
+
+@media only screen and (max-width: 778px) {
+    .gl-hero-img-wrapper {
+        padding-top: 100px;
+    }
+    .gl-hero-img-wrapper .container .gl-elements-content-wrapper h2.gl-hero-text-heading {
+        font-size: 20px;
+    }
+    .gl-hero-img-wrapper .container .gl-elements-content-wrapper .gl-directory-searchbar form fieldset {
+        border-radius: 0px;
+        border: 1px solid #ccc;
+    }
+
+    .navbar-header .navbar-brand{
+            padding: 15px 0;
+    }
+        .navbar-header .navbar-brand .logo{
+            width: 44%;
+                display: inline;
+    }
+
+    .gl-header-main-menu .gl-extra-btns-wrapper{
+            right: 35px !important;
+    }
+
+    .gl-footer-logo, .gl-contact-info{
+        display:none;
+    }
+
+    #outer-box, .review-tips{
+        padding: 15px 0;
+        font-size: 12px;
+    }
+}
+
+.nanhi-kali {
+    color: #059fff;
+    cursor: pointer;
+}
+
+.gl-ranges {
+    font-size: 14px;
+    margin-left: 2px;
+}
+
+.gl-project-description {
+    background-color: #fff;
+    margin: 5px;
+    padding:10px;
+}
+.gl-buy-rent-links {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.gl-buy span{
+    padding: 10px 20px;
+    background-color: #ffcccc;
+    /* border: 1px solid #ff9999; */
+    border-radius: 3px;
+    color: #ff6666;
+}
+
+.gl-rent span{
+    padding: 10px 20px;
+    background-color: #d6f5d6;
+    /* border: 1px solid #ff9999; */
+    border-radius: 3px;
+    color: #00e6ac;
+}
+
+
+
+
+
+.gl-overview-widget {
+  width: 100%;
+  border: 1px solid #ededed;
+}
+.gl-overview-widget .gl-overview-wrapper {
+  padding: 55px 70px 30px;
+  display: block;
+  background-color: #ffffff;
+}
+@media only screen and (max-width: 767px) {
+  .gl-overview-widget .gl-overview-wrapper {
+    padding: 55px 30px 30px;
+
+  }
+
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .gl-overview-widget .gl-overview-wrapper {
+    padding: 55px 25px 30px;
+  }
+
+
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .gl-overview-widget .gl-overview-wrapper {
+    padding: 55px 45px 30px;
+  }
+}
+.gl-overview-widget .gl-overview-wrapper h3 {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  color: #454545;
+  margin: 0 0 25px;
+  display: block;
+}
+.gl-overview-widget .gl-overview-wrapper ul {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 0px;
+}
+.gl-overview-widget .gl-overview-wrapper ul li {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: #bababa;
+  display: block;
+  padding: 15px 0;
+  border-top: 1px solid #f3f3f3;
+}
+.gl-overview-widget .gl-overview-wrapper ul li span {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: #888888;
+  float: right;
+}
+.gl-overview-widget .gl-overview-btns-wrapper {
+  height: 60px;
+  border-top: 1px solid #ededed;
+}
+.gl-overview-widget .gl-overview-btns-wrapper .gl-overview-price {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  float: left;
+  line-height: 60px;
+  padding-left: 70px;
+  padding-right: 15px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  color: #ff5400;
+  width: calc(100% - 120px);
+  border-right: 1px solid #ededed;
+}
+@media only screen and (max-width: 767px) {
+  .gl-overview-widget .gl-overview-btns-wrapper .gl-overview-price {
+    padding-left: 30px;
+  }
+
+  footer .gl-footer-top-wrapper .gl-footer-widget:last-child{
+    border:0px;
+  }
+
+  footer .gl-footer-top-wrapper{
+    padding:50px 0;
+  }
+   .gl-how-it-works-section{
+    padding: 100px 30px;
+   }
+
+   .gl-page-header-wrapper{
+    padding-top:100px;
+   }
+
+   .gl-blog-sec-title{
+        margin: 20px auto 10px;
+    text-align: center;
+   }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .gl-overview-widget .gl-overview-btns-wrapper .gl-overview-price {
+    padding-left: 25px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .gl-overview-widget .gl-overview-btns-wrapper .gl-overview-price {
+    padding-left: 45px;
+  }
+}
+.gl-overview-widget .gl-overview-btns-wrapper a.gl-overview-btns {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  float: left;
+  text-align: center;
+  border-right: 1px solid #ededed;
+}
+.gl-overview-widget .gl-overview-btns-wrapper a.gl-overview-btns i {
+  font-size: 21px;
+  color: #888888;
+}
+.gl-overview-widget .gl-overview-btns-wrapper a.gl-overview-btns .gl-compare-btn {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  margin-top: 15px;
+}
+.gl-overview-widget .gl-overview-btns-wrapper a.gl-overview-btns .gl-compare-btn .icon-bar {
+  display: block;
+  width: 6px;
+  height: 2px;
+  border-radius: 0px;
+  background-color: #bababa;
+}
+.gl-overview-widget .gl-overview-btns-wrapper a.gl-overview-btns .gl-compare-btn .icon-bar:nth-child(2) {
+  width: 10px;
+  margin-top: 2px;
+}
+.gl-overview-widget .gl-overview-btns-wrapper a.gl-overview-btns .gl-compare-btn .icon-bar:nth-child(3) {
+  width: 8px;
+  margin-top: 2px;
+}
+.gl-overview-widget .gl-overview-btns-wrapper a.gl-overview-btns:last-child {
+  border-right: 0px solid;
+}
+
+#gl-side-menu-btn{
+    cursor: pointer;
+}
+
+
+.gl-hero-img-wrapper {
+        /*background: url('http://static.ieplads.com/bmsjs/banners/99acres-hp/1920/1920-alind-gen-12-v2.jpg') center center no-repeat;*/
+        /*background: url('http://idealog.co.nz/media/images/blog/2013/11/cb-10-5087-001_phil_benton_builders.jpg') center center no-repeat;*/
+        background: url('../images/bg3.jpg') center center no-repeat;
+      /*background: linear-gradient(to bottom, #7493d8 0%, #2194d8 100%)*/
+  }
+
+  .gl-how-it-works-section{
+    background: url('../images/bg5.jpg') center center no-repeat;
+     background-size: cover;
+     padding: 100px 0;
+  }
+
+  .gl-how-it-works-section .container{
+    background: rgba(255, 255, 255, 0.56);
+    padding: 10px;
+}
+
+
+.gl-how-it-works-section .gl-custom-sec-content p{
+    color:#272727;
+}
+
+
+.gl-hero-img-wrapper .container .gl-elements-content-wrapper h2.gl-hero-text-heading{
+    color: #fff;
+    font-weight: 400;
+}
+
+.gl-hero-img-wrapper .container .gl-elements-content-wrapper p.gl-hero-text-paragraph{
+    color:#dadada;
+
+}
+
+.gl-hero-img-wrapper h2.gl-hero-text-heading .gl-color-text {
+  color: #fff;
+  font-weight: 700;
+}
+
+.gl-hero-img-wrapper .gl-directory-searchbar form button{
+        background: #5c5a69;
+    background: -moz-linear-gradient(top, #5c5a69 0%, #3f414a 100%);
+    background: -webkit-linear-gradient(top, #5c5a69 0%, #3f414a 100%);
+    background: linear-gradient(to bottom, #5c5a69 0%, #3f414a 100%);
+}
+
+.gl-hero-img-wrapper .container{
+    background: rgba(25, 25, 25, 0.51);
+}
+
+.rating-summary span{
+    font-size: 12px;
+}
+.gl-rating-widget .gl-overview-wrapper{
+padding:45px 15px 30px;
+}
+
+.gl-search-style-map-right .gl-page-content-section{
+    margin-top:40px;
+}
+
+
+.gl-hero-img-wrapper .no-background{
+    background: none;
+}
+
+.gl-page-header-wrapper:after{
+    opacity: 0.1;
+}
+.links li {
+    border: none !important;
+    padding: 5px 0 !important;
+}
+
+.links li span{
+    padding: 5px 10px ;
+    margin: 0px 10px 10px;
+    float: none !important;
+    font-size: 18px !important;
+}
+
+
+
+
